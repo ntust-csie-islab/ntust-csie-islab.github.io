@@ -6,6 +6,10 @@ body {
     text-align: center
 }
 
+.center {
+    text-align: center
+}
+
 .breadcrumb {
     background-color: initial
 }
@@ -13,4 +17,12 @@ body {
 .container {
     background-color: white;
     box-shadow: 0 0 200px 130px rgb(255, 255, 255)
+}
+
+.jumbotron {
+    background-color: initial
+}
+
+.img-responsive {
+    display: block
 }

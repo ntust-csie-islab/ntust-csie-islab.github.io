@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+
+    <title>李漢銘教授個人簡介</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/common.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h5>國立台灣科技大學 資訊工程系所</h5>
+            <a href="/">
+                <img src="/images/logo.gif" title="智慧型系統實驗室">
+            </a>
+            <h2>智慧型系統實驗室</h2>
+            <ul class="breadcrumb">
+                <li role="presentation"><a href="http://neuron.csie.ntust.edu.tw/work/staff.asp">實驗室生活與成員 ( Member ) </a></li>
+                <li><a href="/hmlee/profile.html">指導教授 ( Advisor ) </a></li>
+                <li><a href="http://neuron.csie.ntust.edu.tw/project/projects.asp">研究成果  ( Research Achievement ) </a></li>
+                <li><a href="http://neuron.csie.ntust.edu.tw/history.asp">實驗室沿革  ( History ) </a></li>
+                <li><a href="http://neuron.csie.ntust.edu.tw:3000/">實驗室開會  ( Group Meeting ) </a></li>
+                <li><a href="http://neuron.csie.ntust.edu.tw/homework">課程內容公告</a></li>
+                <li><a href="http://neuron.csie.ntust.edu.tw/Related_Resource.asp">其他相關資源</a></li>
+                <li><a href="http://www.ntust.edu.tw/">台科大首頁</a></li>
+                <li><a href="http://neuron.csie.ntust.edu.tw/enwebdata/">English version</a></li>
+            </ul>
+        </div>
+        <div class="jumbotron row">
+            <div>
+                <div class="col-md-6 center">
+                    <img src="/images/hmlee2005.JPG" class="img-responsive" alt="Cinque Terre" />
+                </div>
+                <div class="col-md-5">
+                    <table class="table">
+                        <tr>
+                            <td align="left" width="100">信箱</td>
+                            <td align="left"></td>
+                        </tr>
+                        <tr>
+                            <td align="left" width="100">網頁</td>
+                            <td align="left">
+                                <a href="http://neuron.csie.ntust.edu.tw/" target="_blank">http://neuron.csie.ntust.edu.tw/</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" width="100">學歷</td>
+                            <td align="left">臺灣大學資訊工程所博士</td>
+                        </tr>
+                        <tr>
+                            <td align="left" width="100">辦公室</td>
+                            <td align="left">T4-510</td>
+                        </tr>
+                        <tr>
+                            <td align="left" width="100">電話</td>
+                            <td align="left">02-27376410</td>
+                        </tr>
+                        <tr>
+                            <td align="left" width="100">專長</td>
+                            <td align="left">智慧型網際網路系統、類神經網路、資訊安全、人工智慧、科技政策</td>
+                        </tr>
+                        <tr>
+                            <td align="left" width="100">實驗室</td>
+                            <td align="left">
+                                <a href="http://neuron.csie.ntust.edu.tw/" style="cursor: e-resize; text-decoration: none" target="_blank">智慧型系統實驗室(RB304-1)</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" width="100">實驗室分機</td>
+                            <td align="left">02-27333141轉7296</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="row marketing">
+            <div class="col-lg-12">
+
+
+ <ul class="breadcrumb">
+                <li ><a href="#Now">現職</a></li>
+                <li ><a href="#Education">學歷</a></li>
+                <li ><a href="#Experience">經歷</a></li>
+                <li ><a href="#Research">專長/個人研究方向簡介</a></li>
+                <li ><a href="#Publish">論文著作</a></li>
+                <li ><a href="">發明專利</a></li>
+                <li ><a href="">主持研究計畫</a></li>
+                <li ><a href="">指導專題/系統</a></li>
+                <li ><a href="">特殊榮譽與獲獎事蹟</a></li>
+                <li ><a href="">智慧型系統實驗室</a></li>
+                <li ><a href=""> English version</a></li>
+                <li ><a href=""></a></li>
+          
+
+            </ul>
+
+                <div class="">
+                    <h4>李漢銘教授個人簡介</h4>
+                    <table class="table table-striped">
+                        <thead>
+                              <tr >
+                      <th width="5%" >
+                         序號
+                      </th>
+                      <th width="26%" >
+                         專利名稱 /證書
+                      </th>
+                      <th width="5%" >
+                         申請
+                         國別 
+                      </th>
+                      <th width="7%" >
+                         證書號 
+                      </th>
+                      <th width="14%" >
+                         發明人 
+                      </th>
+                      <th width="11%" >
+                         專利權人 
+                      </th>
+                      <th width="10%" >
+                         公告日 
+                      </th>
+                      <th width="11%" >
+                         專利期間 
+                      </th>
+                      <th width="7%" >
+                         摘要
+                      </th>
+                   </tr>
+                        </thead>
+                        <tbody>
+                           <tr >
+                      <td width="5%" >
+                         1.
+                      </td>
+                      <td width="26%" >
+                         <a
+                            href="licenses/I226005.pdf">線上客服系統及其建立方法</a>
+                      </td>
+                      <td width="5%" >
+                         台灣 
+                      </td>
+                      <td width="7%" >
+                         I226005
+                      </td>
+                      <td width="14%" >
+                         李漢銘、郭浩鵬、黃麟程、蘇建榮 
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學 
+                      </td>
+                      <td width="10%" >
+                         2005/01/01
+                      </td>
+                      <td width="11%" >
+                         2005/01/01 ~ 2023/01/27 
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent4.htm">摘要</a>
+                      </td>
+                   </tr>
+                   <tr >
+                      <td width="5%" >
+                         2.
+                      </td>
+                      <td width="26%" >
+                         <a
+                            href="licenses/I296767.pdf">具有容錯功能 之資料搜尋系統及其方法 <br>
+                         SEARCH SYSTEM WITH FAULT TOLERANCE ABILITIES AND METHOD THEREOF</a>
+                      </td>
+                      <td width="5%" >
+                         台灣 
+                      </td>
+                      <td width="7%" >
+                         I296767
+                      </td>
+                      <td width="14%" >
+                         李漢銘、黃嘉新
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學 
+                      </td>
+                      <td width="10%" >
+                         2008/05/11
+                      </td>
+                      <td width="11%" >
+                         2008/05/11 ~ 2026/02/06 
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent3.htm">摘要</a>
+                      </td>
+                   </tr>
+                   <tr >
+                      <td width="5%" >
+                         3.
+                      </td>
+                      <td width="26%" >
+                         <a
+                            href="http://neuron.csie.ntust.edu.tw/project/licenses/I314962.pdf">具有學習功能之字詞輸入系統及其資料更新方法 <br>
+                         PHRASE INPUT SYSTEM WITH LEARNING FEATURE AND UPDATE METHOD THEREOF </a>
+                      </td>
+                      <td width="5%" >
+                         台灣 
+                      </td>
+                      <td width="7%" >
+                         I314962
+                      </td>
+                      <td width="14%" >
+                         李漢銘、黃嘉新
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學 
+                      </td>
+                      <td width="10%" >
+                         2009/09/11
+                      </td>
+                      <td width="11%" >
+                         2009/09/11 ~ 2026/02/09 
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent2.htm">摘要</a>
+                      </td>
+                   </tr>
+                   <tr >
+                      <td width="5%" >
+                         4.
+                      </td>
+                      <td width="26%" >
+                         <a
+                            href="patent.files/0950067TW.jpg">基因序列分析 系統及方法</a>
+                         <a href="patent.files/0950067TW.jpg">METHOD
+                         AND SYSTEM OF ANALYZING GENE SEQUENCE</a>
+                      </td>
+                      <td width="5%" >
+                         台灣
+                      </td>
+                      <td width="7%" >
+                         I326431
+                      </td>
+                      <td width="14%" >
+                         李漢銘、羅百玲、葉哲甫、黃嘉新
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學
+                      </td>
+                      <td width="10%" >
+                         2010/06/21
+                      </td>
+                      <td width="11%" >
+                         2010/06/21 ~
+                         2027/04/29
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent%201.htm">摘要</a>
+                      </td>
+                   </tr>
+                   <tr >
+                      <td width="5%" >
+                         5.
+                      </td>
+                      <td width="26%" >
+                         <a
+                            href="licenses/I338236.pdf">用於辨別網頁資料中人名的系統及方法</a>
+                      </td>
+                      <td width="5%" >
+                         台灣
+                      </td>
+                      <td width="7%" >
+                         I338236
+                      </td>
+                      <td width="14%" >
+                         李漢銘、邱坤彥、陳威達、黃嘉新
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學
+                      </td>
+                      <td width="10%" >
+                         2011/03/01
+                      </td>
+                      <td width="11%" >
+                         2011/03/01 ~
+                         2026/12/19
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent5.htm">摘要</a>
+                      </td>
+                   </tr>
+                   <tr >
+                      <td width="5%" >
+                         6.
+                      </td>
+                      <td width="26%" >
+                         <a
+                            href="licenses/I348628%20.pdf">用於辨別文獻之同名作者的系統及方法</a>
+                      </td>
+                      <td width="5%" >
+                         台灣
+                      </td>
+                      <td width="7%" >
+                         I348628
+                      </td>
+                      <td width="14%" >
+                         李漢銘、江建毅、周家慶、黃嘉新
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學
+                      </td>
+                      <td width="10%" >
+                         2011/09/11
+                      </td>
+                      <td width="11%" >
+                         2011/09/11 ~
+                         2027/01/23
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent6.htm">摘要</a>
+                      </td>
+                   </tr>
+                   <tr >
+                      <td width="5%" >
+                         7.
+                      </td>
+                      <td width="26%" >
+                         <a
+                            href="licenses/I352913.pdf">專家搜尋系統及其方法</a>
+                      </td>
+                      <td width="5%" >
+                         台灣
+                      </td>
+                      <td width="7%" >
+                         I352913
+                      </td>
+                      <td width="14%" >
+                         李漢銘、何建明、楊凱翔、周家慶、陳水石
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學
+                      </td>
+                      <td width="10%" >
+                         2011/11/21
+                      </td>
+                      <td width="11%" >
+                         2011/11/21 ~
+                         2028/01/15
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent7.htm">摘要</a>
+                      </td>
+                   </tr>
+                   <tr >
+                      <td width="5%" >
+                         8
+                      </td>
+                      <td width="26%" >
+                         <a href="licenses/US8,175,980B2.pdf">HOT
+                         VIDEO PREDICTION SYSTEM BASED ON USER INTERESTS SOCIAL NETWORK</a>
+                      </td>
+                      <td width="5%" >
+                         美國
+                      </td>
+                      <td width="7%" >
+                         US8,175,980B2
+                      </td>
+                      <td width="14%" >
+                         Hahn-Ming Lee, Hui-Ju
+                         Cheng, Ching-Hao Mao, Chao-Wen
+                         Li, Shou-Wei Ho, Jerome Yeh
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學
+                      </td>
+                      <td width="10%" >
+                         2012/05/08
+                      </td>
+                      <td width="11%" >
+                         2012/05/08 ~
+                         2030/08/27
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent8.htm">摘要</a>
+                      </td>
+                   </tr>
+                   <tr >
+                      <td width="5%" >
+                         9
+                      </td>
+                      <td width="26%" >
+                         <a href="licenses/US8,275,774B2.pdf">STREAMING QUERY SYSTEM AND METHOD FOR EXTENSIBLE MARKUP LANGUAGE</a>
+                      </td>
+                      <td width="5%" >
+                         美國
+                      </td>
+                      <td width="7%" >
+                         US8,275,774B2
+                      </td>
+                      <td width="14%" >
+                         李漢銘, 劉麗貞
+                         林桀宏, 葉治宏, 黃嘉新
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學
+                      </td>
+                      <td width="10%" >
+                         2012/09/25
+                      </td>
+                      <td width="11%" >
+                         2012/09/25 ~
+                         2030/12/13
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent9.htm">摘要</a>
+                      </td>
+                   </tr>
+                   <tr >
+                      <td width="5%" >
+                         10
+                      </td>
+                      <td width="26%" >
+                         <a href="licenses/US8,307,459B2.pdf">BOTNET EARLY DETECTION USING HYBRID HIDDEN MARKOV MODEL ALGORITHM</a>
+                      </td>
+                      <td width="5%" >
+                         美國
+                      </td>
+                      <td width="7%" >
+                         US8,307,459B2
+                      </td>
+                      <td width="14%" >
+                         李漢銘. 毛敬豪. 王奕勛. 陳祖翰.  陳裕傑. 葉治宏. 
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學
+                      </td>
+                      <td width="10%" >
+                         2012/11/06
+                      </td>
+                      <td width="11%" >
+                         2012/11/06 ~
+                         2031/01/03
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent10.htm">摘要</a>
+                      </td>
+                   </tr>
+                   <tr >
+                      <td width="5%" >
+                         11
+                      </td>
+                      <td width="26%" >
+                         <a
+                            href="licenses/I390443.pdf">使用在可擴展性標示語言之串流路徑查詢機制系統與方法</a>
+                         <a href="licenses/I390443.pdf"> STREAMING QUERY SYSTEM AND METHOD FOR EXTENSIBLE MARKUP LANGUAGE </a> 
+                      </td>
+                      <td width="5%" >
+                         台灣 
+                      </td>
+                      <td width="7%" >
+                         I390443
+                      </td>
+                      <td width="14%" >
+                         李漢銘, 劉麗貞, 林桀宏, 葉治宏, 黃嘉新,
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學
+                      </td>
+                      <td   width="10%" > 
+                         2013/03/21
+                      </td>
+                      <td width="11%" > 
+                         2013/03/21~</br>2029/08/03
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent11.htm">摘要</a>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td width="5%" >
+                         12
+                      </td>
+                      <td width="26%" >
+                         <a href="licenses/US8,429,520B2.pdf">RECORD EXTRACTION SYSTEM AND METHOD, AND PROGRAM PRODUCT</a> 
+                      </td>
+                      <td width="5%" >
+                         美國 
+                      </td>
+                      <td width="7%" >
+                         US8,429,520B2
+                      </td>
+                      <td width="14%" >
+                         李漢銘. 何建明. 楊凱翔. 葉治宏. 王瑞遠. 陳水石. 
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學
+                      </td>
+                      <td width="10%" > 
+                         2013/04/23
+                      </td>
+                      <td width="11%" > 
+                         2013/04/23 ~ 2030/07/15
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent12.htm">摘要</a>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td width="5%" >
+                         13
+                      </td>
+                      <td width="26%" >
+                         <a
+                            href="licenses/I396990.pdf"> 引用文獻記錄擷取系統、方法及程式產品 </a> 
+                         <a
+                            href="patent.files/0980029TW專利證書.pdf">CITATION RECORD EXTRACTION SYSTEM AND METHOD, AND PROGRAM </a> 
+                      </td>
+                      <td width="5%" >
+                         台灣
+                      </td>
+                      <td width="7%" >
+                         I396990
+                      </td>
+                      <td width="14%" >
+                         李漢銘. 何建明. 楊凱翔. 葉治宏. 王瑞遠. 陳水石. 
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學
+                      </td>
+                      <td   width="10%" > 
+                         2013/05/21
+                      </td>
+                      <td width="11%" > 
+                         2013/05/21~</br>2029/08/02
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent13.htm">摘要</a>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td width="5%" >
+                         14
+                      </td>
+                      <td width="26%" >
+                         <a
+                            href="licenses/US8,341,742B2.pdf">NETWORK ATTACK DETECTION DEVICES AND METHODS </a> 
+                      </td>
+                      <td width="5%" >
+                         美國 
+                      </td>
+                      <td width="7%" >
+                         US8,341,742B2
+                      </td>
+                      <td width="14%" >
+                         李漢銘. 葉治宏. 黃思育. 毛敬豪.
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學
+                      </td>
+                      <td width="10%" > 
+                         2012/12/25
+                      </td>
+                      <td width="11%" > 
+                         2012/12/25~</br>
+                         2031/05/17
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent14.htm">摘要</a>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td width="5%" >
+                         15
+                      </td>
+                      <td width="26%" >
+                         <a
+                            href="licenses/I405434.pdf">殭屍網路偵測系統及方法 </a> 
+                         <a
+                            href="patent.files/0980026TW證書.pdf"> BOTNET EARLY DETECTION USING HYBRID HIDDEN MARKOV MODEL ALGORITHM </a> 
+                      </td>
+                      <td width="5%" >
+                         台灣
+                      </td>
+                      <td width="7%" >
+                         I405434
+                      </td>
+                      <td width="14%" >
+                         李漢銘. 毛敬豪. 王奕勛. 陳祖翰. 陳裕傑. 葉治宏 
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學
+                      </td>
+                      <td width="10%" > 
+                         2013/08/11
+                      </td>
+                      <td width="11%" > 
+                         2013/08/11 ~ 2029/07/02
+                         </br>
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent15.htm">摘要</a>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td width="5%" >
+                         16
+                      </td>
+                      <td width="26%" > 
+                         <a
+                            href="licenses/US8,505,080B2.pdf">METHOD FOR GENERATING CROSS-SITE SCRIPTING ATTACK  </a> 
+                      </td>
+                      <td width="5%" >
+                         美國
+                      </td>
+                      <td width="7%" >
+                         US8,505,080B2
+                      </td>
+                      <td width="14%" >
+                         李漢銘, 毛敬豪, 吳國賓, 王奕勛, 葉治宏.
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學
+                      </td>
+                      <td width="10%" >  
+                         2013/08/06
+                      </td>
+                      <td width="11%" >  
+                         2013/08/06~
+                         </br>
+                         2031/11/17
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent16.htm">摘要</a>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td width="5%" >
+                         17
+                      </td>
+                      <td width="26%" > 
+                         <a
+                            href="licenses/0980099TW證書.pdf">網路攻擊偵測裝置以及方法NETWORK ATTACK DETECTION DEVICES AND METHODS</a> 
+                      </td>
+                      <td width="5%" >
+                         台灣
+                      </td>
+                      <td width="7%" > 
+                         I439095
+                      </td>
+                      <td width="14%" >
+                         李漢銘, 葉治宏, 黃思育, 毛敬豪
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學
+                      </td>
+                      <td width="10%" >  
+                         2014/05/21
+                      </td>
+                      <td width="11%" >  
+                         2014/05/21~
+                         </br>
+                         2030/01/21 
+                         </br>
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent17.htm">摘要</a> 
+                      </td>
+                   </tr>
+                   <tr>
+                      <td width="5%" >
+                         18
+                      </td>
+                      <td width="26%" > 
+                         <a
+                            href="licenses/1000011TW證書.pdf">跨站腳本攻擊產生方法 METHOD FOR GENERATING CROSS-SITE SCRIPTING ATTACK 
+                         </a> 
+                      </td>
+                      <td width="5%" >
+                         台灣
+                      </td>
+                      <td width="7%" > 
+                         I439097
+                      </td>
+                      <td width="14%" >
+                         李漢銘, 吳國賓, 王奕勛, 毛敬豪, 葉治宏
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學
+                      </td>
+                      <td width="10%" >  
+                         2014/05/21
+                      </td>
+                      <td width="11%" >  
+                         2014/05/21~  
+                         </br>
+                         2031/08/25 
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent18.htm">摘要</a> 
+                      </td>
+                   </tr>
+                   <tr>
+                      <td width="5%" >
+                         19
+                      </td>
+                      <td width="26%" > 
+                         <a
+                            href="licenses/1010100TW證書.pdf">惡意程式偵測方法與系統
+                         </a> 
+                      </td>
+                      <td width="5%" >
+                         台灣
+                      </td>
+                      <td width="7%" > 
+                         I461952
+                      </td>
+                      <td width="14%" >
+                         吳東杰, 毛敬豪, 魏得恩, 李漢銘
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學
+                      </td>
+                      <td width="10%" >  
+                         2014/11/21
+                      </td>
+                      <td width="11%" >  
+                         2014/11/21~  
+                         </br>
+                         2032/12/25  
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent19.htm">摘要</a> 
+                      </td>
+                   </tr>
+                   <tr>
+                      <td width="5%" >
+                         20
+                      </td>
+                      <td width="26%" > 
+                         <a
+                            href="licenses/1010116TW證書.pdf">驗證方法以及驗證系統 AUTHENTICATION METHOD AND AUTHENTICATION SYSTEM
+                         </a> 
+                      </td>
+                      <td width="5%" >
+                         台灣
+                      </td>
+                      <td width="7%" > 
+                         I489312
+                      </td>
+                      <td width="14%" >
+                         鄭博仁, 李漢銘, 魏得恩, 李育杰
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學
+                      </td>
+                      <td width="10%" >  
+                         2015/06/21
+                      </td>
+                      <td width="11%" >  
+                         2015/06/21~  
+                         </br>
+                         2033/05/29  
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent20.htm">摘要</a> 
+                      </td>
+                   </tr>
+                   <tr>
+                      <td width="5%" >
+                         21
+                      </td>
+                      <td width="26%" > 
+                         <a
+                            href="licenses/100148780(I536182).pdf">一種文章分類方法及系統
+                         </a> 
+                      </td>
+                      <td width="5%" >
+                         台灣
+                      </td>
+                      <td width="7%" > 
+                         I536182
+                      </td>
+                      <td width="14%" >
+                         李漢銘、何紹威、林雅惠、吳國賓、林桀宏、葉治宏
+                      </td>
+                      <td width="11%" >
+                         台灣科技大學
+                      </td>
+                      <td width="10%" >  
+                         2016/06/01
+                      </td>
+                      <td width="11%" >  
+                         2016/06/01~
+                         2031/12/26 
+                         </br>
+                      </td>
+                      <td width="7%" >
+                         <a href="patent.files/patent21.htm">摘要</a> 
+                      </td>
+                   </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p></p>
+        </footer>
+
+    </div>
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+
+</body>
+
+</html>

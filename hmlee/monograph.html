@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+
+    <title>李漢銘教授 - 指導專題/系統</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/trbs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/common.css">
+</head>
+
+<body>
+   <div class="container">
+        <div class="header">
+            <h5>國立台灣科技大學 資訊工程系所</h5>
+            <a href="/">
+                <img src="/images/logo.gif" title="智慧型系統實驗室">
+            </a>
+            <h2>智慧型系統實驗室</h2>
+            <ul class="breadcrumb">
+                <li role="presentation"><a href="http://neuron.csie.ntust.edu.tw/work/staff.asp">實驗室生活與成員 ( Member ) </a></li>
+                <li><a href="/hmlee/profile.html">指導教授 ( Advisor ) </a></li>
+                <li><a href="http://neuron.csie.ntust.edu.tw/project/projects.asp">研究成果  ( Research Achievement ) </a></li>
+                <li><a href="http://neuron.csie.ntust.edu.tw/history.asp">實驗室沿革  ( History ) </a></li>
+                <li><a href="http://neuron.csie.ntust.edu.tw:3000/">實驗室開會  ( Group Meeting ) </a></li>
+                <li><a href="http://neuron.csie.ntust.edu.tw/homework">課程內容公告</a></li>
+                <li><a href="http://neuron.csie.ntust.edu.tw/Related_Resource.asp">其他相關資源</a></li>
+                <li><a href="http://www.ntust.edu.tw/">台科大首頁</a></li>
+                <li><a href="http://neuron.csie.ntust.edu.tw/enwebdata/">English version</a></li>
+            </ul>
+        </div>
+        <div class="jumbotron row">
+            <div>
+                <div class="col-md-6 center">
+                    <img src="/images/hmlee2005.JPG" class="img-responsive" alt="Cinque Terre" />
+                </div>
+                <div class="col-md-5">
+                    <table class="table">
+                        <tr>
+                            <td align="left" width="100">信箱</td>
+                            <td align="left"></td>
+                        </tr>
+                        <tr>
+                            <td align="left" width="100">網頁</td>
+                            <td align="left">
+                                <a href="http://neuron.csie.ntust.edu.tw/" target="_blank">http://neuron.csie.ntust.edu.tw/</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" width="100">學歷</td>
+                            <td align="left">臺灣大學資訊工程所博士</td>
+                        </tr>
+                        <tr>
+                            <td align="left" width="100">辦公室</td>
+                            <td align="left">T4-510</td>
+                        </tr>
+                        <tr>
+                            <td align="left" width="100">電話</td>
+                            <td align="left">02-27376410</td>
+                        </tr>
+                        <tr>
+                            <td align="left" width="100">專長</td>
+                            <td align="left">智慧型網際網路系統、類神經網路、資訊安全、人工智慧、科技政策</td>
+                        </tr>
+                        <tr>
+                            <td align="left" width="100">實驗室</td>
+                            <td align="left">
+                                <a href="http://neuron.csie.ntust.edu.tw/" style="cursor: e-resize; text-decoration: none" target="_blank">智慧型系統實驗室(RB304-1)</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" width="100">實驗室分機</td>
+                            <td align="left">02-27333141轉7296</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row marketing">
+            <div class="col-lg-12">
+
+
+ <ul class="breadcrumb">
+                <li ><a href="#Now">現職</a></li>
+                <li ><a href="#Education">學歷</a></li>
+                <li ><a href="#Experience">經歷</a></li>
+                <li ><a href="#Research">專長/個人研究方向簡介</a></li>
+                <li ><a href="#Publish">論文著作</a></li>
+                <li ><a href="patent.html">發明專利</a></li>
+                <li ><a href="projects.html">主持研究計畫</a></li>
+                <li ><a href="monograph.html">指導專題/系統</a></li>
+                <li ><a href="award.html">特殊榮譽與獲獎事蹟</a></li>
+                <li ><a href="">智慧型系統實驗室</a></li>
+                <li ><a href=""> English version</a></li>
+                <li ><a href=""></a></li>
+          
+
+            </ul>
+
+                <div class="">
+                    <h4>指導專題(81學年~迄今)</h4>
+                   <table class="table table-striped">
+                        <thead>
+                         
+                              <tr>
+                            <th width="8%">
+                               學年度
+                            </th>
+                            <th width="37%">
+                               專題研究題目
+                            </th>
+                            <th width="54%">
+                               學　生 
+                            </th>
+                         </tr>
+
+                        </thead>
+                        <tbody>
+                         <tr>
+                            <td width="8%">
+                               105
+                            </td>
+                            <td width="37%">
+                               資訊安全實務
+                            </td>
+                            <td width="54%">
+                               楊明軒、林彥碩、劉昇樺、李宗峻
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               104
+                            </td>
+                            <td width="37%">
+                               open data服務應用
+                            </td>
+                            <td width="54%">
+                               郭婉清、徐銘村、張銘億、陳心怡、蘇冠豪
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               103
+                            </td>
+                            <td width="37%">
+                               OPEN DATA 應用服務
+                            </td>
+                            <td width="54%">
+                               林俊豪、黃昱銓、諶毅軒、葉修宏
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               102
+                            </td>
+                            <td width="37%">
+                               台北市路況與道路規劃系統程式手機應用程式Easy GO
+                            </td>
+                            <td width="54%">
+                               周雍翰、林韋伸、駱建安、羅子桓
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               102
+                            </td>
+                            <td width="37%">
+                               資安與雲端運算
+                            </td>
+                            <td width="54%">
+                               蔡政達
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               101
+                            </td>
+                            <td width="37%">
+                               中華民國消費者文教基金會APP
+                            </td>
+                            <td width="54%">
+                               盧柏彥、呂奇瑾、阮聿麟
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               100
+                            </td>
+                            <td width="37%">
+                               Cookie保護及認證
+                            </td>
+                            <td width="54%">
+                               莊子賢、李學昀、潘宗穎
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               99
+                            </td>
+                            <td width="37%">
+                               消保e起來 (電子雜誌)
+                            </td>
+                            <td width="54%">
+                               王麗潔、楊文嘉
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               98
+                            </td>
+                            <td width="37%">
+                               諮心絕對‧詢找感動 (即時影音廣播系統)
+                            </td>
+                            <td width="54%">
+                               林健弘、洪瑞佑、謝仁傑
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               97
+                            </td>
+                            <td width="37%">
+                               專家學術網路(暫訂)
+                            </td>
+                            <td width="54%">
+                               康哲豪、張浚騰
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               97
+                            </td>
+                            <td width="37%">
+                               iShare網路互助教學平台
+                            </td>
+                            <td width="54%">
+                               林彥成、粘馨云、林均睿
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               96
+                            </td>
+                            <td width="37%">
+                               蝴蝶辨識系統
+                            </td>
+                            <td width="54%">
+                               李文翔、蘇品靜、陳昇展
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               96
+                            </td>
+                            <td width="37%">
+                               網路互助教學平台
+                            </td>
+                            <td width="54%">
+                               周炎綱、鄭乃碩、葉俊材、林螢君
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               95
+                            </td>
+                            <td width="37%">
+                               產生地圖超連結的地名剖析器
+                            </td>
+                            <td width="54%">
+                               謝鴻蔚、黃彰國、劉冠廷、劉偉正、劉力權、施承翰
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               94
+                            </td>
+                            <td width="37%">
+                               Multimedia Transmission
+                               Security on WLN &amp; Distributed Monitoring System
+                            </td>
+                            <td width="54%">
+                               葉宗翰、陳建志、薛中明、陳昱傑
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               94
+                            </td>
+                            <td width="37%">
+                               無線定位監控系統
+                            </td>
+                            <td width="54%">
+                               范力中、黃拓維、謝育錡、郭泰良
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               93
+                            </td>
+                            <td width="37%">
+                               行動無線網路
+                            </td>
+                            <td width="54%">
+                               林益友、簡仲毅、陳裕傑、洪瑞嶸
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               93
+                            </td>
+                            <td width="37%">
+                               網路/無線安全
+                            </td>
+                            <td width="54%">
+                               張家銘、曾伊霆、張惠雯
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               92
+                            </td>
+                            <td width="37%">
+                               整合手機與無線網路的應用
+                            </td>
+                            <td width="54%">
+                               鍾興志、黃佐宇、李兆文
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               92
+                            </td>
+                            <td width="37%">
+                               無線網路AP定位
+                            </td>
+                            <td width="54%">
+                               莊詠順、劉冠宏、余幸茱、邱永欽
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               91
+                            </td>
+                            <td width="37%">
+                               知識整合客服系統 
+                            </td>
+                            <td width="54%">
+                               &nbsp;戴立偉、周子強、楊書明
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               91
+                            </td>
+                            <td width="37%">
+                               無線行動導覽及學習環境暨應用
+                            </td>
+                            <td width="54%">
+                               廖芳文、李居政、林國智
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               90
+                            </td>
+                            <td width="37%">
+                               知識客服中心
+                            </td>
+                            <td width="54%">
+                               郭建揚、黃哲彥、葉博旭 
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               90
+                            </td>
+                            <td width="37%">
+                               智慧型博物館無線互動導覽系統
+                            </td>
+                            <td width="54%">
+                               王玉麟、羅介璋、劉振順
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               90
+                            </td>
+                            <td width="37%">
+                               e-school建置
+                            </td>
+                            <td width="54%">
+                               周孫河、紀弘俊、席時輝 
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               89
+                            </td>
+                            <td width="37%">
+                               資訊系統安全攻防 
+                            </td>
+                            <td width="54%">
+                               游焜棟、林永杰 
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               89
+                            </td>
+                            <td width="37%">
+                               行動通訊電子商務系統
+                            </td>
+                            <td width="54%">
+                               郭浩鵬、黃麟程、蘇建榮 
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               89
+                            </td>
+                            <td width="37%">
+                               智慧型專利分析搜尋引擎
+                            </td>
+                            <td width="54%">
+                               張守智、彭信璁、陳凱嶸
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               88
+                            </td>
+                            <td width="37%">
+                               行動通訊電子商務系統
+                            </td>
+                            <td width="54%">
+                               戴哲男、李嘉雄、王柏翔
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               88
+                            </td>
+                            <td width="37%">
+                               Web080網路電話電子商務系統
+                            </td>
+                            <td width="54%">
+                               潘明燦、陳博仁、邱佳昌 
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               88
+                            </td>
+                            <td width="37%">
+                               EverNet全球資訊網之開發
+                            </td>
+                            <td width="54%">
+                               許筑嵐、陳芃暐、王曉玲 
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               87
+                            </td>
+                            <td width="37%">
+                               智慧型遠距教學系統 
+                            </td>
+                            <td width="54%">
+                               張銘正、何泉生、詹晉豪 
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               87
+                            </td>
+                            <td width="37%">
+                               智慧型遠距教學教材製作設計
+                            </td>
+                            <td width="54%">
+                               廖弘道、林特玄、林岳助 
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               87
+                            </td>
+                            <td width="37%">
+                               智慧型網頁系統設計
+                            </td>
+                            <td width="54%">
+                               洪偉棠、黃炯榮 
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               86
+                            </td>
+                            <td width="37%">
+                               建築規劃與模擬表現技術之發展
+                            </td>
+                            <td width="54%">
+                               廖必先、林宇義 
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               86
+                            </td>
+                            <td width="37%">
+                               WWW校園導覽系統之建置
+                            </td>
+                            <td width="54%">
+                               陳永承、廖坤福、張廷毓 
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               86
+                            </td>
+                            <td width="37%">
+                               臺灣電子郵件索引系統的建構與維護
+                            </td>
+                            <td width="54%">
+                               黃保翕、黃嘉新、潘偉文 
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               85
+                            </td>
+                            <td width="37%">
+                               網際網路上應用的發展
+                            </td>
+                            <td width="54%">
+                               盧永豐&nbsp;&nbsp;、劉自誠&nbsp;&nbsp;、李承珂、商<wbr>懷宗
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               85
+                            </td>
+                            <td width="37%">
+                               在WWW上建構互動式校園導覽系統
+                            </td>
+                            <td width="54%">
+                               李張豐&nbsp;&nbsp;、傅元德&nbsp;&nbsp;、陸俊宇
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               84
+                            </td>
+                            <td width="37%">
+                               建構虛擬實境的電玩
+                            </td>
+                            <td width="54%">
+                               朱志興、陳闕民、陳均煒
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               84
+                            </td>
+                            <td width="37%">
+                               WWW與資料庫的連結
+                            </td>
+                            <td width="54%">
+                               張政雄、陳信江、黃政偉
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               83
+                            </td>
+                            <td width="37%">
+                               具處理模糊入資料的智慧型電腦擇友系統之建構
+                            </td>
+                            <td width="54%">
+                               曾坤源、許書禎、張志富
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               82
+                            </td>
+                            <td width="37%">
+                               利用模糊計算設計手寫文字辨認系統
+                            </td>
+                            <td width="54%">
+                               張如洋、尤振川、洪賢首
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               82
+                            </td>
+                            <td width="37%">
+                               利用類神經網路設計手寫文字辨認系統
+                            </td>
+                            <td width="54%">
+                               李世元
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               81
+                            </td>
+                            <td width="37%">
+                               利用模糊系統作手寫數字之辨識
+                            </td>
+                            <td width="54%">
+                               陳志明、陳宏領、阿可賢
+                            </td>
+                         </tr>
+                         <tr>
+                            <td width="8%">
+                               81
+                            </td>
+                            <td width="37%">
+                               用類神經網路辨識手寫數字
+                            </td>
+                            <td width="54%">
+                               聶庭燁、施文進、王子文
+                            </td>
+                         </tr> 
+                    </tbody>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p></p>
+        </footer>
+
+    </div>
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+
+</body>
+
+</html>

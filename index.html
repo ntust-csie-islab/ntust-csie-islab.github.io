@@ -2,45 +2,27 @@
 <html>
 
 <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="Content-Script-Type" content="text/javascript">
     <meta http-equiv="Content-Style-Type" content="text/css">
 
     <title>國立台灣科技大學智慧型系統實驗室 ( Intelligent System Laboratory ) </title>
-    <link rel="shortcut icon" href="/favicon.ico">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/common.css">
+    <link rel="shortcut icon" href="/favicon.ico">
+
 </head>
 
 <body>
     <div class="container">
-        <div class="header">
-            <h5>國立台灣科技大學 資訊工程系所</h5>
-            <a href="/">
-                <img src="/images/logo.gif" title="智慧型系統實驗室">
-            </a>
-            <h2>智慧型系統實驗室</h2>
-            <ul class="breadcrumb">
-                <li role="presentation"><a href="http://neuron.csie.ntust.edu.tw/work/staff.asp">實驗室生活與成員 ( Member ) </a></li>
-                <li><a href="/hmlee/profile.html">指導教授 ( Advisor ) </a></li>
-                <li><a href="http://neuron.csie.ntust.edu.tw/project/projects.asp">研究成果  ( Research Achievement ) </a></li>
-                <li><a href="http://neuron.csie.ntust.edu.tw/history.asp">實驗室沿革  ( History ) </a></li>
-                <li><a href="http://neuron.csie.ntust.edu.tw:3000/">實驗室開會  ( Group Meeting ) </a></li>
-                <li><a href="http://neuron.csie.ntust.edu.tw/homework">課程內容公告</a></li>
-                <li><a href="http://neuron.csie.ntust.edu.tw/Related_Resource.asp">其他相關資源</a></li>
-                <li><a href="http://www.ntust.edu.tw/">台科大首頁</a></li>
-                <li><a href="http://neuron.csie.ntust.edu.tw/enwebdata/">English version</a></li>
-            </ul>
-        </div>
+
+        <header></header>
 
         <div class="main-content">
             <h3>本實驗室由<a href="/hmlee/profile.html">李漢銘教授</a>建立於1991</h3>
@@ -79,13 +61,17 @@
                 <li><a href="http://neuron.csie.ntust.edu.tw/index_paper_write.asp">論文撰寫相關 ( Useful information of thesis writing ) </a></li>
                 <li><a href="http://neuron.csie.ntust.edu.tw/ConferenceList.rar">國際會議列表 ( Intl. Conference List ) </a></li>
             </ul>
-            <hr>
-            <p>若您對本實驗室有任何寶貴的意見, 可E-mail至 <a href="mailto:B9015053@mail.ntust.edu.tw">管理員</a> 歡迎指教!!</p>
 
         </div>
 
+        <footer></footer>
+
     </div>
 
+    <script>
+        $("header").load("/header.html")
+        $("footer").load("/footer.html")
+    </script>
 
 </body>
 

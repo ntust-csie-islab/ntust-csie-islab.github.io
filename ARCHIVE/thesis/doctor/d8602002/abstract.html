@@ -1,0 +1,142 @@
+<html>
+<head>
+<title> 科技大學模糊類神經網路實驗室 研究論文 NTUST Fuzzy Neural Lab Paper </title>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+</head>
+
+<BODY background="/picture/background/gray_roc.gif" bgcolor="#ffffff" text="#000000" link="#55ffff" vlink="#6966ff">
+<img align=left src="/picture/logo/logo.gif"> <strong> <font size=5>國立台灣科技大學 電子工程系所</font><br>
+<font size="6">模糊類神經網路實驗室 研究論文</font><br>
+<font size=4>Fuzzy Neuron Laboratory Paper</font> </strong> 
+<hr size=10>
+<h1>90級畢業博士 陳志銘 發表論文</h1>
+<hr size=5>
+<center>
+  <table width=80%>
+    <tr>
+      <td> 
+        <center>
+          <h3><a name=AIC> 具灰色預測學習能力之類神經網路模式及其在網際網路資訊探勘上的應用研究 </a></h3>
+        </center>
+        <h4>摘要</h4>
+        <p align="JUSTIFY"> 隨著網際網路的蓬勃發展以及電腦使用的快速普及，使得越來越多的資訊藉由網路來進行傳遞，面對這樣龐大的網際網路資訊空間，使用者要能夠從網際網路上搜尋及擷取想要的資訊，無異是一件相當耗時與困難的事，因此如何利用電腦輔助工具或網際網路資訊探勘技術(Web 
+          mining technique)來幫助人類更有效率的進行資訊的搜尋(search)、擷取(extraction)與過濾(filter)，是一件迫切需要研究的課題。<br>
+          <br>
+          從過去的研究已經驗證機器學習(machine learning)的方法與類神經網路(neural network)為基礎之分類或預測技術，在資訊探勘的應用上扮演著舉足輕重的角色。其中梯度法(gradient 
+          descent method)是一個最常被使用來實現機器學習的方法之一，然而梯度法具有學習速度慢以及容易陷入局部最佳解的缺點，因此，本研究提出一個梯度預測搜尋法則(gradient 
+          forecasting search method, GFSM)來改善傳統梯度法的缺點，用來提昇一些以梯度學習法則為基礎的分類器在資訊探勘上的效率與正確性；而一個所需資料量少、計算複雜度低且精確的預測模型是梯度預測搜尋法能否有效進行最佳解搜尋之關鍵因素，傳統統計為基礎之預測方法的缺點是需要較大量的數據進行預測，因此計算複雜度高，灰色預測模型具有建模資料少且計算複雜度低等優點，然而灰色預測理論以連續之微分方程式為基礎，並且透過一些數學上的假設與近似，將連續之微分方程式轉換成離散之差分方程式來對離散型資料進行建模及預測，這樣的作法不盡合理，且缺乏數學理論上的完備性，因為在轉換過程中已經造成建模上的誤差，且建模過程僅考慮相鄰的兩個資料點關係，無法正確反應數列未來的變化趨勢。因此，本研究基於差分方程式提出一個考慮鄰近三個資料點的離散差分方程預測模型(discrete 
+          difference equation prediction model, DDEPM)來取代灰色預測模型，它除了保有原來灰色預測模型建模資料少、計算簡單的優點外，它具有比灰色預測模型更精確的動態時間序列預測能力，本研究將此一新的預測模型應用於建構梯度預測搜尋法則上，提供資訊探勘應用上一個更具效率且精確的機器學習法則。<br>
+          <br>
+          此外，網際網路資訊探勘技術的主要挑戰在於如何能有效的處理具有高維度輸入特徵值的資料，提出具有漸進式學習(incremental learning)、可擴充性(scalability)以及平行分散處理能力的資訊探勘技術來適應網際網路資訊的特殊型態與特性，過去所發展之傳統資訊探勘技術(data 
+          mining technique)，大部份均無法滿足以上的需求，因而急需開發更新的資訊探勘技術以因應網際網路資訊探勘的需求。因此，本研究提出一個具有自組織能力之階層式小腦模型類神經網路，它可以依據分析學習樣本的分佈，自動建立網路的記憶體配置，並藉由階層式的學習架構，來有效降低記憶體的需求，使其具有解決高維度問題的能力，而此類神經網路架構亦具有可擴充性，可以在不影響其他網路的學習架構下，任意的增減輸出節點的個數，此外，我們也提出了一個漸進式學習的演算法來訓練此一類神經網路。最後，本研究利用自組織階層式小腦模型類神經網路的優點，將其應用於網際網路個人化瀏覽資訊的探勘上。<br>
+          <br>
+          從一些最佳解的搜尋實例、倒傳遞類神經網路的訓練，以及線性文件分類器在網頁分類上的實驗，我們發現所提出之梯度預測搜尋法則，可以有效的改善梯度學習法則的收斂速度，以及幫助梯度學習法則跳脫局部最佳解，使得以梯度學習法則為基礎之分類器提昇其學習的效能，並達到一個更高的分類正確率，這些特性對於網際網路資訊的探勘具有明顯的助益。此外，本研究所提出之具自組織能力之階層式小腦模型類神經網路，經實驗證明具有快速的學習能力、好的一般化與分類能力、低的記憶體需求、適合於平行及分散式運算等特性，並且網路的架構及記憶體的配置可以根據學習樣本的分佈特性自動決定，他解決了傳統小腦模型類神經網路因高的記憶體需求而無法解決高維度問題的限制，更重要的是它的網路架構具備可擴充性以及漸進式學習的能力，實驗結果發現他對於探勘個人化資訊的預測能力優於其他傳統的分類器。 
+        </p>
+      </td>
+    </tr>
+  </table>
+  <table width=80%>
+    <tr>
+      <td> 
+        <hr size=5>
+        <center>
+          <h3><a name=AIE></a> Neural Networks with Grey Prediction Learning Ability 
+            and Their Applications on Web Mining </h3>
+        </center>
+        <h4>Abstract</h4>
+        <p align="JUSTIFY"> World Wide Web (WWW) grows up very rapidly in recent 
+          years, and it contains an enormous amount of data and information that 
+          can be extracted via computer assisted tools, intelligent agents, search 
+          engines, and Web mining techniques. Consequently, how to explore useful 
+          information and knowledge from WWW is gradually becoming urgent need. 
+          However, to search or retrieve information and data from WWW manually 
+          is a difficult and time-consuming job because WWW has become a huge 
+          database and provided abundant information. Thus, how to effectively 
+          search, extract and filter data and information from Internet using 
+          intelligent agents and Web mining techniques has become important research 
+          issues.<br>
+          <br>
+          Past researches present that machine learning methods and the neural-based 
+          prediction or classification methods were extensively used in Web mining 
+          techniques. Among used machine learning methods, the gradient descent 
+          method is widely used to train various classifiers, such as Back-propagation 
+          neural network and linear text classifier. However, the gradient descent 
+          method is easily trapped into a local minimum and slowly converges. 
+          Thus, this study presents a gradient forecasting search method (GFSM) 
+          based on prediction methods to enhance the performance of the gradient 
+          descent method in order to develop a more efficient and precise machine 
+          learning method for Web mining.<br>
+          <br>
+          However, a prediction method with few sample data items and precise 
+          forecasting ability is a key issue to the gradient forecasting search 
+          method. Applying statistic-based prediction methods to implement GFSM 
+          is unsuitable because they require a large number of data items to model 
+          a prediction model. In the contrast with statistic-based prediction 
+          methods, GM(1,1) grey prediction model does not need a large number 
+          of data items to build a prediction model, and it has low computational 
+          load. However, the original GM(1,1) grey prediction model uses a mathematical 
+          hypothesis and approximation to transform a continuous differential 
+          equation into a discrete difference equation in order to model a forecasting 
+          model. This is not a logical approach because the modeling sequence 
+          data are invariably discrete. Moreover, GM(1,1) model only considers 
+          two neighbor sequence data for modeling is not sufficient to build a 
+          precise forecasting model. To construct a more precise prediction model, 
+          discrete difference equation prediction model (DDEPM) is presented to 
+          support Gradient Forecasting Search Method herein.<br>
+          <br>
+          Web mining is the use of data mining techniques to automatically discover 
+          and extract information from Web documents and services. Some previous 
+          studies have indicated that main challenges in Web mining are in terms 
+          of handling high-dimensional data, achieving incremental learning (or 
+          incremental mining), scalability, parallel and distributed mining algorithms. 
+          However, many traditional data mining methods cannot satisfy these needs 
+          for Web mining. In contrast with previous analyses, Albus's CMAC (Cerebellar 
+          Model Arithmetic Computer) neural network model has a high potential 
+          in development of effective data mining techniques owing to its fast 
+          learning property, good generalization capability, native parallel and 
+          distributed processing ability, and ease of implementation by hardware. 
+          However, the conventional CMAC has an enormous memory requirement so 
+          that it cannot be applied to solve higher dimensional problems. This 
+          shortcoming leads to some limitations and inconveniences while using 
+          CMAC neural network to develop Web mining techniques. Consequently, 
+          a hierarchical CMAC (HCMAC) model based on the concept of differentiable 
+          CMAC is presented capable of resolving both the enormous memory requirement 
+          in the conventional CMAC and high dimensional problems. Moreover, a 
+          self-organizing input space approach is proposed to automatically determine 
+          the memory structure of the HCMAC neural network according to the distribution 
+          of training data sets. In addition, a learning algorithm that can learn 
+          incrementally from new added data without forgetting prior knowledge 
+          is proposed to train the self-organizing HCMAC neural network. Finally, 
+          our proposed method is applied to develop Web mining techniques for 
+          personalized Web pages navigation.<br>
+          <br>
+          Experiments on several benchmark functions' searching, Back-propagation 
+          neural network training and linear text classifier for news pages category 
+          mining indicate that the proposed GFSM can accelerate the searching 
+          speed of gradient descent method as well as help the gradient descent 
+          method escape from local minima. These properties can promote effectively 
+          the accuracy rates of classification algorithms to develop more efficient 
+          and precise Web mining techniques. In addition, experiments also confirm 
+          that self-organizing HCMAC neural network has advantages in terms of 
+          constructing memory structure automatically, fast learning, good generalization 
+          ability, low memory requirement, incremental learning, scalability and 
+          parallel and distributed processing ability. The proposed method indeed 
+          is capable of resolving both the enormous memory requirement in the 
+          conventional CMAC and high dimensional problems. Finally, our proposed 
+          method is applied to incrementally learn user profiles from user feedback 
+          for personalized Web pages navigation. Experiments on the four topics 
+          of user profiles show that the self-organizing HCMAC neural network 
+          performs a better predicting accuracy rate to identify user interesting 
+          Web pages than other well-known classifiers do. </p>
+      </td>
+    </tr>
+  </table>
+  <br>
+</center>
+<hr size=6>
+<center>
+  <a href=/index.html><img border=0 src=/picture/icons/home.gif></a> <a href="mailto:WWW@neuron.et.ntust.edu.tw"> 
+  <img border=0 src=/picture/icons/email.gif></a> 
+</center>
+</body>
+</html>

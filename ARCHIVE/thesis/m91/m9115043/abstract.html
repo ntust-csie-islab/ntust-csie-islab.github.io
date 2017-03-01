@@ -1,0 +1,89 @@
+<html>
+<head>
+<title> 科技大學模糊類神經網路實驗室 研究論文 NTUST Fuzzy Neural Lab Paper </title>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+</head>
+
+<BODY background="/picture/background/gray_roc.gif" bgcolor="#ffffff" text="#000000" link="#55ffff" vlink="#6966ff">
+<img align=left src="/picture/logo/logo.gif"> <strong> <font size=5>國立台灣科技大學 資訊工程系所</font><br>
+<font size=6>模糊類神經網路實驗室 研究論文</font><br>
+<font size=4>Fuzzy Neuron Laboratory Paper</font> </strong> 
+<hr size=10>
+<h1>93級畢業碩士 莊乃玉 發表論文</h1>
+<hr size=5>
+<center>
+  <table width=80%>
+    <tr>
+      <td> 
+        <center>
+		<h3>
+  <font face="細明體">ESTFastAnnotator: 以蛋白質分類的方式為EST做功能標定</font></h3>
+        </center>
+        <h4>摘要</h4>
+        <p class="MsoNormal" style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;text-indent:24.0pt"><font face="新細明體"><span lang="EN-US">EST</span></font><span style="font-family: 新細明體">分析是目前的被廣泛使用基因研究方法。</span><font face="新細明體"><span lang="EN-US">EST
+        </span></font><span style="font-family: 新細明體">是基因的片段，錯誤率也相當的高，但是其所攜帶的</span><font face="新細明體"><span lang="EN-US">coding 
+        region</span></font><span style="font-family: 新細明體">具有大量的基因資訊。藉由</span><font face="新細明體"><span lang="EN-US">EST</span></font><span style="font-family: 新細明體">分析來找尋新基因也是目前最有效率的方法。到</span><font face="新細明體"><span lang="EN-US">2002</span></font><span style="font-family: 新細明體">年一月為止，未標定功能的</span><font face="新細明體"><span lang="EN-US">EST</span></font><span style="font-family: 新細明體">已經累積了一千萬筆以上，亟需一個可以快速大量自動分析的</span><font face="新細明體"><span lang="EN-US">EST</span></font><span style="font-family: 新細明體">標定工具來加快基因研究的速度。</span></p>
+        <p>
+        <span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">
+        ESTFastAnnotator</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">提供一個快速、自動化且系統化的</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">EST</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">功能標定方法，不僅克服</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">EST</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">先天上的限制，更能消弭</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">E 
+        value</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">對整個系統的影響。在不同的</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">E 
+        value</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">之下，</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">ESTFastAnnotator</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">的精確度及正確率可以維持在</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">91%</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">以上，而執行時間是</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">InterProScan</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">的</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">1/13</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">。</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">ESTFastAnnotator</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">可以尋找更多資訊並正確標定長度較短的</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">EST</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">序列達</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">84.2%</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">以上，而同樣的</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">EST</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">序列</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">InterProScan</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">只能標定</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">34.3%</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">的</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">EST</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">。所標定的功能進一步跟</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">TIGR</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">比較： 
+        </span>
+        <span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">
+        66.9%</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">的功能跟</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">TIGR 
+        78.6%</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">的功能是一樣的。由於</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">ESTFastAnnotator</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">主要是對所有能找到的蛋白質序列作共同的整理跟分析，可以找到</span><span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">TIGR</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">無法找到的功能。然而一些特殊不具共通性的特殊功能卻有可能因此被遺漏。</span><font face="新細明體">
+        </font>
+     </td>
+    </tr>
+  </table>
+  <hr>
+  <table width=80%>
+    <tr>
+      <td> 
+        <center>
+		<h3><a name="AIE">ESTFastNnnotator:EST Function Annotation by Protein 
+        Cluster Selection</a></h3>
+        </center>
+	<h4>Abstract</h4>
+	    <p style="margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;text-indent:24.0pt"><font face="新細明體"><span lang="EN-US">EST 
+        analysis has been widely used in gene discovery.&nbsp; Although the 
+        incomplete and high error rate of EST, the coding region of EST still 
+        occupies the majority information of genes.&nbsp; Gene discovery through EST 
+        analysis is the most efficient ways.&nbsp; Large ESTs projects have 
+        accumulated over 11.3 million un-annotated files until January 2002, and 
+        still increased rapidly.&nbsp; As of that, a rapid, large-scale, and 
+        automatic EST annotation pipeline is essential in genome research.&nbsp;
+        </span></font></p>
+        <p>
+        <span lang="EN-US" style="font-size: 12.0pt; line-height: 150%; font-family: 新細明體">
+        ESTFastAnnotator tries to provide a fast, systematic, and automatic EST 
+        function annotation method, which overcomes the limitations of EST 
+        sequence carried in nature, and eliminates the impact of E value cutting 
+        threshold.&nbsp; The precision and recall rate of ESTFastAnnotator keeps over 
+        91% under different E values, and the total running time is at least 13 
+        times lower than InterProScan (which is mostly composed by 
+        sequence-motif search tools).&nbsp; ESTFastAnnotator can explore more 
+        function on short EST sequences than sequence-motif search tools by 
+        84.2% of correct hit rate, as InterProScan is 34.3% on the same EST.&nbsp; 
+        The function annotation by ESTFastAnnotator is further compared with 
+        TIGR annotation.&nbsp; Mostly the function annotated by ESTFastAnnotator and 
+        TIGR are the same: 66.9% in ESTFastAnnotator and 78.6% in TIGR.&nbsp; More 
+        function will be found by ESTFastAnnotator for ESTFastAnnotator tries to 
+        annotate the EST by an overall consideration of protein search result.&nbsp; 
+        Some specific function will be ignored by ESTFastAnnotator for 
+        ESTFastAnnotator make decision and conclusion from the common function 
+        of the protein search result.</span></td>
+    </tr>
+  </table>
+
+  <br>
+</center>
+<hr size=6>
+<center>
+  <a href=/index.html><img border=0 src=/picture/icons/home.gif></a> <a href="mailto:WWW@neuron.et.ntust.edu.tw"> 
+  <img border=0 src=/picture/icons/email.gif></a> 
+</center>
+</body>
+</html>

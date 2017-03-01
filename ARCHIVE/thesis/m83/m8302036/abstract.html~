@@ -1,0 +1,58 @@
+<html>
+<head>
+  <title>
+         科技大學模糊類神經網路實驗室  研究論文
+         NTUST Fuzzy Neural Lab  Paper
+  </title>
+</head>
+
+<body background="/picture/background/gray_roc.gif"
+        bgcolor="#ffffff" text="#000000 link="#55ffff" vlink="#6966ff">
+
+<img align=left src="/picture/logo/logo.gif">
+<strong>
+<font size=4>國立台灣科技大學  電子工程系所<BR></font>
+<font size=6>糊類神經網路實驗室  研究論文<BR></font>
+<font size=4>Paper of Fuzzy Neuron Laboratory<BR></font>
+</strong>
+
+<hr size=10>
+<h2>85級畢業碩士　吳軒豪　發表論文</h2>
+<hr size=5>
+
+<CENTER>
+<h3><A NAME=AIC></A></h3>
+<h4></h4>
+</CENTER>
+<CENTER>
+<h3><A NAME=AIE>A Multiclass Neural Network Classifier with Fuzzy Teaching Input</A></h3>
+<h4>Abstract</h4>
+</CENTER>
+<blockquote>
+This research is based on a fuzzy neural network, named Knowledge-
+Based Neural Network with Trapezoidal Fuzzy Set inputs(KBNN/TFS). We
+use this network model to refine fuzzy rules by training data base. we
+propose Interactive Consistency checking Engine with automatic Rule
+Insertion and Deletion (ICE/RID) to perform fuzzy rule verfication. this
+process is used to verify the initial rule base and the rule refines by
+KBNN/TFS. With the interactive interface of ICE, we can detect redundant
+rules, subsumed rules, and conflict rules. Besides, we can also use RID to
+insert and delete fuzzy rules automatically if necessary. The proposed model
+is tested with Inverted Pendulum System(IPS) and a Knowledge Base
+Evaluator (KBE). In these experiments, we demonstrate the ability of
+ICE/RID to remove inconsistencies and insert rules in KBNN/TFS. With the
+combination of ICE/RID and KBNN/TFS, a valid and consistent rules base can
+be obtained.
+</blockquote>
+
+<BR>
+
+<hr size=5>
+<Center>
+<a href=/index.html><img border=0 src=/picture/icons/home.gif></a>
+<a href="mailto:WWW@neuron.et.ntust.edu.tw">
+<img border=0 src=/picture/icons/email.gif></a>
+</Center>
+</body>
+</html>
+

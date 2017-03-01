@@ -1,0 +1,82 @@
+<html>
+<head>
+  <title>
+         科技大學模糊類神經網路實驗室  研究論文
+         NTUST Fuzzy Neural Lab  Paper
+  </title>
+</head>
+<body background="/picture/background/gray_roc.gif"
+        bgcolor="#ffffff" text="#000000 link="#55ffff" vlink="#6966ff">
+<img align=left src="/picture/logo/logo.gif">
+
+<strong>
+<font size=5>國立台灣科技大學  電子工程系所<BR></font>
+<font size=6>糊類神經網路實驗室  研究論文<BR></font>
+<font size=5>Fuzzy Neuron Laboratory Paper<BR></font>
+</strong>
+
+<hr size=10>
+<h2>85級畢業碩士　江益峰　發表論文</h2>
+<hr size=5>
+
+<CENTER>
+<h3><A NAME=AIC>處理多類分離模糊資訊的類神經網路分類器</A></h3>
+<h4>摘    要</h4>
+</CENTER>
+<blockquote>
+本篇論文提出一個類神經網路分類器來學習多類的分離模糊資訊。在
+這個網路的隱藏層 (hidden layer) 中由兩種節點組成，原型節點 (prototype 
+node) 和範例節點 (exemplar node) 分別對應在特徵空間的原型和範例。此
+分類器的訓練演算法有兩個回合。第一回合訓練法則，稱為動態數目之
+原形節點 (DYNamic numbers of PROtotypes, DYNPRO)，能夠依照分佈在
+特徵空間的分離樣本群自動地產生原形節點。由於這些原型節點的數目
+和成長參數 (growth parameter) 並沒有被限制，所以這些原形節點會形成
+接近-最佳判斷區域 (near-optimal decision regions) 來近似輸入樣本的分佈
+並且能夠將大部份的輸入樣本正確分類。接下來，第二回合訓練法則，
+稱為一般化的模糊範例之巢狀建立暨擴展 (Generalized Fuzzy Exemplars 
+Nested Creation and Expansion, GFENCE)，將會產生和調整範例節點來學
+習無法被原形節點正確分類的輸入樣本。此訓練策略能減少記憶體的需
+求並且能使非線性分類 (nonlinear classification) 的過程加速。此外，本模
+型具有線上學習能力以及少量的模糊計算。實驗結果顯示此分類器能產
+生適當的原形節點來代表分佈在樣本空間的樣本群，並且對分離資料庫
+的辨識率亦有不錯的表現。
+</blockquote>
+
+<HR SIZE =3 WIDTH=80%>
+
+<CENTER>
+<h3><A NAME=AIE>A Multiclass Neural Network Classifier with  Disjunctive Fuzzy Information</A></h3>
+<h4>Abstract</h4>
+</CENTER>
+<blockquote>
+This paper presents a multiclass neural network classifier to learn 
+disjunctive fuzzy information in the feature space.  This neural network 
+consists of two types of nodes in the hidden layer.  The prototype nodes and the
+exemplar nodes represent prototypes and exemplars in the feature space, 
+respectively.  This classifier contains two separate training algorithms.  The 
+pass 1 training algorithm DYNPRO (DYNamic numbers of PROtotypes) 
+automatically generates and refines prototypes for distinct clusters in the 
+feature space.  The number and growth parameter of these prototypes are not 
+restricted, so the prototypes will form near-optimal decision regions to meet the 
+distribution of input patterns and classify as many input patterns as possible. 
+Next, the pass 2 training algorithm GFENCE (Generalized Fuzzy Exemplars 
+Nested Creation and Expansion) is used to place and adjust exemplars to learn 
+the patterns that cannot be classified by the prototypes.  Such a training 
+strategy can reduce the memory requirement and speed up the process of 
+nonlinear classification.  In addition, on-line ability is supplied in this model 
+and the computational load is lightened.  The experimental results manifest that
+the appropriate number of prototype nodes used to represent patterns clusters 
+can be determined by this model, and the recognition rate for disjunctive fuzzy 
+information evaluated by this model is encouraging.
+</blockquote>
+
+<BR>
+
+<hr size=5>
+<Center>
+<a href=/index.html><img border=0 src=/picture/icons/home.gif></a>
+<a href="mailto:WWW@neuron.et.ntust.edu.tw">
+<img border=0 src=/picture/icons/email.gif></a>
+</Center>
+</body>
+</html>

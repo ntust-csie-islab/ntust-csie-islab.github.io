@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+  <title>科技大學智慧型系統實驗室 研究論文 NTUST Fuzzy Neural Lab Paper</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=big5">
+</head>
+
+<body background="/picture/background/gray_roc.gif" bgcolor="#ffffff" link="#55ffff" text="#000000" vlink="#6966ff">
+
+<img src="/picture/logo/logo.gif" align="left"> <strong> <font size="5">國立台灣科技大學 資訊工程系所</font><br>
+
+<font size="6">智慧型系統實驗室 研究論文</font><br>
+
+<font size="4">Intelligent System Laboratory Paper</font> </strong> 
+<hr size="10">
+<h1>96級畢業碩士 林恆生&nbsp;發表論文</h1>
+
+<hr size="5">
+<center>
+  
+<table width="80%">
+
+    <tbody>
+    <tr>
+
+      <td> 
+        
+      <center>
+		
+      <h3><a name="AIC">利用適應性遞增式學習演算法及群聚演算法降低入侵偵測虛警率</a></h3>
+
+        </center>
+
+        
+      <h4>摘要</h4>
+
+        
+      <p align="justify"> &nbsp;&nbsp;&nbsp; 隨著網路在商業上、工業上、政府、法人組織甚至是個人社群的廣泛及多樣化的應用，
+	  各式各樣發展成熟的攻擊手法意圖去癱瘓這些網路服務或是取得機要的資訊。因此大量部署入侵偵測系統(IDS)也成為組織網路裡最基本的防護解決方案，
+	  而也隨著入侵偵測系統的經年發展，另外也產生了額外的效應，即是大量假警報的問題。這問題也致使得網路分析人員或管理者總是必須花費額外的時間去從大量無幫助的虛警報訊號中去找出真實的警報，
+	  因此我們的研究貢獻是利用資料探勘即適應性學習方式來分析原生的警報，提供分析人員被組織過的資訊，包含預分類資訊、相似性群聚警報資訊、
+	  以及攻擊特徵法則的統計排序列表來幫助分析人員去快速得知有意義的警訊，及幫助重新調整他們的入侵偵測系統。針對這些需求，
+	  我們提出了在線系統上的兩個演算法分別去處理分類資訊及相似群聚的問題。第一個演算法適應性遞增式概念學習演算法 (IACL, Incremental Adaptive Concept Learning)。
+	  它是用來提供預先分類警報資訊成真或假警報，該演算法能夠去遞增學習新的知識即適應新的行為改變，此外該演算法也是連續性學習演算法，
+	  意指它底層的學習模型只需要根據新的範例學習新的知識而不需要在每次學習時都必須回到原始的狀態重新學習，這也是比較符合實際運作系統的需求。
+	  另一個演算法是線上群聚演算法 (OAG, On-line Alert Grouping)。 該法被設計來針對入侵偵測系統經常性的發佈重覆或相似的警報，而往往這些警報只代表著單一的惡意攻擊行為，
+	  因此分析人員能夠根據該被群聚的資訊而去取得的較具區隔的事件警報。上述演算法也在實際的實驗上在預測的精確率及平均精確率都有不錯的結果，
+	  我們也可以確信尤其是平均精確率更是相對的重要在一個穩定的運作系統上來說。
+        </p>
+
+     </td>
+
+    </tr>
+
+  
+  </tbody>
+</table>
+
+  
+<hr>
+  
+<table width="80%">
+
+    <tbody>
+    <tr>
+
+      <td> 
+        
+      <center>
+		
+      <h3><a name="AIE">Incremental Adaptive Learning and Alert Grouping for False Alarm Reduction in Intrusion Detection<br>
+      </a></h3>
+
+        </center>
+
+	
+      <h4>Abstract</h4>
+
+	
+      <p align="justify">&nbsp;&nbsp;&nbsp; As applications relying on network become increasingly diverse in commerce, governments, 
+	  organizations and social network communities, attempts to compromise those services or steal sensitive information have become increasingly sophisticated. 
+	  Consequently, Intrusion Detection Systems (IDSs) have been adopted as an essential protection method. However, IDSs have many side effects, 
+	  particularly the large number of false alarms, which cause irrelevant information covering relevant alarms. 
+	  Hence, the analysts and network administrators waste considerable time discovering relevant alarms. This study presents a system for providing organized information, 
+	  including the predicted class, which labels an alarm into relevant or irrelevant one; the group information, which represents a single event, grouping those redundant or similar alarms, and useless statistical information, 
+	  a rank list of statistic of valueless signatures which helps analysts tuning the rules of their signature-based IDS. Additionally, 
+	  two algorithms related to machine learning and data mining are proposed in our system. The first one is the Incremental Adaptive Concept Learning (IACL) algorithm, 
+	  which is adopted to train the committee classifier that categorizes the incoming alarms as relevant and irrelevant. Capable of incrementally learning new knowledge and adapting to changing target concepts,
+	  the algorithm is a continuously learning method, meaning that the model is trained by recently collected data without considering entirely accumulative data; 
+	  this approach is more practical in on-line operation than ideal case, re-training underlying model with entire accumulation of recorded data in each time of invoking learning. 
+	  The second algorithm, On-line Alert Grouping (OAG) algorithm, is designed to reduce the amount of redundant alarm information by grouping the similar or repetitive alarms into a single alarm group referring to a single event. Moreover, 
+	  experimental results demonstrate that our IACL algorithm performs better in terms of accuracy and resources than combining all of trained models and only keeping the last learned model after each invoked learning process. 
+	  In particular, the proposed learning model has a better average accuracy than others tested, revealing that it has better stability. 
+	  Finally, On-line operation requirements, such as limited resources, are also considered.<br>
+
+     </p>
+      </td>
+
+    </tr>
+
+  
+  </tbody>
+</table>
+
+
+  <br>
+
+</center>
+
+<hr size="6">
+<center>
+  <a href="/index.html"><img src="/picture/icons/home.gif" border="0"></a> <a href="mailto:WWW@neuron.et.ntust.edu.tw"> 
+  <img src="/picture/icons/email.gif" border="0"></a> 
+</center>
+
+</body>
+</html>

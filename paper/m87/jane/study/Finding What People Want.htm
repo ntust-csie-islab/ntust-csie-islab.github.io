@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<TITLE>Finding What People Want : Experiences with the WebCrawler</TITLE>
+</HEAD>
+<BODY>
+<A HREF="http//info.webcrawler.com/bp/WWW94.html"><H1>Finding What People 
+Want : Experiences with the WebCrawler</H1></A>
+Brian Pinkerton<BR>
+<I>Reference:<BR>
+<A HREF="http//wwwis.win.tue.nl/~reinpost/www94/www94.html">
+Information Retrieval in the World-Wide Web : making Client-based 
+searching feasible<BR></A></I>
+<OL TYPE="A">
+<LI><B>The features of the Webcrawler</B>
+<UL>
+<LI>The Webcrawler index and navigate the Web automatically.<BR>
+Including as many <I>serves</I> as possible.<BR>
+<FONT FACE="Wingdings">&#205;</FONT>
+The Webcrawler is a <I>Web robot </I>instead of <I>Directories</I>.
+<LI>The Webcrawler indexes both titles and content by a <I>breadth-first 
+traversal</I>.
+Providing high-quality index.<BR>
+Creating a broad index.</P>
+</UL>
+<LI><B>The design of the Webcrawler</B><BR>
+<UL>
+<LI><I>The search engine</I>
+<UL>
+<LI>Indexing mode : It uses a breadth-first algorithm. (Queue)
+This ensures that a large number of different serves will be visited , 
+instead of just visiting many pages in one server.
+<LI>Real-time search mode : ( The path of a search query on Webcrawler )<BR>
+<FONT SIZE=6><FONT FACE="Webdings">&#74;</FONT>
+<FONT SIZE=2>A story : The fish-search algorithm<BR>
+It's topic : The algorithm simulates a school of fish, breeding and search
+ing for food.<BR>
+It's match : eash URL ( a fish )；relevent document ( food )；<BR>
+A newly relevent document is retrived ( the fish breeds a number of 
+children )；<BR>
+Final ( a fish swim in pulluted water )</P><FONT>
+<IMG SRC="Image8.gif" WIDTH=567 HEIGHT=215></P>
+<OL>
+<LI>The Query sever sends the query to the database, and the most 
+relevant documents are noted to form the first list of URLs.
+<LI>The first list of URLs is given to the Search Engine, which spawns a 
+series of Agent to follow the unvisited links.
+<LI>If the newly checked links are relevent, them they are added to the 
+index, and the query is resubmitted to the Database Server.
+<LI>Repeat step 2 and 3 until enough matches have been found.
+(利 用 Fish algorithm, 使 database 更 加 完 整 , 找 出 相 關 而 無 事 先 
+作 index 的 文 件) 
+<LI>Sort the matches by relevency and return the list to the user.</OL></UL>
+<LI><I>Agents</I><BR>
+To actually retrieve documents from the web.<BR>
+The agents run in separate process.<BR>
+<IMG SRC="find1.bmp"></P>
+<LI><I>The Database</I><BR>
+<UL>
+<LI>A full-text index :
+It's inverted to make queries fast !! ( looking up a word produces a list 
+of pointers to documents that contain that word.)
+<LI>A representation of the Web ( as a graph )</P></UL></UL>
+<LI><B>Addittional</B> : 
+Precision &amp; Recall<BR>
+Precision : how well the retrieved documents match the query.<BR>
+Recall : what fraction of the relevant documents are retrieved by the 
+query.<BR>
+&lt;&lt; Example&gt;&gt;<BR>
+If an index contained five documents about tiger, then a query for tiger 
+retrieved four documents about tiger and two others : <BR>
+The precision is 0.66；The recall is 0.80.
+</BODY>
+</HTML>

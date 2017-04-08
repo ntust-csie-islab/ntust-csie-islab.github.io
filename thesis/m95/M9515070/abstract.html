@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+  <title>國立台灣科技大學智慧型系統實驗室 研究論文 NTUST Fuzzy Neural Lab Paper</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+</head>
+
+<body background="/picture/background/gray_roc.gif" bgcolor="#ffffff" link="#55ffff" text="#000000" vlink="#6966ff">
+
+<img src="/picture/logo/logo.gif" align="left"> <strong> <font size="5">國立台灣科技大學 資訊工程系所</font><br>
+
+<font size="6">智慧型系統實驗室 研究論文</font><br>
+
+<font size="4">Intelligent System Laboratory Paper</font> </strong> 
+<hr size="10">
+<h1>97級畢業碩士 劉麗貞 (Li-zhen Liu)&nbsp;發表論文</h1>
+
+<hr size="5">
+<center>
+  
+<table width="80%">
+
+    <tbody>
+    <tr>
+
+      <td> 
+        
+      <center>
+		
+      <h3><a name="AIC">可擴展標示查詢語言之串流查詢機制</a></h3>
+
+        </center>
+
+        
+      <h4>摘要</h4>
+
+        
+      <p align="justify"> &nbsp;&nbsp;&nbsp; 自從一九九八年W3C公佈可擴展標示語言（eXtensible Markup Language, XML）的語法標準後，XML即被廣泛的應用在各種電子資料交換之上，XML文件資料量也隨之快速成長。當一份XML文件之資料量遠超過記憶體所能負載時，採用文件物件模型（Document Object Model, DOM）的查詢方式顯然勢不可行。
+本論文針對此類大資料量之XML文件提出一種串流路徑查詢機制，可以同時支援包括正向軸（forward axis）之子軸（child）、後代軸（descendant）、後繼軸（following）、後繼兄弟軸（following-sibling）以及逆向軸（backward axis）之母軸（parent）、先代軸（ancestor）、前驅軸（preceding）、前驅兄弟軸（preceding-sibling）的查詢功能。主要著重將一個XML 路徑語言（XPath）表達式轉換成適用於串流查詢的抽象語意樹，然而，並非所有轉換後的抽象語意樹皆適用於串流查詢，因此，在本文裡，我們也將說明如何將一個轉換後但不適用於串流查詢之抽象語意樹拆解成適用於串流查詢的語意樹。再將抽象語意樹視為計算模組(computation module), 並從串流資料剖析來的節點一一對映於抽象語意樹進行計算處理以求得查詢結果。從實驗的結果得知，本研究所提方法確實能在有限的記憶體與寶貴的時間兩者中取得平衡並提升查詢效率。
+        </p>
+
+     </td>
+
+    </tr>
+
+  
+  </tbody>
+</table>
+
+  
+<hr>
+  
+<table width="80%">
+
+    <tbody>
+    <tr>
+
+      <td> 
+        
+      <center>
+		
+      <h3><a name="AIE">Toward a Streaming Evaluation Model for XPath<br>
+      </a></h3>
+
+        </center>
+
+	
+      <h4>Abstract</h4>
+
+	
+      <p align="justify">&nbsp;&nbsp;&nbsp; Extensible Markup Language (XML), a markup language proposed by World Wide Web Consortium (W3C) in 1996, has become a standard format for the exchange of information among various applications on the Internet. With the popularity of XML, the amount of XML document is growing rapidly, when the document which is multiple times larger than available main memory, it will be failed to use DOM based approach. 
+We present a streaming evaluation model for evaluating a XPath expression (involving forward axis, such as child, descendant, following, following-sibling and backward axes, such as parent, ancestor, preceding, and preceding-sibling axes) on a XML document. Besides, we propose an approach which can convert a XPath expression into a corresponding abstract syntax tree suited for evaluating on streaming XML document. Of course, not all XPath expressions can be evaluated this way. We show how to analyze a XPath expression to tell if and how it can be streaming evaluated, and if cannot, how to break the evaluation into multiple passes where each is in streaming manner. Furthermore, we view this abstract syntax tree as computation module against very large XML document. In the most practical case, the processing time is linear to the XML document size and memory is linear to the depth of XML document excluding backward axes. Experiments showed that proposed approach with a good efficiency on execution time within as little memory.
+
+     </p>
+      </td>
+
+    </tr>
+
+  
+  </tbody>
+</table>
+
+
+  <br>
+
+</center>
+
+<hr size="6">
+<center>
+  <a href="/index.html"><img src="/picture/icons/home.gif" border="0"></a> <a href="mailto:WWW@neuron.et.ntust.edu.tw"> 
+  <img src="/picture/icons/email.gif" border="0"></a> 
+</center>
+
+</body>
+</html>

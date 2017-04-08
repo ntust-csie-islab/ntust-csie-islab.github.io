@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<TITLE>秘密檔案</TITLE>
+</HEAD>
+<BODY BACKGROUND="pbg.gif">
+<CENTER>
+<IMG SRC="hi.jpg" WIDTH=160 HEIGHT=200 ALT="我的照片"><BR>
+<IMG SRC="tree.gif" WIDTH=400 HEIGHT=20 VSPACE=20 ALT="line"><BR>
+<BLANK><MARQUEE WIDTH=90% BACKGROUND="pbg.gif"><B>
+Hello!I am Jane.My brief self-introduction as follows:</B></MARQUEE></BLANK><BR>
+<TABLE ALIGN=CENTER>
+<TR><TH COLSPAN=2>談  家  珍
+<TR><TH>身高<TH ALIGN=LEFT>五尺x吋
+<TR><TH>誕生<TH ALIGN=LEFT>Dec.1976
+<TR><TH>學歷<TH ALIGN=LEFT><A HREF="HTTP://www.ntou.edu.tw">台灣海洋大學</A>
+<A HREF="HTTP://www.ee.ntou.edu.tw">電機系</A>畢業
+<TR><TH><TH><A HREF="HTTP://www.ntust.edu.tw">台灣科技大學</A>
+<A HREF="HTTP://www.et.ntust.edu.tw">電子工程所</A>研究生一年級
+<TR><TH>實驗室<TH ALIGN=LEFT><A HREF="HTTP://neuron.et.ntust.edu.tw">
+Neuron&Fuzzy實驗室</A>
+<TR><TH>藏匿處<TH>
+</TABLE>
+<IMG SRC="tree.gif" WIDTH=400 HEIGHT=20 VSPACE=30 ALT="line">
+</CENTER>
+</BODY>
+</HTML>

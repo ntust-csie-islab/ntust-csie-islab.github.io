@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+  <title>國立台灣科技大學智慧型系統實驗室 研究論文 NTUST Fuzzy Neural Lab Paper</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+</head>
+
+<body background="/picture/background/gray_roc.gif" bgcolor="#ffffff" link="#55ffff" text="#000000" vlink="#6966ff">
+
+<img src="/picture/logo/logo.gif" align="left"> <strong> <font size="5">國立台灣科技大學 資訊工程系所</font><br>
+
+<font size="6">智慧型系統實驗室 研究論文</font><br>
+
+<font size="4">Intelligent System Laboratory Paper</font> </strong> 
+<hr size="10">
+<h1>96級畢業博士 王榮英 (Jung-Ying Wang)&nbsp;發表論文</h1>
+
+<hr size="5">
+<center>
+  
+<table width="80%">
+
+    <tbody>
+    <tr>
+
+      <td> 
+        
+      <center>
+		
+      <h3><a name="AIC">蛋白質溶劑可接觸面積之預測與分析</a></h3>
+
+        </center>
+
+        
+      <h4>摘要</h4>
+
+        
+      <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;近年來類神經網路與支持向量機等機器學習理論，被大量的使用於各類生物資訊問題的預測上，雖然可得到較高的準確度，但其最大
+
+的問題在於上述理論並不夠通透，無法深入的探究為什麼會得此結果，並進行進一步的分析。如目標殘基與其相鄰殘基間彼此之合作
+
+與競爭關係對預測之影響等。故於此論文中我們提出建構樣式字典與多線性迴歸分析法兩個理論，藉助此兩個理論進行一系列的統計
+
+分析，將有助於我們能更深入的瞭解，蛋白質殘基間之交互作用對溶劑可接觸面積的影響。
+另一方面由於溶劑可接觸面積之預測，至今可分為兩大分支，既傳統的兩類別(或數個類別)的預測及實際值的預測。於本論文中我們
+
+提出了一個全新的預測系統，我們將此系統命名為SVM-Cabins。本系統先利用由蛋白質演化資訊所得的位置加權矩陣為特徵值，接著
+
+以累進切割集的切割方式，利用某一門檻值來進行傳統的兩類別切割，而後再以支持向量機針對不同的切割集，作溶劑可接觸面積之
+
+兩類別的預測，最後我們再將所得的所有切割集的兩類別預測結果，映射成溶劑可接觸面積之實際值。上述系統當我們採用13個不同
+
+的累進切割集來做預測，針對Barton502資料集，可達到平均絕對誤差15.1%及相關係數0.66，此預測之準確度為至今最佳的結果。由
+
+於本系統先採用傳統的兩類別預測，再導入至實際值之預測，故本系統可同時達到對兩類(既傳統及實際值預測)之最佳化。本系統之
+
+理論亦可以利用於任何預測之值介於一數值範圍間的所有問題。</p>
+
+     </td>
+
+    </tr>
+
+  
+  </tbody>
+</table>
+
+  
+<hr>
+  
+<table width="80%">
+
+    <tbody>
+    <tr>
+
+      <td> 
+        
+      <center>
+		
+      <h3><a name="AIE">Prediction and Evolutionary Information Analysis of Proteins Solvent Accessibility<br>
+      </a></h3>
+
+        </center>
+
+	
+      <h4>Abstract</h4>
+
+	
+      <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;This thesis describes the result of our research in developing FAQ-master as an intelligent Web information system. 
+
+The system is developed to perform intelligent discovery, retrieval, filtering, proxy, ranking and presentation of 
+
+Web information to provide high-quality FAQ solutions to meet user information request. By a high quality answer we 
+
+mean an answer that is profound, up-to-date, and relevant to the user’s question. We summarized problems into: how 
+
+to faithfully capture user intention, how to effectively discover and aggregate Web information, how to present the 
+
+relevant result to the user, and how to provide efficient proxy mechanism to help speed up the turn around time. We 
+
+propose the following techniques to tackle the above issues: ontology, user models, website models, and data 
+
+aggregation and proxy mechanisms. Based upon the techniques, FAQ-master was developed to contain four agents, 
+
+namely, Interface Agent, Proxy Agent, Answerer Agent, and Search Agent, which can effectively and efficiently 
+
+improve the search result from the following three aspects of the Web search activity, namely, user intention, 
+
+document processing, and website search.
+The Interface Agent was developed to work as an assistant between the user and FAQ system for capturing true user’s 
+
+intention. Based on user modeling, template-based and ontology-supported techniques, the agent can support natural 
+
+language query, enhanced by the pattern-match and template-based technique; assistance and guidance for human-
+
+machine interaction; and better personalized information services. It also handles user feedback on the suitability 
+
+of the proposed responses. The Proxy Agent was developed to work as a two-tier mediator between the Interface Agent 
+
+and backend Answerer Agent. It employs an ontology-enhanced intelligent proxy mechanism to effectively alleviate the 
+
+overloading problem usually associated with a backend server. The Answerer Agent was developed to help clean, 
+
+retrieve, and transform FAQ information collected from a heterogeneous environment, such as the Web, and stores it 
+
+in an ontological database. It works as a back end process to perform ontology-directed information aggregation, 
+
+supported by the wrapper technique, from the webpages collected by the Search Agent. Finally, the Search Agent was 
+
+developed to work as an both user-oriented and domain-related Web information retrieval with the help of ontology-
+
+supported website models. This approach provides a semantic level solution for the Search Agent so that it can 
+
+provide domain-specific, focused Web information discovery toward a high degree of user satisfaction.
+Our first contribution is on the techniques of user modeling and query processing involved in the development of 
+
+Interface Agent, which features ontology-supported, template-based user modeling technique and query processing. Our 
+
+preliminary experimentation demonstrates that user intention and focus of up to eighty percent of the user queries 
+
+can be correctly understood by the system. In addition, from the experiments we verify the robustness of the 
+
+linguistic pattern match technique by demonstrating its effectiveness in analyzing users’ query intention and 
+
+focus.
+The second contribution is on the techniques of query prediction in Proxy Agent. The agent features following 
+
+interesting points. First, it performs fast user-oriented mining and prediction by discovering frequent queries and 
+
+predicted queries from user query history. The improved sequential pattern mining algorithm is made more efficient 
+
+by the techniques of perfect hashing and database decomposition. Second, it performs ontology-directed case-based 
+
+reasoning. The semantics of PC ontology, in particular the VRelationships, are used in determining similar cases, 
+
+performing case adaptation, and case retaining. Our experiments show that the agent can share up to 70% of the query 
+
+loading from the backend process, which helps a lot on the overall query performance.
+The third contribution is on the techniques of organizing and processing unstructured Web information in Answerer 
+
+Agent. The agent employs ontology as the key technique, supported by the wrapper techniques to help clean, retrieve, 
+
+and transform unstructured FAQ information collected from a heterogeneous environment, and stores it in an 
+
+ontological database, which reflects the ontological structure. When it comes to the retrieval of FAQs, the agent 
+
+trims irrelevant query keywords, employs either full keywords or partial keywords to retrieve FAQs, and removes 
+
+conflicting FAQs before turning the final results to the user, all of which are supported by ontology. In addition, 
+
+to producing a more effective presentation of the search results, the agent employs an enhanced ranking technique, 
+
+which includes Appearance Probability, Satisfaction Value, Compatibility Value, and Statistic Similarity Value as 
+
+four measures with proper weights to rank the FAQs. Our experiments show the Agent does improve the precision rate 
+
+and produces better ranking results.
+The final contribution is on the techniques of reflecting both user-oriented and domain-focused aspects in web 
+
+search in Search Agent. The agent features an ontology-supported website modeling technique to provide a semantic 
+
+level solution for a search engine so that it can provide fast, precise and stable search results with a high degree 
+
+of user satisfaction. The website modeling technique closely connected to the domain ontology, which supports the 
+
+following functions in both website model construction and application: query expansion, webpage annotation, 
+
+webpage/website classification, and focused collection of domain-related and user-interested Web resources. The 
+
+agent features the following interesting characteristics. 1) Ontology-supported construction of website models. By 
+
+this, we attribute domain semantics into the Web resources collected and stored in the local database. One important 
+
+contribution here is the new Ontology-supported OntoClassifier which can do very accurate and stable classification 
+
+on webpages to support more correct annotation of domain semantics. Our experiments show that Ontoclassifier 
+
+performs very well in obtaining accurate and stable webpages classification. 2) Website models-supported web 
+
+resource discovery. By this, we take into account both user interests and domain specificity. The contribution here 
+
+is the new Focused Crawler which employs progressive strategies to do user query-driven webpage expansion, 
+
+autonomous website expansion, and query results exploitation to effectively expand the website models. 3) Website 
+
+models-supported Webpage Retrieval. By this, we leverage the power of ontology features as a fast index structure to 
+
+locate most-wanted webpages for the user.
+</p>
+      </td>
+
+    </tr>
+
+  
+  </tbody>
+</table>
+
+
+  <br>
+
+</center>
+
+<hr size="6">
+<center>
+  <a href="/index.html"><img src="/picture/icons/home.gif" border="0"></a> <a href="mailto:WWW@neuron.et.ntust.edu.tw"> 
+  <img src="/picture/icons/email.gif" border="0"></a> 
+</center>
+
+</body>
+</html>

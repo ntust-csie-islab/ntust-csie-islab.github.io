@@ -1,0 +1,17 @@
+<BODY  TEXT=#ff0000 BGCOLOR=#000000 background="4.jpg">
+<HEAD>
+<CENTER>
+<H3>關於梨仔的二三事<H3>
+<font size=5>
+<FORM ACTION="BASIC.HTML" TARGET=DISPLAY> <input type="submit" value="基本資料"> </A></FORM> 
+<FORM ACTION="SCHOLAR.HTML" TARGET=DISPLAY> <input type="submit" value="學經歷">
+</A></FORM> 
+<FORM ACTION="RESEARCH.HTML" TARGET=DISPLAY> <input type="submit"
+value="研究領域"></A> </FORM> 
+<FORM  ACTION="OTHER.HTML" TARGET=DISPLAY> <input type="submit" value="其他"> </FORM> 
+<h3><center>
+<a text=#ff0000 href="mailto:M8502037@mail.ntust.edu.tw"><img src="emailed.gif"><br>E-Mail to pear</a></center></h3>  
+</font>
+</CENTER>
+</HEAD>
+</BODY>

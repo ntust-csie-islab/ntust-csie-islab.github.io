@@ -1,0 +1,76 @@
+<title>CGI Programming OpenFAQ</title>
+<h1>CGI Programming OpenFAQ</h1>
+<h2>How do I decode information from HTML forms?
+</h3>
+<strong>Contributors:</strong><br>
+<ul>
+<li>JimEsten <a href="mailto:jesten@wdynamic.com">jesten@wdynamic.com</a>
+</ul>
+<hr>
+When the users clicks the submit button the information 
+is transmitted as a URL encoded string. 
+<p>
+This string is in the format:
+<p>
+key=value&key=value&key=value
+<p>
+...where each key (the "name" of your form element) 
+and value (what the user inputs) are separated by the 
+ampersand. The key and the value themselves are separated 
+by an equal sign. Any non alpha-numeric characters get 
+represented by a hexadecimal equivalent preceded by a 
+percent sign.
+<p>
+So, to decode, first separate each key/value pair, then 
+separate the keys from the values, and finally convert 
+any characters that aren't already readable.
+<p>
+Here is a generic perl routine that leaves the contents 
+of the form in an associative array <code>%FORM</code>
+<p>
+<pre>
+sub parse {
+
+ local($name, $value, $pair, $buffer, @pairs);
+
+    # Check for request method and handle appropriately
+
+    if ($ENV{'REQUEST_METHOD'} eq 'GET') {
+        @pairs = split(/&/, $ENV{'QUERY_STRING'});
+    }
+    elsif ($ENV{'REQUEST_METHOD'} eq 'POST') {
+        read(STDIN, $buffer, $ENV{'CONTENT_LENGTH'});
+        @pairs = split(/&/, $buffer);
+    }
+    else {
+        $Error_Message = "Bad request method ($ENV{'REQUEST_METHOD'}).  Use POST or GET";
+        return(0);
+    }
+
+    # Convert the data to its original format
+
+    foreach $pair (@pairs) {
+        ($name, $value) = split(/=/, $pair);
+
+        $name =~ tr/+/ /;
+        $name =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
+        $name =~ s/\n//g;
+        $value =~ tr/+/ /;
+        $value =~ s/%([a-fA-F0-9][a-fA-F0-9])/pack("C", hex($1))/eg;
+        $value =~ s/\n//g;
+        $FORM{$name} = $value;
+    }
+}
+</pre>
+<p>
+This can be used directly in the cgi script, or placed 
+in a separate file and "require" that file in each 
+script that parses a form.
+<p>
+(There are also 
+<a href="5.html">existing libraries</a> of free code
+to carry out this and other CGI-related tasks in many
+programming languages. -TB)
+	
+<hr>
+<a href="http://www.boutell.com/openfaq/cgi/12.html">Previous</a> | <a href="http://www.boutell.com/openfaq/cgi/19.html">Next</a> | <a href="http://www.boutell.com/openfaq/cgi">Table of Contents</a>

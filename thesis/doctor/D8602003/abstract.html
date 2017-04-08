@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+
+  <title>國立台灣科技大學智慧型系統實驗室 研究論文 NTUST Fuzzy Neural Lab Paper</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+</head>
+
+<body background="/picture/background/gray_roc.gif" bgcolor="#ffffff" link="#55ffff" text="#000000" vlink="#6966ff">
+
+<img src="/picture/logo/logo.gif" align="left"> <strong> <font size="5">國立台灣科技大學 資訊工程系所</font><br>
+
+<font size="6">智慧型系統實驗室 研究論文</font><br>
+
+<font size="4">Intelligent System Laboratory Paper</font> </strong> 
+<hr size="10">
+<h1>97級畢業博士 陳宗騰 (Tsung-Teng Chen)&nbsp;發表論文</h1>
+
+<hr size="5">
+<center>
+  
+<table width="80%">
+
+    <tbody>
+    <tr>
+
+      <td> 
+        
+      <center>
+		
+      <h3><a name="AIC">自我調適式專家系統</a></h3>
+
+        </center>
+
+        
+      <h4>摘要</h4>
+
+        
+      <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;人工智慧領域中非常有名的Turing Test給予本研究的第一個動機：一個專家系統不應該單單具備固定的解題知識；它也應該如同人
+
+類專家一樣，可以透過改採不同的觀點或解題策略來解題。本研究中我們試圖引進語意網表示的知識調整機制來增強專家系統的自我
+
+調適能力—專家系統因此能夠改用不同的觀點或解題策略來排除解題過程中遇到的困難。
+ 傳統專家系統使用內建的解題知識及使用者提供的事實來求解，但這個事先建構的解題知識往往只能在事先假設的環境下運作，當
+
+使用者無法提供預期的輸入資料時，傳統專家系統即可能無法找到任何有用的解答。本研究中，我們在專家系統的推演過程中導入「
+
+自我調適(self-adaptability)」的觀念，並且提出一個能有效處理未預期情況的專家系統架構，讓專家系統可以在推理過程隨時組
+
+織新的操作知識(operational knowledge)來適應新的環境。藉由這種自我調適的特性，專家系統甚至在輸入資料不完全的情況下，
+
+仍然可以找到一個有用的解答。
+ 我們所提出來的系統架構中，利用語意網路(semantic network)來表示領域知識(domain knowledge)。領域知識由三大部份所組成
+
+，分別為條件知識(condition knowledge)、結論知識(conclusion knowledge)、以及一組用來鏈接條件知識與結論知識的屬性關連
+
+(attribute relation)。我們定義了四種在領域知識上的調適(adaptation)操作，分別命名為條件知識調適(condition knowledge 
+
+adaptation)、操作知識調適(operational knowledge adaptation)、結論知識調適(conclusion knowledge adaptation)、及表現方
+
+式調適(presentation adaptation)。本研究專注於探討前三種知識調適方式對專家系統調適能力的影響。另外，我們也提出了專家
+
+系統內建知識庫與外在語意詞庫合作的觀念，並藉由這種合作機制來擴展專家系統的調適能力，這樣也可藉由外在語意詞庫來減少知
+
+識工程師在建構專家系統知識庫時的工作量。
+ 為了實現前述的知識調適能力，我們定義出兩個最基本的知識調適操作，分別為一般化知識調適(generalization knowledge 
+
+adaptation)及特殊化知識調適(specialization knowledge adaptation)。此外，我們同時也根據系統在推演過程中是否需要使用者
+
+的指引，提出了兩種不同的調適策略，分別為監督式調適策略(supervised adaptation policy)及非監督式調適策略(unsupervised 
+
+adaptation policy)。非監督式調適策略模式適合對問題背景知識較不熟悉的使用者，在此模式下，專家系統僅完全依靠內建知識庫
+
+所包含的各種觀念及相互間的層次關係來自動地進行知識調適的操作。另一方面，對一個具有問題背景知識的進階使用者來說，他可
+
+以利用監督式調適策略，在推理過程中提供適當的資訊來指引知識調適操作的進行，以求能快速地找到一個正確的解答。我們分別為
+
+這兩種調適策略定義了兩種不同的知識調適操作，分別命名為監督式知識調適及非監督式知識調適。
+ 此外，為了讓自我調適式的專家系統能有效地找到一個好解答，我們提出了兩個以亂度(entropy)為基礎的量測：一個量測是用來在
+
+眾多可能的知識調適操作中，找出造成最小資訊損失(information loss)的操作；另一個量測則是讓系統在產生操作知識時，可以從
+
+眾多屬性關連(attribute relation)中找到最佳者。
+我們還證明出，具有我們所提架構的自我調適式專家系統，不只在一般情況下可以找到一個正規的解答，在面臨未預期情況時，也可
+
+以藉由知識調適能力來自動地調適其操作知識並找到一個有意義的解答。最後，我們還透過一個精簡的例子來進一步說明自我調適式
+
+專家系統的運作方式。</p>
+
+     </td>
+
+    </tr>
+
+  
+  </tbody>
+</table>
+
+  
+<hr>
+  
+<table width="80%">
+
+    <tbody>
+    <tr>
+
+      <td> 
+        
+      <center>
+		
+      <h3><a name="AIE">Making Expert Systems Self-Adaptive<br>
+      </a></h3>
+
+        </center>
+
+	
+      <h4>Abstract</h4>
+
+	
+      <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;The famous Turing Test gives the first inspiration to this research: an expert system should not be hard-wired with 
+
+problem-solving knowledge; it should be able to exhibit the problem-solving capability like a human expert. In this 
+
+study, we try to improve the self-adaptability of an expert system by regulating semantic-network-represented 
+
+knowledge so that it can exhibit human-like behavior by taking flexible viewpoints to solve problems.
+ The pre-built knowledge of traditional expert systems is only capable of limited responses to changes in the 
+
+operating environment. If the data input is unexpected, a traditional system may fail to reach any rational 
+
+conclusions. In our study, we introduce the concept of self-adaptability to the inference process of an expert 
+
+system, and propose an architecture that is capable of handling unexpected user input effectively and efficiently. 
+
+Such a system can formulate operational knowledge on the move for inference. With this self-adaptive capability, an 
+
+expert system can reach useful conclusions, even when the input data is insufficient. 
+ The architecture of the proposed system encodes domain knowledge with semantic networks, which contain conclusion 
+
+knowledge, condition knowledge, and attribute relations that relate the two types of knowledge together. We also 
+
+define four types of adaptation, namely, condition knowledge adaptation, operational knowledge adaptation, 
+
+conclusion knowledge adaptation, and presentation adaptation, and focus on how the first three contribute to the 
+
+adaptive capability of the system. We also proposed the concept of the cooperation of the built-in domain knowledge 
+
+and external semantic lexicon to extend the adaptability of the system and reduce the workload of a knowledge 
+
+engineer in constructing domain knowledge. 
+ We have defined two primary knowledge adaptation operations for realizing the adaptation mechanism in a self-
+
+adaptive expert system, which are generalization knowledge adaptation, and specialization knowledge adaptation. In 
+
+addition, based on whether the assistance of the end-user advice is needed during the knowledge adaptation process, 
+
+two adaptation policies are proposed, namely, supervised adaptation policy and unsupervised adaptation policy. The 
+
+unsupervised adaptation policy mode is for an unskilled end-user, which allows the system to fully automatically 
+
+perform knowledge adaptation based on the internal concept hierarchies of built-in domain knowledge. On the other 
+
+hand, a proficient end-user can direct the process of knowledge adaptation under the supervised adaptation policy 
+
+mode in order to find a useful conclusion quickly. We have also defined two corresponding types of knowledge 
+
+adaptation operations for different adaptation policies, namely, unsupervised knowledge adaptation, and supervised 
+
+knowledge adaptation.
+ In addition, to enable a self-adaptive expert system to effectively produce better conclusions, two entropy-based 
+
+measuring mechanisms are proposed: one minimizes the information loss during knowledge adaptation, while the other 
+
+selects the best attribute relation during the generation of operational knowledge. 
+ We have proved that a self-adaptive expert system based on this architecture can always reach a regular conclusion 
+
+or an abstract conclusion, which is a more meaningful conclusion by automatically modifying its operational 
+
+knowledge in response to user feedback during the inference process, even in unexpected situations. Finally, we have 
+
+demonstrated a small but clear example to illustrate how a self-adaptive expert system works.</p>
+      </td>
+
+    </tr>
+
+  
+  </tbody>
+</table>
+
+
+  <br>
+
+</center>
+
+<hr size="6">
+<center>
+  <a href="/index.html"><img src="/picture/icons/home.gif" border="0"></a> <a href="mailto:WWW@neuron.et.ntust.edu.tw"> 
+  <img src="/picture/icons/email.gif" border="0"></a> 
+</center>
+
+</body>
+</html>

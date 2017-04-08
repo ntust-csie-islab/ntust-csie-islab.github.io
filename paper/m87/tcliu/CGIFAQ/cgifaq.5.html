@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head><title>CGI Programming FAQ: Troubleshooting a CGI application
+</title></head>
+<body bgcolor="#ffffff" vlink="#608060" link="#40a040" text="#000000"><h2>Section 5: Troubleshooting a CGI application
+</h2><pre>
+Since this subject is quite well covered by other documents, this FAQ has
+relatively little to say. 
+
+Eric Wienke has a page "Debugging CGI Scripts 101" at
+<a href="http://www.liquidsilver.com/scripts/debug101.html">http://www.liquidsilver.com/scripts/debug101.html</a>
+
+Tom Christiansen's "Idiot's guide to solving Perl/CGI problems" is a
+slightly tongue-in-cheek list of common problems, and how to track
+them down.  Much of what Tom covers is not specifically Perl, but
+applies equally to CGI programming in other languages. 
+
+Marc Hedlund's CGI FAQ and Thomas Boutell's WWW FAQ also
+deal with this subject. 
+
+See "Further Reading" below (if you don't already know where to find these
+documents). 
+
+</pre><h3><a name="1">5.1: Are there some interactive debugging tools and services available?</a></h3><pre>
+(1) Several CGI programming libraries offer powerful interactive
+    debugging facilities.   These include:
+
+	- for Perl, Lincoln Stein's CGI.pm
+	<a href="http://www-genome.wi.mit.edu/ftp/pub/software/WWW/cgi_docs.html">http://www-genome.wi.mit.edu/ftp/pub/software/WWW/cgi_docs.html</a>
+
+	- for Tcl, Don Libes' cgi.tcl
+	<a href="http://expect.nist.gov/cgi.tcl">http://expect.nist.gov/cgi.tcl</a>
+
+	- for C++, Nick Kew's CGI++
+	<a href="http://www.webthing.com/cgiplusplus/">http://www.webthing.com/cgiplusplus/</a>
+
+(2) Nathan Neulinger's cgiwrap is another package with debugging aids.
+<a href="http://www.umr.edu/~cgiwrap/">http://www.umr.edu/~cgiwrap/</a>
+
+(3) The "mod_cgi" Apache module (new with Apache 1.2) enables you to
+capture script output and errors for diagnosis.
+
+See also the next question.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="2">5.2: I'm having trouble with my headers.   What can I do?</a></h3><pre>
+For simple cases, examining your response headers "by hand" may suffice:
+(1) telnet to the host and port where the server is running - e.g.
+        telnet www.myhost.com 80
+(2) Enter HTTP request.   The most useful for this purpose is usually HEAD; eg
+        HEAD /index.html HTTP/1.0
+        (optionally other headers)
+        (followed by a blank line)
+Now you'll get a full HTTP response header back.
+
+For complex cases, such as sending a request with several headers
+(as a browser does) or POSTing a form, there several free online
+diagnosis services available:
+  1. cg-eye
+     <a href="http://server.htmlhelp.org/tools/cg-eye/">http://server.htmlhelp.org/tools/cg-eye/</a>
+	This combines an offline cgi "linter" with two online services:
+	(a) Interactive mode permits you to formulate an HTTP request,
+	which is then sent to your server.
+	(b) Live mode submits your form, exactly as it gets it from your
+	browser.
+	In both cases, it will print a detailed report of the transaction,
+	and optionally (if the CGI is producing an HTML page) validate it.
+  2. httpeek
+     <a href="http://computerdog.com/httpeek/index.shtml">http://computerdog.com/httpeek/index.shtml</a>
+	(somewhat like cg-eye interactive mode)
+  3. The Header Dumper
+     <a href="http://www3.pair.com/webthing/docs/cgi/debug/headers.shtml">http://www3.pair.com/webthing/docs/cgi/debug/headers.shtml</a>
+	(somewhat like cg-eye live mode, which supersedes it)
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="3">5.3: Why do I get Error 500 ("the script misbehaved", or "Internal Server Error")</a></h3><pre>
+Your script must follow the CGI interface, which requires it to print:
+(1) One or more Header lines.
+(2) A blank line
+(3) (optional, but strongly advised) a document body.
+
+This error means it didn't.
+
+The Header lines can include anything that's valid under HTTP, but must
+normally include at least one of the three special CGI headers:
+	Content-Type
+	Location
+	Status
+
+Example (a very minimal HTML page via CGI)
+Content-Type: text/html			&lt;= Header
+					&lt;= Blank Line
+&lt;title&gt;HelloWorld&lt;/title&gt;Hello World	&lt;= Document Body
+
+A common reason for a script to fail is that it crashed before printing
+the header and blank line (or while these are buffered).  Or that it
+didn't run at all: you _did_ try it from the commandline as well as
+check the file permissions and server configuration, didn't you?
+
+Another possible reason is that it printed something else - like an
+error message - in the Headers.   Check error logs, put a dummy header
+right at the top (for debugging only), check the "Idiot's Guide",
+and use the debug mode of your CGI library.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="4">5.4: I tried to use (Content-Type|Location|whatever), but it appears in my Browser?</a></h3><pre>
+That means you put the line in the wrong place.  It must appear in the
+CGI Header, not the document body.  See previous question.
+
+It's also possible that you didn't print a header at all, or had a blank
+line or other noise before or in the header, but that the HTTPD has
+corrected this error for you (servers which correct your errors may give
+rise to the "works on A not on B" phenomenon).   See previous question.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="5">5.5: How can I run my CGI program 'live' in a debugger?</a></h3><pre>
+David S. Jackson offers the following tip:
+
+&gt; I have a very good trick for debugging CGIs written in C/C++ running on
+&gt; UNIX. You might want to add it to the debugging section of your CGI faq.
+&gt; 
+&gt; First, in your CGI code, at it's start, add "sleep(30);". This will cause
+&gt; the CGI to do nothing for thiry seconds (you may need to adjust this
+&gt; time). Compile the CGI with debuging info ("-g" in gcc) and install the
+&gt; CGI as normal. Next, using your web browser, activate the CGI. It will of
+&gt; course just sit there doing nothing. While it is 'sleeping', find it's PID
+&gt; (ps -a | grep &lt;cgi name&gt;). Load your debugger and attach to that PID
+&gt; ("attach &lt;pid&gt;" in gdb). You will also need to tell it where to find the
+&gt; symbol definitions ("symbol-file &lt;cgi&gt;" in gdb). Then set a break point
+&gt; after the invocation of the sleep function and you are ready to debug. Do
+&gt; be aware that your browser will eventually timeout if it doesn't recieve
+&gt; anything.
+
+(Anyone know similar tricks for scripting languages)?
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small></body></html>

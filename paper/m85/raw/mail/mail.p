@@ -1,0 +1,32 @@
+<title>敬請批評指教</title>
+<form action="/cgi-bin/post" method="POST">
+<!-- 宣告表格開始，厚度為3, 間隔為10， 寬度為5。 -->
+<table border=3 cellpadding=10 cellspacing=5>
+<tr><td>
+
+<!-- 產生一個18 bytes的文字填寫區 -->
+
+<p> 請問您尊姓大名：
+<input type="text" name="name" size=20><br>
+
+<p>您的電傳信箱 :
+<!-- 產生一個18 bytes的文字填寫區，內定值為"@mail.ntit.edu.tw" -->
+<input type="text" name="Email" size=30 value="@mail.ntit.edu.tw"><br>
+
+* 標題:
+<input type="text" name="Title" size=30><p>
+
+寫下您的寶貴意見如何：<br>
+<!-- 產生一個長60 bytes，寬5 bytes的文字區 -->
+<textarea type="text" name="Post" rows=5 cols=50></textarea><p>
+
+<!-- 交由CGI程式處理 -->
+<input type="submit" value="送出信件">　　
+<!-- 清除所填資料 -->
+<input type="reset" value="清除內容">
+
+</form>
+</td>
+</tr>
+<!-- 結束表格 -->
+</table>

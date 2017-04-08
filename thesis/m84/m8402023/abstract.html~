@@ -1,0 +1,72 @@
+<html>
+<head>
+<meta http-eqiv="Content-Type" content="text/html; charset=utf8">
+  <title>
+         科技大學模糊類神經網路實驗室  研究論文
+         NTUST Fuzzy Neural Lab  Paper
+  </title>
+</head>
+<body background="/picture/background/gray_roc.gif">
+       <bgcolor="#ffffff" text="#000000 link="#55ffff" vlink="#6966ff">
+
+<img align=left src="/picture/logo/logo.gif">
+<strong>
+<font size=5>國立台灣科技大學  電子工程系所</font><BR>
+<font size=6>糊類神經網路實驗室  研究論文</font><BR>
+<font size=4>Fuzzy Neuron Laboratory Paper</font>
+</strong>
+<hr size=10>
+<h1>86級畢業碩士　劉俊麟　發表論文</h1>
+<hr size=5>
+
+<CENTER>
+<H3><A NAME=AIC>模糊規則系統之驗證、不一致規則化解以及加入新規則方法之研究及設計</A></H3>
+<H4>摘要</h4>
+</CENTER>
+<blockquote>
+ 在這篇論文中，針對一個梯形模糊集合輸入的類神經網
+路知識庫系統(KBNN/TFS)提出模糊規則之驗證、不一致規則
+化解以及加入新規則的方法。並使用梯形LR模式的模糊區
+間，以方便處理模糊資訊。在此我們使用必要性支持度與可
+能性支持度(此稱為支持對)來檢驗與去除不一致性。並且利
+用支持對，以及初始學習點的觀念，尋找並加入新規則。我
+們利用一個知識庫評估器 (Knowledge Base Evaluator) 的
+例子來驗證我們所提出的方法。經過不一致規則的化解後，
+不一致規則被去除，且學習結果也有所提升。除此之外，針
+對因衝突而被刪除的規則，使用初始學習點產生新規則並加
+入系統，其結果更是大幅度的改進僅做不一致規則化解的系
+統。
+</blockquote>
+
+<HR SIZE=3 WIDTH=80%>
+
+<CENTER>
+<H3><A NAME=AIE>Inconsistency Resolution and Rule Insertion of Fuzzy Rule-Based Systems</A></H3>
+<H4>Abstract</h4>
+</CENTER>
+<blockquote>
+ In this paper, a fuzzy rule inconsistency resolution and insertion method is
+ proposed on a fuzzy neural network, named Knowledge-Based Neural Network
+with Trapezoidal Fuzzy Set inputs (KBNN/TFS).  To facilitate the processing of
+fuzzy information, trapezoidal LR-type fuzzy interval is employed.  Necessity
+support and possibility support (named support pair) are applied to detect and
+remove inconsistency.  In addition to the support pair, the concept of initial
+learning point is used to handle rule insertion.  We show the works of the
+proposed methods on an example named Knowledge Base Evaluator (KBE).
+After inconsistency resolution operations, inconsistencies are resolved, and the
+learning result is improved.  Moreover, to set initial learning point on deleted
+conflict rule, a new rule is generated and inserted to the system.  And the resu
+much better than only applying inconsistency resolution.
+</blockquote>
+</body>
+
+<BR>
+
+<hr size=5>
+<Center>
+<a href=/index.html><img border=0 src=/picture/icons/home.gif></a>
+<a href="mailto:WWW@neuron.et.ntust.edu.tw">
+<img border=0 src=/picture/icons/email.gif></a>
+</Center>
+</body>
+</html>

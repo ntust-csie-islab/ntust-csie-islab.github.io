@@ -1,0 +1,16 @@
+Return-Path: <nobody@et.ntit.edu.tw>
+Received: from et.ntit.edu.tw by neuron.et.ntit.edu.tw (4.1/SMI-4.1)
+	id AA01219; Tue, 19 Nov 96 13:50:24 CST
+Received: from neuron.et.ntit.edu.tw ([140.118.2.70]) by et.ntit.edu.tw (8.6.11/8.6.11) with SMTP id OAA08811 for <raw@neuron.et.ntit.edu.tw>; Tue, 19 Nov 1996 14:02:11 +0800
+Date: Tue, 19 Nov 1996 14:02:11 +0800
+From: nobody@et.ntit.edu.tw
+Message-Id: <199611190602.OAA08811@et.ntit.edu.tw>
+Apparently-To: <raw@neuron.et.ntit.edu.tw>
+Status: R
+
+test()
+@mail.ntit.edu.tw
+Mozilla/3.0 (Win95; I)
+140.118.2.184(140.118.2.184)
+test
+test

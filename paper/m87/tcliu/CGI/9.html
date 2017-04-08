@@ -1,0 +1,50 @@
+<title>CGI Programming OpenFAQ</title>
+<h1>CGI Programming OpenFAQ</h1>
+<h2>How can users send me comments and/or email?
+</h3>
+<strong>Contributors:</strong><br>
+<ul>
+<li>boutell <a href="mailto:boutell@boutell.com">boutell@boutell.com</a>
+<li>David_Beroff <a href="mailto:david@note.com">david@note.com</a>
+</ul>
+<hr>
+	There are two ways:
+<h3>Using a mailto: URL</h3>
+You can simply create a link which looks like this:
+<P>
+&lt;A HREF="mailto:me@my.address">Send Me Mail&lt;/A>
+<P>
+This works great for browsers that support the mailto: URL. Perhaps
+Perhaps 95% of web users will be able to use such a link. 
+A few older browsers do not support it, but giving out an
+email address is often a reasonable backup.
+<h3>Installing a comment form</h3>
+If you have access to the server's configuration files, or if your
+server administrator permits users to create their own CGI scripts,
+you can create a form which sends mail to you from any browser
+that supports forms. A really flexible package for this
+is the <A HREF="http://web.mit.edu/wwwdev/cgiemail/">
+mit-dcns-cgi package</A> (URL is &lt;URL:http://web.mit.edu/wwwdev/cgiemail/&gt; ). I've written a simple 
+<A HREF="http://www.boutell.com/email/">email forms package
+(URL is &lt;URL:http://www.boutell.com/email/&gt; )</A>,
+which does it in ANSI C. Many other such packages exist.
+<p>
+<A HREF="http://seclab.cs.ucdavis.edu/~hoagland/">
+GetComments</A> (URL is &lt;URL:http://seclab.cs.ucdavis.edu/~hoagland/&gt;) 
+is a more general package, written in Perl, which can
+do many different things in response to a form submission.
+<p>
+<a href="http://www.mornini.com/">InfoMania</a> offers a tool
+called Uniform which automatically formats e-mail based on the
+input received from a form posting. This "one size fits all"
+CGI program is a convenient alternative to writing custom
+CGI programs. &lt;URL:http://www.mornini.com/&gt;
+<p>
+<a href=http://www.note.com/success/public/freeform/?openfaq>FreeForm</a>
+(URL is &lt;URL:http://www.note.com/success/public/freeform/?openfaq&gt;)
+is a service which is provided to web content publishers, allowing them to add
+free fill-out forms to their site.  They can get feedback from their site's visitors,
+without needing to access CGI on their provider's server, or to even know CGI.
+
+<hr>
+<a href="http://www.boutell.com/openfaq/cgi/8.html">Previous</a> | <a href="http://www.boutell.com/openfaq/cgi/12.html">Next</a> | <a href="http://www.boutell.com/openfaq/cgi">Table of Contents</a>

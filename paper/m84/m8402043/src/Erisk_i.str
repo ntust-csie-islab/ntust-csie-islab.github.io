@@ -1,0 +1,6 @@
+lrate 0.07
+netfile erisk.net
+cwfile erisk_i.cor
+trafile erisk_i.tran1
+epcoh 500
+pss 0.0001

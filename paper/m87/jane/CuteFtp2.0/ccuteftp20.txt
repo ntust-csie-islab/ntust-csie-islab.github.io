@@ -1,0 +1,31 @@
+CuteFTP v2.0 中文化版(含註冊)!!! 
+
+檔名: ccuteftp20.exe (474,265)
+
+下載: 1. http://www.taconet.com.tw/~tyf  一峰小站
+      2. ftp://140.115.20.242/d:/ftp/upload/winsock/chinese_patch/ccuteftp20.exe
+
+原始檔案來源: 1. ftp://140.115.20.242/d:/ftp/upload/winsock/CuteFTP_v2.0.zip
+              
+使用: 1. 直接執行 ccuteftp20.exe 即可, 會自行建立目錄, 並解開到目錄中
+         檔案中已含註冊機
+
+源起: 我中文化的原因不為別的, 只希望大家能用的開心,方便, 這也是大部分中文
+      化作者的心聲. 而我唯一的請求, 就是希望大家能寫封 Email 給予我小弟鼓
+      勵一番, 因為有你們的支持, 才是我的原動力, 也希望大家能到小弟的網站
+      參觀一下, 給小弟我一些建議
+
+說明:
+      1. 使用 Visual C++ 完成中文化
+      2. 感謝 ChenGB 提供完美中文化方法
+         http://www.me.tku.edu.tw/~f/ChenGB/
+
+
+            小峰
+          9/30/1997
+
+=============== 一峰小站 ==================
+本尊站:  http://www.taconet.com.tw/~tyf
+分身站:  http://home.trdi.edu.tw/~tyf
+Email :  eric@flag.address.com.tw
+說明  :  收集中文化程式, 免費資源, 軟體序號

@@ -1,0 +1,9 @@
+<HTML>
+<HEAD>
+<TITLE>¤À³Îµøµ¡</TITLE>
+</HEAD>
+<FRAMESET COLS="20%,80%">
+<FRAME SRC="menu.html" NAME="LEFT">
+<FRAME SRC="introduce.html" NAME="RIGHT"> 
+</FRAMESET>
+</HTML>

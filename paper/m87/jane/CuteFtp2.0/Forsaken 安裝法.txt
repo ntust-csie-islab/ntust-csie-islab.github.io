@@ -1,0 +1,18 @@
+forsaken這個遊戲的 movie addon 不能裝,會發生前面
+網友提到的錯誤,但是直接拿來看還不錯啦...^__^
+喔...我要問的是
+進入第一關後不知要幹麻ㄟ....好像有個門打不開...
+看過操作設定也不知要如何開門...
+請問大家:第一關(Vocano)要如何過阿? ^_^
+
+=========================================================
+上述的問題全因為安裝不正確所致,
+steps:
+1.install forsaken to HD (example: d:\forsaken)
+2.extract video addon to d:\forsaken\data\splash\裡 (nfo有寫)
+3.extract fix file to d:\forsaken and execute it.
+4.extract crack.ace to d:\forsaken to oerwrite the forsakenHW.exe &
+  forsakenSW.exe & forsaken.exe
+5.如果執行還不行, step3 再做一次.
+6.Enjoy it!
+							Arnor

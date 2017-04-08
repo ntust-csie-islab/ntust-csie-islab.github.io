@@ -1,0 +1,80 @@
+<title>CGI Programming OpenFAQ</title>
+<h1>CGI Programming OpenFAQ</h1>
+<h2>How do I install the Perl 5 CGI libraries (CGI, LWP and more)? How can CPAN.pm help?
+</h3>
+<strong>Contributors:</strong><br>
+<ul>
+<li>Stas <a href="mailto:sbekman@hotmail.com">sbekman@hotmail.com</a>
+<li>Stas <a href="mailto:sbekman@hotmail.com">sbekman@hotmail.com</a>
+<li>Stas <a href="mailto:sbekman@hotmail.com">sbekman@hotmail.com</a>
+</ul>
+<hr>
+		<P>If you do not have root access, you will need to install
+these modules in an alternate location. If you were
+installing these tools as root, you would do it like this:
+
+<PRE>
+       perl Makefile.PL
+        make
+        make test
+        make install
+</PRE>
+
+
+To do this in an alternate location, first create
+the directory you will use instead. If that directory
+is called <code>/path_to_your_home/lib/perl5</code>, then you
+install the tools like this:
+
+<pre>
+       perl Makefile.PL PREFIX=/path_to_your_home \
+        INSTALLPRIVLIB=/path_to_your_home/lib/perl5 \
+        INSTALLSCRIPT=/path_to_your_home/bin \
+        INSTALLSITELIB=/path_to_your_home/lib/perl5/site_perl \
+        INSTALLBIN=/path_to_your_home/bin \ 
+        INSTALLMAN1DIR=/path_to_your_home/man  \
+        INSTALLMAN3DIR=/path_to_your_home/man3
+        make
+        make test
+        make install
+
+        (in some cases perl Makefile.PL PREFIX=/path_to_your_home would be sufficient)
+ 
+</PRE>
+
+<BR>
+Then, each time you want to use modules in that path, you should add this to your
+scripts as the second line:</P>
+
+<pre>
+use lib qw(/path_to_your_home/lib/perl5 /path_to_your_home/lib/perl5/site_perl);
+</pre>
+This line instructs Perl 5 to look for libraries in that
+directory as well as the standard directories.
+<p>
+Also consider using the wonderful CPAN.pm module to install and upgrade
+the perl modules available at CPAN (see <A HREF="http://www.perl.com/CPAN">www.perl.com/CPAN</A>).
+If you have perl5.004 or higher you have it bundled with your distribution.
+Otherwise, download it from CPAN. When you install it the first time, it asks
+you a few questions; one of them is a PREFIX directory name as above. After configuration
+is over, you run it like so:
+<pre>
+
+% perl -MCPAN -e shell
+&gt; install CGI
+</pre>
+This will fetch the latest CGI module, unpack it, make it, test it and
+install it into your local area or any other directory you instruct it to!</P>
+<p>
+More CPAN.pm tricks:
+<p>
+<pre>
+&gt; i /CGI/
+</pre>
+Returns the list of modules that match that pattern. Many
+other functions are also available.
+	
+	
+	
+<hr>
+<a href="http://www.boutell.com/openfaq/cgi/20.html">Previous</a> | <a href="http://www.boutell.com/openfaq/cgi/25.html">Next</a> | <a href="http://www.boutell.com/openfaq/cgi">Table of Contents</a>

@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<TITLE>歡迎光臨 Jane's Homepage</TITLE>
+</HEAD>
+<BODY BGCOLOR="000000" TEXT=FFFF00 LINK=FFFF00>
+<CENTER>
+<IMG SRC="Welcome.gif" WIDTH=300 HEIGH=50 ALT="Welcome.gif"><P>
+<IMG SRC="0021.gif" ALT=bar WIDTH=60%><P>
+<A HREF="divide.html">
+<IMG ALIGN=MIDDLE SRC="dancer.gif" BORDER=0 WIDTH=130 HEIGHT=180 ALT="請進">
+</A>
+<B><I><H3><BLINK><MARQUEE WIDTH=50%>
+Welcome come to Jane's Homespage!!</MARQUEE></BLINK><P>
+<A HREF="mailto:jane@neuron.et.ntust.edu.tw">
+<IMG SRC="mailme.gif" WIDTH=70 HEIGHT=60 BORDER=0 ALT="mailme.gif"></A><BR>
+<FONT SIZE=-1>有話想告訴我嗎???<p>
+<IMG SRC="bar.gif" ALT=bar><P>
+</CENTER>
+</BODY>
+<marquee behavior="slide" width="400" height="16"
+loop="1" bgcolor="abcdef" >歡迎光臨</marquee> 
+</HTML>

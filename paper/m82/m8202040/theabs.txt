@@ -1,0 +1,66 @@
+學年度          083
+校院代碼        0102
+系所代碼        542213
+學位類別        M
+論文名稱(中)    處理多類模糊輸入的類神經網路分類器
+論文名稱(英)    A Multiclass Neural Network Classifier
+                with Fuzzy Teaching Inputs
+語文別          中文
+學號            M8202040
+研究生姓(中)    陳
+研究生名(中)    宏領
+研究生姓名(英)  Hong-Ling Chen
+指導教授(中)    李漢銘
+指導教授(英)    Hahn-Ming Lee
+關鍵字(中)      模糊集合理論；類神經網路；資料分類器；梯形模糊數
+關鍵字(英)      fuzzy sets theory; neural networks; pattern classifier;
+                trapezoidal fuzzy number
+提要(中)        本篇論文提出一個能處理模糊輸入資訊之類神經網路分類器，而且這系統
+                的輸出可以是多類別的。這分類器的隱藏層 (hidden layer) 是以結合一
+                個模糊原型節點 (fuzzy prototype node) 以及數個模糊範例節點(fuzzy
+                exemplar nodes) 的方式來表示每一種輸出類別。模糊輸入資訊以及位於
+                隱藏層中的所有節點皆採用梯形模糊數 (trapezoidal fuzzy number) 來
+                表示。此模型的訓練演算法有兩個回合(passes)。第一回合採用兩種快速
+                的單週期(one-epoch) 演算法其中之一來訓練原型節點的權重 (weights)
+                。其一稱為模糊超矩盒原型之擴展暨收縮 (Prototype Expansion and
+                Contraction of FUzzy Hyperbox, PECFUH)，另一種為模糊數之向量量化
+                學習法 (FUzzy Number's Learning Vector Quantization, FUNLVQ)。訓
+                練後的原型節點能正確分類大部份的輸入樣本。例外的樣本則經由範例節
+                點的產生或擴展來處理。第二回合訓練的目的即在於建構各個範例節點，
+                而且經由所提出的少週期訓練演算法，稱之為模糊範例之巢狀建立暨擴展
+                (Fuzzy Exemplar Nested Creation and Expansion, FENCE) 來達成。因
+                為原型節點的上述功能，範例節點的數目能大量減少，第二回合的學習速
+                率也得以提升。此外，本模型具有線上學習能力以及少量的模糊數計算。
+                非線性可分割的輸入樣本以及互相重疊的類別也有不錯的處理結果。值得
+                一提的是，當遇到含有不考慮項 (don't-care) 資訊的輸入樣本時，此模
+                型具有非常好的一般化 (generalization) 能力。實驗結果則顯示此分類
+                器在學習以及回想 (recall) 時的速度都相當快；同時，所需的節點數目
+                亦很少。
+
+提要(英)        This paper presents a multiclass neural network classifier with
+                fuzzy teaching inputs.  The classifier creates each class by
+                aggregating a fuzzy prototype and several fuzzy exemplars in the
+                hidden layer. Fuzzy inputs and all the nodes in the hidden layer
+                are represented by trapezoidal fuzzy numbers.  We train the
+                classifier by a two-pass learning algorithm. In pass one, a very
+                fast one-epoched algorithm PECFUH (Prototype Expansion and
+                Contraction of FUzzy Hyperbox) or FUNLVQ(FUzzy Number's Learning
+                Vector Quantization) is used to train the prototypes.  These
+                prototypes will classify as many fuzzy input instances as possi-
+                ble.  Afterward, exemplars that mean the exceptions, like the
+                "holes," in pattern space will be generated and expanded in pass
+                two to classify those fuzzy input instances that cannot be
+                correctly classified by the prototypes. We propose a few-epoched
+                FENCE (Fuzzy Exemplar Nested Creation and Expansion) training
+                algorithm to create the exemplar nodes.  Due to the training in
+                pass one, the number of exemplar nodes is reduced and the
+                learning speed is very fast during pass two.  In addition, on-
+                line adaptation is supplied in this model and the computational
+                load is lightened.  Also, nonlinearly separable instances and
+                overlapping classes can be handled well.  Furthermore, this
+                classifier has good generalization ability for the training
+                instances with don't-care information.  The experimental results
+                manifest that the training and recalling are fast. At the same
+                time, they illustrate that required nodes are few.
+
+頁數            100

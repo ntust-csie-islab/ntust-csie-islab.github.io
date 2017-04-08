@@ -1,0 +1,105 @@
+<!-- 行政院衛生署 意見留言板 -->
+
+<title>意見留言板</title>
+<center>
+<!-- 設定一個無邊框的表格 -->
+<table cellspaceing=5 border=0 width=90% cellpadding=10>
+
+<tr>
+  <th>
+  <!-- 顯示標題 -->
+  <font size=6><img src="bbstitle.gif" alt="意見留言板"></font>
+  <hr size=5 width=100%>
+  </th>
+</tr>
+<tr>
+ <td>
+
+  <!-- 本頁說明 -->
+　<b><font size=+2>各</font></b> 位 先 進 ， 歡 迎 蒞 臨 行 政 院 衛 
+生 署 ， 並 謝 謝 您 給 我 們 這 個 機 會 將 資 訊 送 到 您 的 
+面 ， 但 必 須 改 進 及 加 強 的 地 方 實 在 太 多 了 。 
+希 望 您 留 下 寶 貴 的 意 見 ， 作 為 我 們 進 步 的 參 考 ， 再 
+次 謝 謝 您 !!<p>
+
+  <!-- Form 開始. 指定處理程式為 cimment.exe, 傳遞方式為 post -->
+  <form action="/cgi-win/comment.exe"  method=post>
+
+  <!-- 產生一個寬 20 bytes 的文字填寫區 -->
+  姓　　名:<input type=text size=20 name=visitor><p>
+
+  <!-- 底下性別是二選一，內定值是男性 -->
+  性　　別:<input type="radio" name="sex_type" value="男" checked>男<input 
+type="radio" name="sex_type" value="女">女<p>
+
+  <!-- 產生一個長 20 bytes 的文字填寫區 -->
+  電子信箱:<input type=text size=30 name=email><p>
+ 
+
+   <-- 產生一個下拉式的選單，select 屬於多選一, 內定值為空白 -->
+   職　　業:<select name=job_type size=1>   <option selected>　
+   <option>教師
+   <option>學生
+   <option>公務員
+   <option>醫護人員
+   <option>工
+   <option>商
+   <option>資訊人員
+   <option>自由業
+   <option>其它
+   </select><p>
+
+   <-- 產生一個下拉式的選單，select 屬於多選一, 內定值為空白 -->
+   教育程度:<select name=edu_type size=1>   <option selected>　
+   <option>研究所以上
+   <option>大學
+   <option>專科
+   <option>高中、職
+   <option>中學
+   <option>小學
+   </select><p>
+
+   <-- 產生一個下拉式的選單，select 屬於多選一, 內定值為空白 -->
+   年　　齡:<select name=age_type size=1>   <option selected>　
+   <option>20歲以下
+   <option>21～30歲
+   <option>31～40歲
+   <option>41～50歲
+   <option>50歲以上
+   </select><p>
+
+   <-- 產生一個下拉式的選單，select 屬於多選一, 內定值為空白 -->
+   您是從何處得知本站<select name=where size=1>   <option selected>　
+   <option>WWW
+   <option>BBS
+ 
+
+   <option>報章雜誌 
+   <option>朋友告知
+   <option>其它來源
+   </select><p>
+
+   <!-- 產生一個長 20 bytes 的文字填寫區, 內定值為 http:// -->
+   衛生資訊方面，您最喜歡的Homepage:<br>
+   <input type=text size=50 name=url value="http://"><p>
+
+   <!-- 產生一個長度為60bytes，寬度為6bytes的文字填寫區 -->
+   寫下您的寶貴意見如何:<p>
+   <textarea name="comment" rows=6 cols=60></textarea><p>
+
+   <!-- 將輸入交給GCI程式來處理 -->
+   <input type="submit" value="送出信件">
+
+   <!-- 清除剛輸入的資料 -->
+ 　<input type="reset" value="清除內容">
+
+   <!-- 結束 Form -->
+   </form>
+
+   <hr size=5 width=100%>
+  </td>
+</tr>
+
+</table>
+
+</center>

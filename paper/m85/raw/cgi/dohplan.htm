@@ -1,0 +1,84 @@
+<!-- 行政院衛生署科技研究發展計畫查詢 -->
+<!-- 顯示本頁標題 -->
+
+<title>行政院衛生署科技研究發展計畫查詢</title>
+<center><h1>行政院衛生署科技研究發展計畫查詢</h1></center>
+<hr>
+
+<!-- 本頁說明及程式使用方法簡介 -->
+本程式可以查詢81年度至84年度，由行政院衛生署委託各機關的研究計畫， 
+使用方式如下：<br>
+
+<b>
+  本程式可單一條件或複合條件二種查詢方式，查詢欄位需點選□。</b><br>
+  計畫年度與執行單位可透過系統內建的選單來選取。<br>
+  計畫名稱與主持人則可透過關鍵字來查詢。<br>
+  最後請按『開始查詢』進行查詢，或者按『清除內容』重新輸入查詢字
+串。<p>
+
+<!-- Form 開始 -->
+<!-- 指定處理程式為 /cgi-win/dohplan.exe , 傳遞方式採 post 方式-->
+<form action="/cgi-win/dohplan.exe" method=post>
+
+<!--指定資料庫的路徑，允許管理者將資料庫放在其它路徑下 -->
+<input type=hidden name=mdbpath value="c:\database\">
+
+<!-- 產生一個 checkbox, 用以決定是否將後面計畫年度列入查詢條件-->
+<!-- 如果使用者點選該方框，HTTP server 會將變數whichyear="yes"-->
+<!-- 傳給 CGI程式 -->
+
+<input type="checkbox" name="whichyear" value="yes">
+
+<-- 產生一個下拉式的選單，select 屬於多選一, 內定值為空白 -->
+計畫年度:<select name="year">
+<option selected>　
+<option>81
+<option>82
+ 
+
+<option>83
+<option>84
+</select><p>
+<!-- 產生一個 checkbox, 用以決定是否將後面計畫名稱列入查詢條件-->
+<!-- 如果使用者點選該方框，HTTP server 會將變數whichplan="yes"-->
+<!-- 傳給 CGI程式 -->
+<input type="checkbox" name="whichplan" value="yes">
+<!-- 產生一個長 30 bytes 的文字填寫區 -->
+計畫名稱:<input type=text size=30 name=plan><p>
+
+<!-- 產生一個 checkbox, 用以決定是否將後面執行單位列入查詢條件-->
+<!-- 如果使用者點選該方框，HTTP server 會將變數whichrunner="yes"-->
+<!-- 傳給 CGI程式 -->
+<input type="checkbox" name="whichrunner" value="yes">
+<-- 產生一個下拉式的選單，select 屬於多選一, 內定值為空白 -->
+<-- 由於執行單位數量過多，在此僅列出10個做為參考 -->
+執行單位:<select name=runner>
+<option selected>　
+<option>三軍總醫院
+<option>大仁藥學專科學校
+<option>大同工學院
+<option>工業技術研究院
+<option>中山大學
+<option>中山醫院
+<option>中山醫學院
+<option>中山醫學院附設醫院
+<option>中央研究院生物醫學科學研究所
+<option>中原大學
+</select><p>
+<!-- 中原大學以後的單位省略 -->
+
+<!-- 產生一個 checkbox, 用以決定是否將後面計畫主持人列入查詢條件-->
+<!-- 如果使用者點選該方框，HTTP server 會將變數whichauthor="yes"-->
+<!-- 傳給 CGI程式 -->
+<input type="checkbox" name="whichauthor" value="yes">
+<!-- 產生一個長 30 bytes 的文字填寫區 -->
+主持人　:<input type=text size=30 name=author><p>
+<!-- 將資料傳給 dohplan.exe 處理 -->
+<input type=submit value="開始查詢">
+ 
+
+<!-- 清除剛輸入的資料 -->
+<input type=reset value="清除內容">
+<!-- Form 結束 -->
+</form>
+<hr>

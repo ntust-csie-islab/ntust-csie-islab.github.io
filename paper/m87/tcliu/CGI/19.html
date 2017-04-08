@@ -1,0 +1,27 @@
+<title>CGI Programming OpenFAQ</title>
+<h1>CGI Programming OpenFAQ</h1>
+<h2>Why does the browser show my script instead of run it?
+</h3>
+<strong>Contributors:</strong><br>
+<ul>
+<li>JimEsten <a href="mailto:jesten@wdynamic.com">jesten@wdynamic.com</a>
+</ul>
+<hr>
+The most common cause of this behavior is placing the cgi 
+script in a directory that the web server software does not 
+recognize as one from which scripts should be run.
+<p>
+Most web servers have configuration options that allow the
+webmaster to set up specific directories, very often something
+like /cgi-bin/ where cgi scripts must reside to be recognized
+as programs.
+<p>
+An alternative configuration is called cgi-anywhere, and uses
+a file extension (such as .cgi) to indicate that a file is
+a cgi script.  As this alternate method offers nearly no
+security, it is seldom seen by users who have commercial
+Internet Service Providers. (I disagree with this comment --
+the .cgi setup can be just fine if the server is configured
+to run scripts with the user ID of the user who owns them. -TB)	
+<hr>
+<a href="http://www.boutell.com/openfaq/cgi/14.html">Previous</a> | <a href="http://www.boutell.com/openfaq/cgi/20.html">Next</a> | <a href="http://www.boutell.com/openfaq/cgi">Table of Contents</a>

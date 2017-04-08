@@ -1,0 +1,41 @@
+<title>CGI Programming OpenFAQ</title>
+<h1>CGI Programming OpenFAQ</h1>
+<h2>How do I use a simple text file database to dynamically populate entries in a form popup?
+</h3>
+<strong>Contributors:</strong><br>
+<ul>
+<li>LenCoop <a href="mailto:coopl@bcc.orst.edu">coopl@bcc.orst.edu</a>
+</ul>
+<hr>
+Suppose you have a tab delimited text database with records as lines. You can
+fill up your hash/array as follows (assuming column 1 are your keys, and
+column 3 are your labels that you want to appear in the form):
+<P>
+<PRE>
+open(TDB,"text.db")
+while (<TDB>) {
+  @Fld = split(/\t/,$_, 9999);
+  $vars{$Fld[0]} = $Fld[2];
+}
+close(TDB);
+</PRE>
+<P>
+There are lots of other ways to populate a hash from a file, this is a simple one.
+<P>
+Then, assuming you use CGI.pm, you use the hash to fill the popup (or
+scrolldown, or checkboxes) like this (if you want entries sorted by the
+key $vars):
+<P>
+<PRE>
+popup_menu(-name=>'what you want',
+               -values=>[ sort keys %vars ],
+               -labels=>\%vars,
+               ),
+</PRE>
+This allows the menu items to be completely separate from the script.
+Note that this example assumes you are using the highly useful
+CGI.pm library, which is included with Perl 5.004 or later. It is
+also available through CPAN.
+<BR>
+<hr>
+<a href="http://www.boutell.com/openfaq/cgi/25.html">Previous</a> | <a href="http://www.boutell.com/openfaq/cgi/36.html">Next</a> | <a href="http://www.boutell.com/openfaq/cgi">Table of Contents</a>

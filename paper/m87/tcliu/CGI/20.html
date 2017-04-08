@@ -1,0 +1,25 @@
+<title>CGI Programming OpenFAQ</title>
+<h1>CGI Programming OpenFAQ</h1>
+<h2>Can I write regular HTML from a cgi script?
+</h3>
+<strong>Contributors:</strong><br>
+<ul>
+<li>JimEsten <a href="mailto:jesten@wdynamic.com">jesten@wdynamic.com</a>
+</ul>
+<hr>
+It is very common to have a cgi script generate some sort of
+formatted response that appears to be a regular HTML web page.
+<p>
+There are a couple points to keep in mind. First, HTML treats
+any number of spaces as a single space and ignores conventional line returns, except inside
+of the &lt;pre&gt; tag.  Second, if you are generating a file 
+to which your script directs the user's browser, you may want
+to write out line feeds and HTML line breaks to make the HTML 
+more easily readable in the source browser.
+<p>
+A popular way to write large blocks of HTML in Perl cgi scripts
+is to use HERE documents.  This encloses a large segment of 
+information as if it were a single string, saving the typing of
+a great many quotes!	
+<hr>
+<a href="http://www.boutell.com/openfaq/cgi/19.html">Previous</a> | <a href="http://www.boutell.com/openfaq/cgi/24.html">Next</a> | <a href="http://www.boutell.com/openfaq/cgi">Table of Contents</a>

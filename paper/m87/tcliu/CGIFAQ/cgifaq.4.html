@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head><title>CGI Programming FAQ: Applications: Is there an existing script to ...
+</title></head>
+<body bgcolor="#ffffff" vlink="#608060" link="#40a040" text="#000000"><h2>Section 4: Applications: Is there an existing script to ...
+</h2><pre>
+There are a lot of applications available.   For all the tasks
+listed here, there are free systems you can download and install
+yourself (at least if you're on UNIX).   Many are excellent.
+
+Before ever *buying* software, do a Net search on what you want and
+check what freeware is available.   Does the commercial system you
+had in mind *really* have any advantages?   If you can't follow
+the jargon they use to explain the merits of their system, insist
+on some clarification (hey, that's not just for Web software :-)
+
+Most questions under this heading are probably best answered by
+reference to appropriate review sites on the Web (in many cases,
+Thomas Boutell's WWW FAQ).   In cases where I know of one or more
+good sites, I've referenced them.
+
+</pre><h3><a name="1">4.1: Where to look for programs, scripts, and other resources?</a></h3><pre>
+Matt Wright - himself author of many popular CGI resources - has
+recently (March.97) opened a new website dedicated to this subject:
+
+<a href="http://www.cgi-resources.com/">http://www.cgi-resources.com/</a>
+
+I am happy to recommend this as a rich and well-organised collection,
+and probably the best of its kind on the Web today.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="2">4.2: Where to look for free scripts for my application?</a></h3><pre>
+(see also previous question, which should perhaps replace this one altogether)
+
+Some popular places to look for a wide range of free CGI applications are:
+
+Selena Sol's Public Domain CGI Scripts
+<a href="http://www.extropia.com/Scripts/">http://www.extropia.com/Scripts/</a>
+
+Matt Wright's Script Archive
+<a href="http://www.worldwidemart.com/scripts/">http://www.worldwidemart.com/scripts/</a>
+
+Dale Bewley has a much longer list of script archives
+(along with his own scripts) at
+<a href="http://www.engr.iupui.edu/~dbewley/perl/">http://www.engr.iupui.edu/~dbewley/perl/</a>
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="3">4.3: Discussion group/bulletin board</a></h3><pre>
+David R Woolley maintains a list of currently around 100 systems at
+<a href="http://freenet.msp.mn.us/~drwool/webconf.html">http://freenet.msp.mn.us/~drwool/webconf.html</a>
+("Conferencing on the Web").
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="4">4.4: CSCW/Groupware</a></h3><pre>
+There are several overview sites for this.   A few are:
+
+The CSCW Yellow Pages, at
+<a href="http://www11.informatik.tu-muenchen.de/cscw/yp/YP-index-type.html">http://www11.informatik.tu-muenchen.de/cscw/yp/YP-index-type.html</a>
+
+NCSA Web Collaboration pages, at
+<a href="http://union.ncsa.uiuc.edu/HyperNews/get/www/collaboration.html">http://union.ncsa.uiuc.edu/HyperNews/get/www/collaboration.html</a>
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="5">4.5: Database</a></h3><pre>
+This subject deserves its own FAQ.   When someone recently asked about one,
+Matthew.Healy@yale.edu (Matthew D. Healy) posted this answer (slightly chopped)
+
+&gt; : Is there a CGI and Database FAQ available?
+&gt; : If so, could someone tell me where can I get it?
+&gt; 
+&gt; Dunno about a FAQ on that.  I can recommend a couple of published
+&gt; works, however:
+&gt; 
+&gt; 1. I wrote a chapter about CGI/Database work for the book
+&gt; {Special Edition Using CGI}.  Fulltext is online at the
+&gt; publisher's WWW site:
+&gt; 
+&gt; <a href="http://www.mcp.com/que/et/se_cgi/">http://www.mcp.com/que/et/se_cgi/</a>  The book
+&gt; <a href="http://www.mcp.com/que/et/se_cgi/Cgi13fi.htm">http://www.mcp.com/que/et/se_cgi/Cgi13fi.htm</a>  My chapter on WWW/DBMS
+&gt; 
+&gt; 2. Jeff Rowe wrote an excellent book, {Building Internet Database
+&gt; Servers With CGI}.  URL for more info:
+&gt; 
+&gt; <a href="http://cscsun1.larc.nasa.gov/~beowulf/db/existing_products.html">http://cscsun1.larc.nasa.gov/~beowulf/db/existing_products.html</a>
+&gt; 
+&gt; Jeff's WWW site has scads of useful information on WWW/DBMS programming,
+&gt; and pointers to lots more sites.
+
+Matthew's CGI links page at <a href="http://ycmi.med.yale.edu/~healy/cgilinks.html">http://ycmi.med.yale.edu/~healy/cgilinks.html</a>
+expands the list, and includes links to popular packages including
+Bo Frese Rasmussen's WDB at <a href="http://venus.dtv.dk/~bfr/wdb/">http://venus.dtv.dk/~bfr/wdb/</a>
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="6">4.6: Is than a non-setuid script to allow users to change password?</a></h3><pre>
+Yes.  Here is an example:
+
+        <a href="http://pitch.nist.gov/cgi-bin/cgi.tcl/passwd-form.cgi">http://pitch.nist.gov/cgi-bin/cgi.tcl/passwd-form.cgi</a>
+
+It is an Expect script that wraps itself around the passwd command.
+With this technique, there is no need to make scripts setuid (e.g.,
+cgiwrap).  This same technique lends itself to many other scripts that
+might otherwise need setuid.
+
+(contributed by Don Libes &lt;libes@cme.nist.gov&gt;)
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small></body></html>

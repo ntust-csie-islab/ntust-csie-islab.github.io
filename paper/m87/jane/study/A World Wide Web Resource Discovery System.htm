@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=big5">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>A World Wide Web Resource Discovery System</TITLE>
+</HEAD>
+<BODY>
+<A HREF="http://www.w3.org/Conference/WWW4/Papers/66/">
+<H1>A World Wide Web Resource Discovery System</H1></A>
+Budi Yuwono<BR>
+Savio L. Y. Lam<BR>
+Jerry H. Ying<BR>
+Dik L. Lee<BR>
+<BR>
+<HR>
+<OL TYPE="A">
+<B><LI>Abstract:</B>
+    <OL>
+    <LI>Relevance feedback mechanisms → 在 search result 中，user 將 有 
+興 趣 的 page 做 記 號 ，system 從 這 些 page 中 翠 取 一 些 keyword ，
+feedback 給系統.
+    <LI>Hypertext mapping technique → the links among the hit pages 
+Vector space retrieval model
+    <LI>Query sharing → allow any user to save his query statement on 
+the server's side(reuse it)</LI>
+    <LI>Vector space retrieval model
+    </OL>
+<BR>
+<B><LI>System Architecture:</LI><BR>
+<I>Indexer robot(autonomous WWW browser)</I></B><BR>
+ → 建 立 及 維 護 index database for keyword searching<DIR>
+工作：visits a given WWW site<BR><DIR>
+<DIR>
+retrieves WWW pages<BR>
+extract keywords and hyperlink data<BR>
+insert keywords into an index</DIR>
+</DIR>
+</DIR>
+<BR>
+<B><I>Index Database(Hashing table)<BR></B></I><DIR>
+Table：<DIR>Page-ID table : URL → pageID<BR>
+Keyword-ID table : keyword → keywordID<BR>
+Page modification-date table : pageID → date  
+<I><FONT FACE="新細明體" LANG="ZH-TW" SIZE=2>(用於 periodic maintenance)</I></FONT><BR>
+Hyperlink Table : pageID → 
+Incoming hyperlink，Outcoming hyperlink<BR>
+Inverted index table : keywordID → &lt;pageID,word position&gt;<BR><DIR>
+<I><FONT FACE="新細明體" LANG="ZH-TW" SIZE=2>(used in query)</DIR></I></FONT>
+Forward index table : pageID→keywordID<BR><DIR>
+<I><FONT FACE="新細明體" LANG="ZH-TW" SIZE=2>(利用一組文件表示一個keyword)
+</FONT></DIR>
+</DIR>
+</DIR>
+<BR>
+<B>Periodic maintenance<BR><DIR></B></I>
+Index robot checks the validity of every URL entry<BR>
+Whether the page has been modified<BR>
+</DIR>
+<B><I>Search engine<DIR></B></I><BR>
+利用TFxIDF search→the relevance score of document(I) with respect to query Q<BR>
+<IMG SRC="a world1.gif" WIDTH=274 HEIGHT=56>
+<FONT FACE="Arial" SIZE=3>……</FONT><FONT LANG="ZH-TW" SIZE=3><I>Eequation1</I><BR>
+<I><FONT LANG="ZH-TW" SIZE=3>
+( It's the sum of the weights of the query terms appearing in the document )</FONT><BR>
+</I></FONT>
+<IMG SRC="a world2.gif" WIDTH=147 HEIGHT=35>
+<FONT FACE="Arial" SIZE=3>……</FONT><FONT LANG="ZH-TW" SIZE=3><I>Eequation2</I><BR>
+<DIR>
+<FONT LANG="ZH-TW" SIZE=2>
+TF(i,j) : the term frequency of term(j) in document(i)<BR>
+TF(i,max) : the maximum term frequency of a keyword in document(i)<BR>
+N : the number of documents in the collection<BR>
+DF(j) : the number of documents containing term(j)<BR>
+</FONT></DIR>
+Each component of such a vector corresponds to the weight of term in query or document<BR>
+<I>Point：<BR><DIR></I>
+Equation1 : the term weight is normalized for document length (short documents have equal chances to be retrieved as longer documents)<BR>
+Equation2 : 給 予 在 少 部 分 文 件 中 常 出 現 的 keyword 較 高 的 weight
+</DIR>

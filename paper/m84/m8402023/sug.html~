@@ -1,0 +1,11 @@
+<html>
+<title>給我一點意見吧</title>
+<h1>您的意見,我會珍惜</h1>
+<form method="post" action="/cgi-bin/suggest.pl">
+<p>您的大名:<input name="name" size="20">
+<p>您的 E-mail address:<input name="email" size="30">
+<p>您的意見:<textarea name="suggest" cols=30 rows=4>
+</textarea><p>
+<input type="submit" value="確定送出">
+<input type="reset" value="擦掉重來">
+</form></html> 

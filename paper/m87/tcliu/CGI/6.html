@@ -1,0 +1,96 @@
+<title>CGI Programming OpenFAQ</title>
+<h1>CGI Programming OpenFAQ</h1>
+<h2>How can I keep information between calls to my CGI program?
+</h3>
+<strong>Contributors:</strong><br>
+<ul>
+<li>boutell <a href="mailto:boutell@boutell.com">boutell@boutell.com</a>
+<li>Psychosis <a href="mailto:psychos@aeon.org">psychos@aeon.org</a>
+</ul>
+<hr>
+	One valid approach is to use hidden fields in forms. For example:
+<PRE>
+&lt;INPUT TYPE=hidden NAME=state VALUE="hidden info to be returned with form">
+</PRE>
+By now, virtually all browsers can handle the hidden type, but understand
+that some older browsers may fail to hide the field (and probably
+confuse the user). Note that "hidden" doesn't mean "secret"; the user can 
+always click on "view source."
+<p>
+The ugliness of a "hidden" field appearing on a browser that doesn't
+understand hidden fields can be minimized by setting SIZE=0 for
+that attribute. 
+<h3>Using PATH_INFO</h3>
+Another approach is to take advantage of the PATH_INFO
+environment variable. PATH_INFO contains any additional text
+in the URL that accessed the CGI program after the name of
+the CGI program itself. For instance, if your CGI program's URL is:
+<p>
+http://mysite.com/cgi-bin/mycgi
+<p>
+But you open the following URL instead:
+<p>
+http://mysite.com/cgi-bin/mycgi/Bob/27
+<p>
+The program "mycgi" will still be executed -- and the environment
+variable PATH_INFO will contain the text <code>/Bob/27</code>. You
+can take advantage of this by always outputting URLs that contain
+the state information you are trying to keep from one call to the next.
+<p>
+Keep in mind that URLs are limited to 1024 characters; browsers
+are not required to cope with more than that. If you need more,
+or dislike long URLs, simply keep the name of a temporary file
+in the PATH_INFO section of the URL and store information about
+that session in the temporary file. 
+<h3>Using HTTP "Cookies"</h3>
+"Cookies" are a newer mechanism, originated by Netscape, which allows
+the browser to keep state information supplied to it by the server.
+The next time a request is made for a URL in a particular portion
+of the server, the relevant "cookie" will be sent to the server as 
+part of the request! Cookies are currently implemented by
+Netscape and by Microsoft's Internet Explorer (2.0). By the time
+you read this more browsers may support them. But it is best
+to ensure that your pages are still usable without them.
+<p>
+For example, your CGI program might output the following to set a cookie.
+(Note that the Set-Cookie header must appear in its entirety on one line.)
+<pre>
+Content-type: text/html
+Set-Cookie: cookiename=valueofcookie; expires=Saturday, 28-Feb-96 23:59:59 GMT; path=/cgi-bin/mycgiprogram
+
+&lt;h1&gt;Web page follows.&lt;h1&gt;
+</pre>
+<p>
+This sets a cookie which will always be sent back to your
+server along with every request for a document on your server with 
+a local URL beginning with <code>/cgi-bin/mycgiprogram</code>. The
+cookie will continue to be sent until the expiration time. The
+expiration time should be set using Greenwich Mean Time as shown
+above, but note that the browser may have a poor idea of the local
+time zone. For that reason it is best to set cookies to expire at 
+least 24 hours in the future.
+<p>
+When your CGI program is accessed again by the user, the cookies
+sent by the browser will appear in the HTTP_COOKIE environment
+variable. each cookie will appear as a NAME=VALUE pair; pairs 
+will be separated by a semicolon followed by optional
+white space. 
+<p>
+As with form submissions, unusual characters in cookies
+should be escaped using the %xx notation (% followed
+by two hexadecimal digits specifying the ascii code
+of the character).
+<p>
+See Netscape's <a href="http://www.netscape.com/newsref/std/cookie_spec.html">
+Cookie Specification Page</a> 
+&lt;URL:http://www.netscape.com/newsref/std/cookie_spec.html&gt;
+for more detailed and precise information.
+<h3>Persistent CGIs</h3>
+Another alternative is to eliminate the need to keep information between calls
+using an interface such as <a HREF="http://www.fastcgi.com">FastCGI</a>. Of course,
+you will still need to identify the remote user between cgi accesses. Cookies or
+remote host/site information are very useful here. If you do use
+FastCGI, keep in mind that if you configure more than one cgi process
+they will not share memory.
+<hr>
+<a href="http://www.boutell.com/openfaq/cgi/5.html">Previous</a> | <a href="http://www.boutell.com/openfaq/cgi/7.html">Next</a> | <a href="http://www.boutell.com/openfaq/cgi">Table of Contents</a>

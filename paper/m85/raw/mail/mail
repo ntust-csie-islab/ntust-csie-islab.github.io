@@ -1,0 +1,61 @@
+<title>敬請批評指教</title>
+<!-- 指定資料處理程式為 /cgi-bin/suggest，傳遞方式為 "Get" -->
+<form action="/staff/m8502039/cgi-bin/guest" method="get">
+
+<center>
+<!-- 顯示字型由小變，再由大變小 -->
+<font size=+1>= 敬</font>
+<font size=+3>請</font>
+<font size=+5>批</font>
+<font size=+5>評</font>
+<font size=+3>指</font>
+<fontsize=+1>教 =</font>
+
+<!-select type=text name="user" value="raw"-!>
+<!-option-!>
+<!-/select-!>
+<!-- 宣告表格開始，厚度為3, 間隔為10， 寬度為5。 -->
+<table border=3 cellpadding=10 cellspacing=5>
+<tr><td>
+<!-- 產生一個18 bytes的文字填寫區 -->
+* 請問您尊姓大名：
+<input type="text" name="name" size=18><br>
+
+<!-- 單一圈選職業欄，內定值為 "學生" -->
+* 請問您的職業是：　<br>
+<input type="radio" name="job_type" value="教師">教師
+<input type="radio" name="job_type" value="學生" checked>學生
+<input type="radio" name="job_type" value="軟體工程師">軟體工程師
+<input type="radio" name="job_type" value="公務員">公務員
+<input type="radio" name="job_type" value="自由業">自由業<br>
+<input type="radio" name="job_type" value="其它">其它:
+<!-- 如果職業欄選擇其它，則提供一個18 bytes的文字填寫區 -->
+<input type="text" name="job" size=18><br>
+
+* 您的電子信箱呢？　
+<!-- 產生一個18 bytes的文字填寫區，內定值為"@mail.ntit.edu.tw" -->
+<input type="text" name="email" size=28 value="@mail.ntit.edu.tw"><p>
+
+* 您覺得這裡提供的資料做的如何？<br>
+<!-- 單一圈選感覺欄，內定值為"還可以" -->
+<input type="radio" name="judge" value="棒呆了">棒呆了
+<input type="radio" name="judge" value="不錯啊">不錯啊
+<input type="radio" name="judge" value="還可以" checked>還可以
+<input type="radio" name="judge" value="有待加強">有待加強
+<input type="radio" name="judge" value="遜斃了">遜斃了<p>
+
+寫下您的寶貴意見如何：<br>
+<!-- 產生一個長60 bytes，寬5 bytes的文字區 -->
+<textarea name="comment" rows=5 cols=50></textarea><p>
+
+<!-- 交由CGI程式處理 -->
+<input type="submit" value="送出信件">　　
+<!-- 清除所填資料 -->
+<input type="reset" value="清除內容">
+
+</form>
+</center>
+</td>
+</tr>
+<!-- 結束表格 -->
+</table>

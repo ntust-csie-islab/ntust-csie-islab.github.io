@@ -1,0 +1,235 @@
+<title>CGI Programming OpenFAQ</title>
+<h1>CGI Programming OpenFAQ</h1>
+<h2>File locking: what if two copies of my program run at the same time?
+</h3>
+<strong>Contributors:</strong><br>
+<ul>
+<li>Stas <a href="mailto:sbekman@hotmail.com">sbekman@hotmail.com</a>
+<li>boutell <a href="mailto:boutell@boutell.com">boutell@boutell.com</a>
+<li>Stas <a href="mailto:sbekman@hotmail.com">sbekman@hotmail.com</a>
+</ul>
+<hr>
+		<A NAME="Table of contents"></A>
+<UL>
+
+<LI><A HREF="#1. FileLocking Issues. WWW Guestbook Case.">1. FileLocking
+Issues. WWW Guestbook Case.</A></LI>
+
+<LI><A HREF="#1.1 Locking with flock and modifying the file by opening it onl">1.1
+Locking with flock and modifying the file by opening it only once</A></LI>
+
+<LI><A HREF="#1.2 File Locking when flock(3) or lockf(3) is unavailable">1.2
+File Locking when flock(3) or lockf(3) is unavailable</A></LI>
+
+<LI><A HREF="#Summary">1</A><A HREF="#File Locking Issues : Summary">.3
+File Locking Issues : Summary</A></LI>
+</UL>
+
+<H3><A NAME="1. FileLocking Issues. WWW Guestbook Case."></A>1. File Locking:
+the WWW Guestbook Example</H2>
+
+<P>File locking is a must when you program a cgi script
+in any language. Don't cry if your database or some file is corrupted or 
+broken and you didn't think about file locking! Before you go any father learn
+how to protect yourself from these annoying disasters. </P>
+
+<P>How it can happen? Very simple: let's say  you wrote a guestbook, which works by
+reading the file in modifying it and writing it back. Now imagine that
+TWO users were delighted to submit their appreciation of your site using your 
+guestbook, and it happens that they press the submit button at the same time. As a
+result, 2 occurences of your guestbook are starting to run. Both read the
+original file, modify it, and write it back. What happens next? There are
+several possibilities:</P>
+
+<OL>
+<LI>The first copy of the script finished writing before the second started
+to. Result: one of the users will not find her submitted entry, because
+the second user (the second copy of the guestbook) overwrote the changes
+made by the first one. Bad news!</LI>
+
+<LI>Both copies tried to write at once (not completely true since only
+one process can use a CPU in any given time, but they take turns by getting
+a very short CPU time slice; if the file to write is a very big
+one, 1 time slice of CPU&nbsp;will not be sufficient to accomplish the
+writing). Result - You get a corrupted file!</LI>
+</OL>
+
+<P>There are few other scenarios to describe, but this one is the most
+important. So how do you solve it? Easy (if you have a flock(3) working).
+Use flock (100% clean) or emulate it(not 100% clean). Lets rewrite the
+guestbook:</P>
+
+1. Flock the file<br>
+<b> &nbsp;&nbsp;&nbsp;&nbsp; Critical section start </b><br>
+2. Read the file into the memory<br>
+3. Modify it<br>
+4. Write it to the disk<br>
+ <b>&nbsp;&nbsp;&nbsp;&nbsp; Critical section end</b><br>
+5. Unlock (just close the file; this automatically
+unlocks the file as soon as it is safe to do so)
+<p>
+The <strong>Critical Section></strong> is the section of the code where you 
+don't want other programs (processes) to use your resource 
+(the guestbook file) while you are modifying it.
+<p>
+What does the other process do if you lock the file? It 
+will wait patiently until you release it! So it's 
+important to make all the critical sections as short
+as possible (imagine a situation where 100 users submit to your guestbook
+every second). So, do all the input parsing and guestbook new entry
+preparing before you open the guestbook file. Once you open and lock
+it, just locate the place you want to write to, write there
+and close it!</P>
+<h3>Two Ways to Lock Files</h3>
+<P>Here are two ways to lock files: first the preferred
+method, using the <code>flock</code> function, and second
+the alternative method using 
+external file locking which is not always effective.
+<P><A HREF="#Table of contents">[Back to the TOC]</A></P>
+<P>
+<HR SIZE=4 WIDTH="50%"></P>
+<H4><A NAME="1.1 Locking with flock and modifying the file by opening it onl"></A>1.1
+Locking with <code>flock</code></H4>
+
+<P>Notes: </P>
+
+This Perl solution uses the flock function which must be available on your system.
+Check whether it actually works for you before you trust it on
+a particular operating system. Flock is reported not to work on NFS 
+(you need a flock daemon for that, and it's bad on some systems such
+as AIX).
+
+<PRE>  my $file = &quot;filename&quot;;       # specify the filename to open
+  open FH, &quot;+&lt;$file&quot; or die &quot;Cannot open $file: $!&quot;;
+  flock FH, 2;                 # wait for exclusive lock
+  ## from here to the close FH, we have critical region
+  ## be sure to minimize this time
+
+  ## get current content
+  seek FH, 0, 0;               # rewind to beginning
+  my @content = &lt;FH&gt;;          # get current content
+
+  &lt;Change your @content lines here&gt;</PRE>
+
+<PRE>  ## write new list, and release file
+  seek FH, 0, 0;               # rewind again
+  truncate $file, 0;           # empty the file
+  print FH @content;           # print the new content
+
+  ## release file
+  close FH;
+  # Note that close frees flock as well !
+</pre>
+
+<p>If you need to append, do this:
+
+<PRE>  open FH, &quot;+&lt;$file&quot; or die &quot;Cannot open $file: $!&quot;;
+  flock FH, 2;                 # wait for exclusive lock
+
+  seek FH, 0, 2;                # end of file
+  print FH &quot;Anything you want to append&quot;;
+  close FH;</PRE>
+
+<P><A HREF="#Table of contents">[Back to the TOC]</A></P>
+
+<H4><A NAME="1.2 File Locking when flock(3) or lockf(3) is unavailable"></A>1.2
+File Locking when <code>flock(3)</code> or <code>lockf(3)</code> is unavailable</H4>
+
+<P>If you have the flock(3) function working, use the method described in <A HREF="#1.1 Locking with flock and modifying the file by opening it onl">Locking
+with <code>flock</code></A>.</P>
+
+<P>If not, you need to create a lockfile when you enter a critical section,
+and remove it when you leave it. You also have to handle the case where your
+cgi is getting killed in the middle of the critical section, preventing
+the lockfile from being removed. So, another instance of the program
+should be able to do the cleanup. Here is the code, which is
+far from perfect since there is actually no guarantee that the CPU will
+not let another copy of the program run during the check for the lock file;
+however, making this test as fast as possible is better than having no locking
+at all.
+<A HREF="#1.1 Locking with flock and modifying the file by opening it onl">flock(3)
+</A> is a better solution.</P>
+
+<PRE>sub get_file_lock
+  {
+  local ($lock_file) = @_;
+  local ($timeout);
+
+  $timeout=20;    # in seconds
+  while (-e $lock_file &amp;&amp; (stat($lock_file))[9]+$timeout&gt;time)
+  { sleep(1);}
+ 
+  open(LOCK_FILE, &quot;&gt;$lock_file&quot;) || die &quot;Can't open $lock_file:$!);
+}
+
+sub release_file_lock
+  {
+  local ($lock_file) = @_;
+
+  close(LOCK_FILE);
+  unlink($lock_file);
+  }</PRE>
+
+<P>So how do you use it? Like flock(), but you need to specify a lockfile
+name to the function. <BR>
+Important: it should be a static name like </code>/tmp/myapplication.lock</code>. If you
+use something like <code>$$.lock</code> ($$ is the process number), you fail to accomplish
+your goal because two copies of the program won't look for the same lock file! 
+
+<P>Why is this code not perfect? In the test and write operation. There is a chance
+(you decide if you can afford it) that 2 programs will try to get the lock
+file at the time (lets name them A and B) . Now imagine this:</P>
+
+A executes the code and arrives to the line:
+<p>
+<PRE>while (-e $lock_file) {sleep 1);
+open(LOCK_FILE, &quot;&gt;$lock_file&quot;) || die &quot;Can't open $lock_file:$!);</PRE>
+
+<p>A tests for the lock ( <code>-e $lock_file</code> ), and finds that there is none
+(or it has to kick the dead one). The moment A is finished with the test and knows
+that the way is clear, it is interrupted since its CPU time slice is over!
+<p>
+Now B gets the CPU do the same thing: checks for the lock file, and doesn't
+find one since A didn't have a chance to create one yet. So B writes the
+lockfile, believing it has a lock. And now B is interrupted.
+
+<p>A wakes up. The first thing it does is overwrite
+B's lockfile (it already tested that there is no lockfile, a moment
+before it went to sleep) and both programs happily overwrite each
+other changes, probably ruining something on the way. To make things worse,
+B finishes much earlier than A since it had a short task to do, so it deletes
+the lockfile. And A is continuing to do a long task without any lockfile!
+Now process C enters to run, doesn't find the lockfile, creates one and keeps
+ruining your files. Now A deletes the lockfile (it thinks it owns the lock,
+remember?) and on and on. Hope you understand the scenario!
+<p>
+This is why it is definitely better to use <code>flock</code>
+if at all possible.
+
+<P><A HREF="#Table of contents">[Back to the TOC]</A></P>
+
+<P>
+<H4>1.3 <A NAME="File Locking Issues : Summary"></A>File Locking Issues
+: Summary</H4>
+
+<P>1. Use flock when more then one program can write on the same time and
+it has to read/write from the same file.</P>
+
+<P>2. Remember that if you use external locking , the program can be stopped
+in the middle of critical section (User presses a Stop button ). The lockfile
+isn't getting deleted, so you have to handle that case as well (in the case
+of flock it's not a problem since when file is getting closed it's geitting
+unlocked as well).</P>
+
+<p>3.&nbsp;Be careful when you use scripts someone else wrote. They can
+be badly written (in the case of file locking and other cases as well). The
+script which is reported to work by many people can fail for you if it's not
+properly written. So this is a second important issue to check when using 
+someone else's code, almost as important as taint checking (some
+poorly written scripts pass your input to the Unix command line, allowing
+users to trick the shell into deleting your files and so on).
+
+	
+	
+<hr>
+<a href="http://www.boutell.com/openfaq/cgi/24.html">Previous</a> | <a href="http://www.boutell.com/openfaq/cgi/35.html">Next</a> | <a href="http://www.boutell.com/openfaq/cgi">Table of Contents</a>

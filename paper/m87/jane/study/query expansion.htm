@@ -1,0 +1,130 @@
+<HTML>
+<HEAD>
+<TITLE>A Multi-Engine Search Tool with Clustering</TITLE>
+</HEAD>
+<BODY>
+<UL>
+<LI><A HREF="http://ails6.csie.ntu.tw/~chia/pub/www6/PAPER53.html">
+<H1>A Multi-Engine Search Tool with Clustering</LI></A>
+<LI>Integrating query expansion and conceptual relevance feedback for personalized Web information rettrival
+</UL></H1>
+<DIR>
+Chia-Hui Chang and Ching-Chi Hsu<BR>
+Department of Computer Science and Information Engineering<BR>
+National Taiwan University, Taipei 106,Taiwan<BR>
+Reference</P>
+MultiSearch and clustering for Digital Library<BR>
+陳志明;國立台灣大學 資訊工程研究所 碩士論文<BR>
+<HR>
+<OL TYPE="A">
+<LI><B>Abstract</B>
+<OL>
+<LI>None of the search services is broad enough to cover the WWW
+ ( 重 複 性 低 )</LI><BR>
+→various search engines<BR>
+另 外，也 有 較 高 的 可 靠 性 .<BR>
+<LI>Keyword based querying : 
+<UL>
+<LI>Inherent ambiguity of words
+<LI>Difference interpretation for a query
+<LI>The information given by the user is too few to give good estimation
+，故 User 在 查 詢 時，很 多 未 指 明 資 訊 可 能 隱 藏 在 search result，
+造 成 符 合 query 的 資 訊 過 多 且 雜 亂 <BR></UL>
+<BR>Category of the database : 採 用 narrow - down 的 方 式 ，強 迫 user 
+在 許 多 分 類 不 清 的 範 圍 中 做 選 擇，造 成 user 使 用 不 便 .<BR>
+→ query expansion &amp; relevance feedback<BR></OL>
+They integrated existing <B><I>search engines</B></I> and techniques of 
+<B><I>query expansion</B></I> and <B><I>relevance feedback</B></I>.</P>
+<B><LI>Step:</B>
+<DIR><I>&lt; the system receives a user's query as a list of keywords</I> &gt;<BR>
+<I>&lt; redirect the query to other search engine ,將 search results 做 一 整
+合</I>&gt;</DIR>
+<IMG SRC="query1.gif" WIDTH=524 HEIGHT=392>
+<OL>
+<LI>蒐 集 object-attribute data matrix.
+<LI>計 算 文 件 間 的 相 似 性 ，並 分 類<BR>
+Extract related words as reference.
+<LI>Display the clustering results to the user and get the user feedback.
+<LI>Refine the query with user feedback.
+<LI>Repeat step 1-4</LI></OL>
+<BR>
+<LI><B>System Architecture</B>
+<UL>
+<LI><I>Multi-Engine Process Module </I>
+→ get keywords to represent the documents (vector model )<BR>
+<OL>
+<LI>MultiSearch module ( multithread ) ─ 負 責 與 search engine 溝 通
+<OL TYPE="a">
+<LI>將 queries 同 時 送 到 several search engines，以 加 快 執 行 速 度.
+<LI>Fetch URLs and information.
+<LI>Signal Multifetch module.
+</OL>
+<LI>MultiFetch module ( multithread ) ─ 與 整 個 網 路 溝 通
+<OL TYPE="a">
+<LI>Fetch the real document.
+<LI>一旦download N real documents ( the number of thread )，signal 
+HtmlParser Module.( 讓 USER 不 要 等 太 久 )</LI></OL>
+</OL>
+** MultiSearch & MultiFetch 同 時 並 行，以 節 省 回 應 時 間. 
+<BR><BR>
+<LI><I>HtmlParser Module </I>( token analysis of documents )
+<OL TYPE="a">
+<LI>將 搜 尋 結  果 的 文 件，以 其 <I>titles, headings, list items, 
+italic, bold words</I> 為 document's vector!!<BR>
+另 外<I>hyperlinks</I> 亦 是 documents 重 要 的 分 類 依 據!!! 其 原 因 為 :<BR>
+<UL>
+<LI>相 關 內 容 的 文 件 ，通 常 都 透 過 hyperlink串 連 起 來. 
+<LI>同 一IP address (server)上 的 文 件 ，有 時 會 有 相 同 的 topic.</UL>
+<LI>Each document is represented as a t-dimensional vector.
+Dimension : the number of attributes permissible.
+Weight : the importance of the term in the document.
+</OL>
+<LI><I>Clustering Module </I>( Resemblance computation )
+此 時 的 文 件 皆 用 a vector of attributes or terms 來 表 示.<BR>
+<IMG SRC="query2.gif" WIDTH=449 HEIGHT=64><BR>
+TF(i,t) : the relative frequency of term of t in cluster c(i).<BR>
+DF(t,q) : the document frequency of term t in the whole collection of query q.<BR>
+QF(t) : the frequency of term t appeared in queries so far.<BR>
+<UL>
+<LI>Point : 給 予 <I>常 出 現</I> 在 query domain 中 的 terms 及<I>unique to other 
+queries</I>的terms 較 高 的 weight!! ( dynamically re-weight the terms )
+<LI>作 用 : 太 多 的 keywords 無 法 對 這 些 相 關 文 件 做 一 清 楚 的 
+分 類，故 使 用 Resemblance computing 以 在 分 類 文 件 時 做 一 指 標 .
+<LI>Disadvantage:
+<OL>
+<LI>The weighting of terms are not always well-assigned.
+<LI>Each document isn't always well-coupled.
+<LI>它 只 根 據 文 字 上 的 相 似 性 來 分 類 ，而 忽 略 了 語 意 !!
+</OL></UL>
+<BR>
+<LI><I>Classification Module</I>
+<UL>
+<LI>What is "classification"?
+好 比 書 架 上 已 有 各 類 書 籍 的 標 籤，而 我 們 新 收 集 到 的 書 只 
+需 至 入 某 一 類 即 可 .</P>
+<LI>Step:
+<P>&lt;插圖&gt;</P>
+<OL TYPE="a">
+<LI>選 擇 Yahoo 為 original category tree，收 集 其 documents 來 建 立 a 
+table of term and weight.
+<LI>將 new document 與 each category 計 算 其 similarity coefficient，將 
+此 document 放 入 最 相 似 的 category.</OL>
+<P>&lt;插入公式&gt;</P>
+<LI>Point : provide the human-classified categories.
+<LI>User Interface and Feedback
+查詢結束後系統會顯示 : the clustering results<BR><DIR>
+the attributes of documents (terms)<BR></DIR>
+<OL>
+<LI>user 可 以 將 感 興 趣 的 topics，feedback 回 去 給 系 統，改 變 the 
+weight of terms and the query.
+<LI>藉 由 這 個 interface，user 不 必 瀏 覽 所 有 文 件 的 內 容，即 可 
+得 知 其 文 件 的 topics.</OL>
+<LI>Query Profile
+儲 存 the information user have queried before，日 後 user 重 新 查 詢 時，
+則 不 必 將 一 連 串 的 查 詢 步 驟 重 做 .
+</UL></UL>
+<LI><B>Problem</B>
+<UL>
+<LI>整合的必要性???
+-----------可彈性地增減所欲使用的search engines</UL>
+</OL>

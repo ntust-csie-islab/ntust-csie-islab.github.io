@@ -1,0 +1,192 @@
+.de DS
+.nf
+.in +.5i
+..
+.de DE
+.fi
+.in -.5i
+..
+.TH GIFTRANS l local
+.SH NAME
+.PP
+giftrans \- transform gif from gif87 to gif89, making one color transparent
+.SH SYNOPSIS
+.PP
+.B giftrans
+.RI [ options ]
+.BR [ -o
+.IB filename ]
+.B filename
+.SH DESCRIPTION
+.PP
+.B giftrans
+converts any GIF file into a GIF89a.
+Allows for setting the transparent or background color, changing colors,
+adding or removing comments. Also code to analyze GIF contents.
+.SH OPTIONS
+.IP -h
+Print short help on stdout.
+.IP -t
+Specify the transparent color
+.IP -T
+Index of the transparent color is the background color index
+.IP -B
+Specify the transparent color's new value
+.IP -b
+Specify the background color
+.IP -g
+Change a color in the global color table
+.IP -c
+Add a comment
+.IP -C
+Remove old comment
+.IP -l
+Only list the color table
+.IP -L
+Verbose output of GIFs contents
+.IP -V
+Verbose output while converting
+.IP -o
+Redirect stdout to a file
+.IP -e
+Redirect stderr to a file
+.PP
+Colors may be specified as index, as rgb.txt entry or in the #rrggbb form.
+.SH EXAMPLE
+.PP
+To convert the white background of a gif file to transparent, use
+.sp
+.DS
+giftrans -t #ffffff file.gif > transparentfile.gif
+.DE
+.SH BUGS
+.PP
+This program has been tested on a HP9000/720 with HP-UX A.08.07
+In this environment, neither lint -u nor gcc -Wall produce any messages.
+If you encounter any errors or need to make any changes to port it
+to another platform, please contact me.
+.PP
+Known bugs:
+.IP
+-B flag won't work if there's an Extension between the Global Color
+Table and the Image Descriptor (or Graphic Control Extension). If -V
+has been specified, a Warning Message will be displayed.
+Will be fixed in 2.0
+.IP
+Always outputs GIF89a. Shouldn't do this if version is newer.
+.IP
+-D option may output changed data instead of original data, use
+with caution, best only with then -L option.
+.SH COPYRIGHT
+.PP
+Copyright (c) 24.2.94 by Andreas Ley <ley@rz.uni-karlsruhe.de>
+.PP
+Permission to use, copy, modify, and distribute this software for any
+purpose and without fee is hereby granted, provided that the above
+copyright notice appears in all copies. This software is provided "as is"
+and without any express or implied warranties.
+.SH VERSION HISTORY
+.IP "Version 1.11 - 21.7.94"
+Moved Plain Text Extension to the Extensions section where it belongs
+.br
+Accept Unknown Extension Labels
+.br
+Incorporated MS-DOS port by enzo@hk.net (Enzo Michelangeli)
+.br
+Added -o and -e options to redirect stdout and stderr
+.br
+Added -D debug flag
+.IP "Version 1.10.2 - 22.6.94"
+Support for -DRGBTXT flag
+.IP "Version 1.10.1 - 21.6.94"
+Different rgb.txt file FreeBSD/386BSD
+.IP "Version 1.10 - 19.6.94"
+Added option to change a color in the global color table
+.br
+Added option to change the color for the transparent color index
+.IP "Version 1.9.1 - 7.6.94"
+Different rgb.txt files for X11 and Open Windows
+.IP "Version 1.9 - 1.6.94"
+Fixed a bug which caused color names to be rejected.
+.IP "Version 1.8 - 30.5.94"
+Accept #rrggbb style arguments.
+.br
+Do nothing if rgb-color not found in GIF.
+.IP "Version 1.7 - 16.5.94"
+Added -l option to only list the color table.
+.br
+Added -L option for verbose output without creating a gif.
+Added -b option to change the background color index.
+.br
+Display all matching color names for color table entries.
+.br
+Fixed a bug which caused bad color names if rgb.txt starts with
+whitespace.
+.br
+Doesn't use strdup anymore.
+.br
+Fixed =& bug on dec machines.
+.IP "Version 1.6 - 5.4.94"
+Added color names recognition.
+.IP "Version 1.5 - 15.3.94"
+Added basic verbose output to analyze GIFs.
+.IP "Version 1.4 - 8.3.94"
+Fixed off-by-one bug in Local Color table code.
+.br
+Added option to add or remove a comment.
+.br
+Transparency is no longer the default.
+.PP
+This man file made 9.8 from documentation in the program source code
+by Kai Nordlund (knordlun@fltxa.helsinki.fi).
+.SH THANKS
+.PP
+Thanx for bug reports, ideas and fixes to
+.IP
+patricka@cs.kun.nl (Patrick Atoon)
+.IP
+wes@msc.edu (Wes Barris)
+.IP
+pmfitzge@ingr.com (Patrick M. Fitzgerald)
+.IP
+hoesel@chem.rug.nl (frans van hoesel)
+.IP
+boardman@jerry.sal.wisc.edu (Dan Boardman)
+.IP
+krweiss@chip.ucdavis.edu (Ken Weiss)
+.IP
+chuck@trantor.harris-atd.com (Chuck Musciano)
+.IP
+heycke@camis.stanford.edu (Torsten Heycke)
+.IP
+claw@spacsun.rice.edu (Colin Law)
+.IP
+jwalker@eos.ncsu.edu (Joseph C. Walker)
+.IP
+Bjorn.Borud@alkymi.unit.no (Bjorn Borud)
+.IP
+Christopher.Vance@adfa.oz.au (CJS Vance)
+.IP
+pederl@norway.hp.com (Peder Langlo)
+.IP
+I.Rutson@bradford.ac.uk (Ian Rutson)
+.IP
+Nicolas.Pioch@enst.fr (Nicolas Pioch)
+.IP
+john@charles.CS.UNLV.EDU (John Kilburg)
+.IP
+enzo@hk.net (Enzo Michelangeli)
+.SH DISTRIBUTION
+.IP "Original distribution site is"
+ftp://ftp.rz.uni-karlsruhe.de/pub/net/www/tools/giftrans.c
+.IP "To compile for MS-DOS, you need getopt:"
+ftp://ftp.rz.uni-karlsruhe.de/pub/net/www/tools/getopt.c
+.IP "MS-DOS executable can be found at"
+ftp://ftp.rz.uni-karlsruhe.de/pub/net/www/tools/giftrans.exe
+.IP "A template rgb.txt for use with the MS-DOS version can be found at"
+ftp://ftp.rz.uni-karlsruhe.de/pub/net/www/tools/rgb.txt
+.IP "Additional info can be found on"
+http://melmac.corp.harris.com/transparent_images.html
+.SH SEE ALSO
+.PP
+xv(1), giftoppm(1), ppmtogif(1)

@@ -1,0 +1,67 @@
+<title>CGI Programming OpenFAQ</title>
+<h1>CGI Programming OpenFAQ</h1>
+<h2>Can I safely allow my users to run their own CGI scripts?
+</h3>
+<strong>Contributors:</strong><br>
+<ul>
+<li>boutell <a href="mailto:boutell@boutell.com">boutell@boutell.com</a>
+<li>boutell <a href="mailto:boutell@boutell.com">boutell@boutell.com</a>
+<li>keith_gardner <a href="mailto:cabernet@mindspring.com">cabernet@mindspring.com</a>
+</ul>
+<hr>
+	CGI scripts are a very powerful facility,
+with some risks attached to them. In a Unix system, if CGI scripts run 
+with the same user ID as the web server itself, poorly or
+maliciously written scripts can damage files or open security holes.
+<P>
+There are two important steps that should be taken to correct this:
+<P>
+1. NEVER run your web server as root; make sure it
+is configured to change to another user ID at startup time. (This is
+standard practice in all web server distributions, but 
+administrators have been known to change it back to running
+as root anyway. Don't.)
+<P>
+2. Consider using a wrapper such as 
+<A HREF="http://www.cs.tu-berlin.de/www/suicide.c">
+<URL:http://www.cs.tu-berlin.de/www/suicide.c></A>,
+<a HREF="ftp://ftp.rz.uni-karlsruhe.de/pub/net/www/tools/cgi-src/">
+user.c</a>
+<URL:ftp://ftp.rz.uni-karlsruhe.de/pub/net/www/tools/cgi-src/> ,
+or <a HREF="http://www.umr.edu/~cgiwrap">CGIwrap</a>
+<URL:http://www.umr.edu/~cgiwrap> or the
+module for this purpose that comes with the Apache server
+to ensure that each CGI script runs with the permissions and user ID of the
+user responsible for it. 
+<P>
+3. Consider routinely scheduled back-ups if data preservation
+is important to you.
+<P>
+4. Consider routinely scheduled monitoring or automatic
+monitoring of service and data if it is important that
+the data and service be available at all time.
+<P>
+5. Consider intrusion and destructive behavior detection
+systems, remote logging service for identification, and
+a good lawyer if web security is important to you or you
+have the resources to spend on enforcing security other
+than dealing with the potential headaches.
+<P>
+6. Consider hiring security experts or at least plan to test
+internally your web applications, test your web server, and
+test other network services for even better security.
+<P>
+7. Consider security issues in your requirements analysis,
+specification, design, implementation, and testing phases
+when developing web applications.
+<P>
+If proper precautions are taken, user CGI scripts can be 
+reasonably safe. As always, dumb mistakes that open security
+holes for outsiders are more likely to be the cause of
+problems than actual malice on the part of your own users.
+
+	
+	
+	
+<hr>
+<a href="http://www.boutell.com/openfaq/cgi/5.html">Next</a> | <a href="http://www.boutell.com/openfaq/cgi">Table of Contents</a>

@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head><title>CGI Programming FAQ: HTTP Headers and NPH Scripts
+</title></head>
+<body bgcolor="#ffffff" vlink="#608060" link="#40a040" text="#000000"><h2>Section 2: HTTP Headers and NPH Scripts
+</h2><pre>
+This is a fairly technical section dealing with HTTP, the protocol of
+the Web. It also includes NPH, the mechanism by which CGI programs can
+return HTTP header information directly to the Client.
+
+</pre><h3><a name="1">2.1: What is HTTP (HyperText Transfer Protocol)?</a></h3><pre>
+HTTP is the protocol of the Web, by which Servers and Clients (typically
+browsers) communicate.  An HTTP transaction comprises a Request sent by
+the Client to the Server, and a Response returned from the Server to
+the Client.
+Every HTTP request and response includes a message header, describing
+the message.   These are processed by the HTTPD, and may often be
+mostly ignored by CGI applications (but see below).
+A message body may also be included:
+  1) A HEAD or GET request sends only a header.   Any form data is encoded 
+     in an HTTP_QUERY_STRING header field, which is available to the CGI
+     program as an environment variable QUERY_STRING.
+  2) A POST request sends both header and body.   The body typically
+     comprises data entered by a user in a form.
+  3) A HEAD request does not expect a body in the response.
+  4) A GET or POST request will accept a response with or without a body,
+     according to the header.   The body of a response is typically an
+     HTML document.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="2">2.2: What HTTP request headers can I use?</a></h3><pre>
+Most HTTP request headers are passed to the CGI script as environment
+variables.   Some are guaranteed by the CGI spec.   Others are server,
+browser and/or application dependent.
+
+To see what _your_ browser and server are telling each other, just use
+a trivial little CGI script to print out the environment.   In Unix:
+	#!/bin/sh
+	echo "Content-type: text/plain"
+	echo
+	set
+
+(Just call it "env.cgi" or something, and put it where your server
+will execute it.   Then point your browser at
+<a href="http://your.server/path/to/env.cgi">http://your.server/path/to/env.cgi</a> ).
+
+This enables you to see at-a-glance what useful server variables are set.
+Note that dumping the environment like this within a more complex
+script can be a useful debugging technique.
+
+For details, see the CGI Environment Variables specification at
+<a href="http://hoohoo.ncsa.uiuc.edu/cgi/env.html">http://hoohoo.ncsa.uiuc.edu/cgi/env.html</a>
+(which also includes a version of the above script - somewhat more
+nicely formatted - online).
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="3">2.3: What Environment variables are available to my application?</a></h3><pre>
+See previous question.   Those you can rely on are documented in NCSA's
+pages; those associated with your particular server and browser can
+be determined using the above script.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="4">2.4: What HTTP response headers do I need to know about?</a></h3><pre>
+Unless you are using NPH, the HTTPD will insert necessary response
+headers on your behalf, always provided it is configured to do so.
+
+However, it is conventional for servers to insert the Content-Type header
+based on a page's filename, and CGI scripts cannot rely on this.  Hence
+the usual advice is to print an explicit Content-Type header.
+At least one of "Content-Type", "Status" and "Location" is almost
+always required.
+
+A few other headers you may wish to use explicitly are:
+Status		(to set HTTP return code explicitly.   Caveats:
+		   (1) Behaviour is undefined if it conflicts with
+		   another header. (2) This is NOT an HTTP header.)
+Location	(to redirect the user to another URI, which may or may
+		not be on your own server)
+Set-cookie	(Netscape/Nonstandard) Set a cookie
+Refresh		(Netscape/Nonstandard) Clientpull
+
+You can also use general MIME headers: eg "Keywords" for the benefit of
+indexers (although in this instance some major search robots have
+regrettably introduced a new protocol to do the same thing).
+
+For a detailed reference, see RFC1945 (HTTP/1.0) or RFC2068 (HTTP/1.1).
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="5">2.5: What is NPH?</a></h3><pre>
+NPH = No Parsed Headers.   The script undertakes to print the entire
+HTTP response including all necessary header fields.   The HTTPD
+is thereby instructed not to parse the headers (as it would normally do)
+nor add any which are missing.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="6">2.6: Must/should/can I write nph scripts?</a></h3><pre>
+Generally, no.   It is usually better to save yourself hassle by letting
+the HTTPD produce the headers for you.
+
+If you are going to use NPH, be sure to read and understand the HTTP spec at
+<a href="http://www.w3.org/pub/WWW/Protocols/">http://www.w3.org/pub/WWW/Protocols/</a>
+
+Your headers should be complete and accurate, because you're instructing
+the HTTPD not to correct them or insert what's missing.
+
+Possible circumstances where the use of NPH is appropriate are:
+  * When your headers are sufficiently unusal that they might be
+    differently parsed by different HTTPDs (eg combining "Location:"
+    with a "Status:" other than 302).
+  * When returning output over a period of time (eg displaying
+    unbuffered results of a slow operation in 'real' time).
+See RFC1945 (HTTP/1.0) or RFC2068 (HTTP/1.1) for detail
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="7">2.7: Do I have to call it nph-*</a></h3><pre>
+According to NCSA's reference pages, this is the standard for telling
+the server that your script is NPH, so this should be a fully portable
+convention.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="8">2.8: What is the difference between GET and POST?</a></h3><pre>
+Firstly, the the HTTP protocol specifies differing usages for the two
+methods.   GET requests should always be idempotent on the server.
+This means that whereas one GET request might (rarely) change some state
+on the Server, two or more identical requests will have no further effect.
+
+This is a theoretical point which is also good advice in practice.
+If a user hits "reload" on his/her browser, an identical request will be
+sent to the server, potentially resulting in two identical database or
+guestbook entries, counter increments, etc.   Browsers may reload a
+GET URL automatically, particularly if cacheing is disabled (as is usually
+the case with CGI output), but will typically prompt the user before
+re-submitting a POST request.   This means you're far less likely to get
+inadvertently-repeated entries from POST.
+
+GET is (in theory) the preferred method for idempotent operations, such
+as querying a database, though it matters little if you're using a form.
+There is a further practical constraint that many systems have builtin
+limits to the length of a GET request they can handle: when the total size
+of a request (URL+params) approaches or exceeds 1Kb, you are well-advised
+to use POST in any case.
+
+In terms of mechanics, they differ in how parameters are passed to the
+CGI script.   In the case of a POST request, form data is passed on
+STDIN, so the script should read from there (the number of bytes to be
+read is given by the Content-length header).   In the case of GET, the
+data is passed in the environment variable QUERY_STRING.   The content-type
+(application/x-www-form-urlencoded) is identical for GET and POST requests.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small></body></html>

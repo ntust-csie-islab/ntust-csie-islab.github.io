@@ -1,0 +1,174 @@
+--13:21:56--  http://www.boutell.com:80/openfaq/cgi/
+           => `index.html'
+Connecting to proxy.ntust.edu.tw:3128... connected!
+Proxy request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+
+    0K -> ..
+
+13:21:56 (2.35 MB/s) - `index.html' saved [2464]
+
+Loading robots.txt; please ignore errors.
+--13:21:57--  http://www.boutell.com:80/robots.txt
+           => `robots.txt'
+Connecting to proxy.ntust.edu.tw:3128... connected!
+Proxy request sent, awaiting response... 200 OK
+Length: 395 [text/plain]
+
+    0K ->                                                        [100%]
+
+13:21:58 (385.74 KB/s) - `robots.txt' saved [395/395]
+
+--13:21:58--  http://www.boutell.com:80/openfaq/cgi/apply.cgi
+           => `apply.cgi'
+Connecting to proxy.ntust.edu.tw:3128... connected!
+Proxy request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+
+    0K -> .
+
+13:22:03 (1.46 KB/s) - `apply.cgi' saved [1648]
+
+--13:22:03--  http://www.boutell.com:80/openfaq/cgi/4.html
+           => `4.html'
+Connecting to proxy.ntust.edu.tw:3128... connected!
+Proxy request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+
+    0K -> ..
+
+13:22:04 (2.55 KB/s) - `4.html' saved [2833]
+
+--13:22:04--  http://www.boutell.com:80/openfaq/cgi/5.html
+           => `5.html'
+Connecting to proxy.ntust.edu.tw:3128... connected!
+Proxy request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+
+    0K -> ..
+
+13:22:07 (2.57 KB/s) - `5.html' saved [2514]
+
+--13:22:07--  http://www.boutell.com:80/openfaq/cgi/6.html
+           => `6.html'
+Connecting to proxy.ntust.edu.tw:3128... connected!
+Proxy request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+
+    0K -> ....
+
+13:22:12 (2.97 KB/s) - `6.html' saved [4610]
+
+--13:22:12--  http://www.boutell.com:80/openfaq/cgi/7.html
+           => `7.html'
+Connecting to proxy.ntust.edu.tw:3128... connected!
+Proxy request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+
+    0K -> ...
+
+13:22:12 (220.08 KB/s) - `7.html' saved [3155]
+
+--13:22:12--  http://www.boutell.com:80/openfaq/cgi/8.html
+           => `8.html'
+Connecting to proxy.ntust.edu.tw:3128... connected!
+Proxy request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+
+    0K -> ....
+
+13:22:17 (1.72 KB/s) - `8.html' saved [4151]
+
+--13:22:17--  http://www.boutell.com:80/openfaq/cgi/9.html
+           => `9.html'
+Connecting to proxy.ntust.edu.tw:3128... connected!
+Proxy request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+
+    0K -> ..
+
+13:22:29 (1.69 KB/s) - `9.html' saved [2517]
+
+--13:22:29--  http://www.boutell.com:80/openfaq/cgi/12.html
+           => `12.html'
+Connecting to proxy.ntust.edu.tw:3128... connected!
+Proxy request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+
+    0K -> .
+
+13:22:30 (2.51 KB/s) - `12.html' saved [1245]
+
+--13:22:30--  http://www.boutell.com:80/openfaq/cgi/14.html
+           => `14.html'
+Connecting to proxy.ntust.edu.tw:3128... connected!
+Proxy request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+
+    0K -> ..
+
+13:22:33 (2.04 KB/s) - `14.html' saved [2468]
+
+--13:22:33--  http://www.boutell.com:80/openfaq/cgi/19.html
+           => `19.html'
+Connecting to proxy.ntust.edu.tw:3128... connected!
+Proxy request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+
+    0K -> .
+
+13:22:34 (2.80 KB/s) - `19.html' saved [1278]
+
+--13:22:34--  http://www.boutell.com:80/openfaq/cgi/20.html
+           => `20.html'
+Connecting to proxy.ntust.edu.tw:3128... connected!
+Proxy request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+
+    0K -> .
+
+13:22:35 (2.72 KB/s) - `20.html' saved [1197]
+
+--13:22:35--  http://www.boutell.com:80/openfaq/cgi/24.html
+           => `24.html'
+Connecting to proxy.ntust.edu.tw:3128... connected!
+Proxy request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+
+    0K -> ..
+
+13:22:37 (3.15 KB/s) - `24.html' saved [2798]
+
+--13:22:37--  http://www.boutell.com:80/openfaq/cgi/25.html
+           => `25.html'
+Connecting to proxy.ntust.edu.tw:3128... connected!
+Proxy request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+
+    0K -> ..........
+
+13:22:40 (3.70 KB/s) - `25.html' saved [10455]
+
+--13:22:40--  http://www.boutell.com:80/openfaq/cgi/35.html
+           => `35.html'
+Connecting to proxy.ntust.edu.tw:3128... connected!
+Proxy request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+
+    0K -> .
+
+13:22:53 (165.12 B/s) - `35.html' saved [1492]
+
+--13:22:53--  http://www.boutell.com:80/openfaq/cgi/36.html
+           => `36.html'
+Connecting to proxy.ntust.edu.tw:3128... connected!
+Proxy request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+
+    0K -> ..
+
+13:22:55 (2.40 KB/s) - `36.html' saved [2813]
+
+
+FINISHED --13:22:55--
+Downloaded: 48,033 bytes in 17 files

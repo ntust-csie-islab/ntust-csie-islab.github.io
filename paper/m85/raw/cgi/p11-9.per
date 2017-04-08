@@ -1,0 +1,46 @@
+#!/usr/local/bin/perl
+
+print "Content-type: text/html
+<head><title>智力測驗答案公佈</title></head>
+<body>
+<h1>智力測驗答案公佈</h1>";
+%answer = &user_input;  # 讀使用者輸入資料。
+
+if ($answer{'test1'} eq "3")
+{
+   print "<H3>第一題 答對了! 2 加 3 等於 5</H3>";
+} else
+{
+   print "<H3>第一題 答錯了! 2 加 3 等於 5</H3>";
+};
+
+if ($answer{'test2'} eq "台北")
+{
+   print "<H3>第二題 答對了! 台北是台灣的首都</H3>";
+} else
+{
+   print "<H3>第二題 答錯了! 台北是台灣的首都</H3>";
+};
+
+print "</body>";
+
+sub user_input
+{
+   local ($buffer, @datas, $data, $name, $value, %FORM); 
+   $ENV{'REQUEST_METHOD'} =~ tr/a-z/A-Z/;  
+   if ($ENV{'REQUEST_METHOD'} eq "POST")
+   {
+      read(STDIN, $buffer, $ENV{'CONTENT_LENGTH'});
+    } else {
+      $buffer = $ENV{'QUERY_STRING'};
+   }
+   @datas = split(/&/, $buffer);
+   foreach $data (@datas)
+   {
+      ($name, $value) = split(/=/, $data);
+      $value =~ tr/+/ /;
+      $value =~ s/%(..)/pack("C", hex($1))/eg;
+      $FORM{$name} = $value;
+   }
+   %FORM;
+}

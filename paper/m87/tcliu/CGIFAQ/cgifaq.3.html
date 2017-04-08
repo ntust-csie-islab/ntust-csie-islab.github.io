@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html><head><title>CGI Programming FAQ: Techniques: "How do I..."
+</title></head>
+<body bgcolor="#ffffff" vlink="#608060" link="#40a040" text="#000000"><h2>Section 3: Techniques: "How do I..."
+</h2><pre>
+This section comprises programming hints and tips for a number of popular
+tasks. Also included are a number of common questions to which the answer
+is "you can't", with the reasons why.
+
+</pre><h3><a name="1">3.1: Can I get information about who is visiting?</a></h3><pre>
+*sigh*
+Many people keep mailing me questions or suggested hacks to get
+visitor information, particularly email addresses.   It seems they
+won't take "NO" for an answer.
+
+The bottom line is that whatever information is available to _you_
+is _equally_ available to every spammer on the net.   Therefore when
+a browser bug _does_ permit personal data to be collected, it gets
+reported and fixed very quickly (one short-lived Netscape release
+reportedly had such a bug).
+
+You can get some limited information from the environment variables
+passed to you by the browser.   Relatively few of these are guaranteed
+to be available, and some may be misleading.   For particular types
+of information, see below.   For full details, see NCSA's reference pages.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="2">3.2: Can I get the email of visitors?</a></h3><pre>
+Why do you want to do this?
+
+The best information available is the REMOTE_ADDR and REMOTE_HOST,
+which tell you nothing about the user.   Techniques such as "finger@"
+are not reliable, are widely disliked, and generally serve only to
+introduce long delays in your CGI.   Better - as well as more polite -
+just to ask your users to fill in a form.
+
+BTW: the "From:" header line (HTTP_FROM variable) is usually only set
+by robots, since human visitors to your webpage will not normally want
+their addresses collected without permission, and browsers respect this.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="3">3.3: 	"But I saw some.kool.site display my email address..."</a></h3><pre>
+Some sites will play party tricks, which can get *some users* email
+addresses.   Possible tell-tale signs of this are inordinate delays
+loading a page (fingering @REMOTE_HOST - doesn't often work but
+probably can't be detected from the webpage), or a submit button that
+appears to do nothing at all (a <a href="mailto:">mailto:</a> link - works quite well but
+trivially detectable).   As a "snoop" party trick that's fine, but
+if you find someone abusing these facilities (eg they send you
+junkmail), alert their service provider!
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="4">3.4: Can I verify the email addresses people enter in my Form?</a></h3><pre>
+Unfortunately people will sometimes enter an incorrect or invalid
+email address in your Form.   Worse, they may enter a valid but
+incorrect email address that will deliver to someone who doesn't
+want your mail.
+
+Proposed regexps to match email addresses are sometimes posted.
+Most of these will fail against perfectly valid email addresses,
+like "S=N.OTHER/OU1=X12345A/RECIPNUM=1/MTA-BASIC@attmail.com"
+(which is what your address looks like if you are connected to
+the Internet via X400 - and if you think that example is too easy,
+check the ones at the end of Eli the Bearded's Email Addressing FAQ).
+
+Probably the most complete parser and checker available for download
+is Tom Christiansen's, at
+<a href="http://www.perl.com/CPAN/authors/Tom_Christiansen/scripts/ckaddr.gz">http://www.perl.com/CPAN/authors/Tom_Christiansen/scripts/ckaddr.gz</a>
+Of course, this still says nothing about deliverability.
+
+A frequently-suggested hack that doesn't work is to use
+SMTP EXPN or VRFY commands.   Modern versions of sendmail permit
+administrators to disable these commands, and many sites take
+advantage of this facility to protect their users' privacy.
+
+Probably the best way to verify an email address is to send mail to
+it, asking the user to respond.   Include a clause like "if you have
+received this mail in error, please accept our apologies..."
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="5">3.5: Subject: How can I get the hostname of the remote user?</a></h3><pre>
+You can't. Well, not always.
+
+IF it is available, you'll find it in the REMOTE_HOST environment
+variable.  However, this will more often than not contain the numerical
+IP address rather than the IP name of the remote host. Remember that
+not all IP addresses have a hostname associated with them; this is the
+case of most IP addresses assigned to dialup users, for example. Your
+web server may also not perform a reverse lookup on incoming
+connections, in which case REMOTE_HOST will contain the IP address even
+if it has a corresponding IP name. In the second case, you can do a
+reverse lookup yourself in your script, but this is expensive and
+should probably be avoided unless absolutely necessary.
+
+Even if you do manage to obtain a hostname, you should be aware that it
+may not correspond to the hostname the user is accessing your page
+from. It may instead be that of an intervening proxy host.
+
+The short answer is therefore that there is no reliable way of finding
+out what the remote user's hostname is.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="6">3.6: Can I get browser details and return different pages?</a></h3><pre>
+Why do you want to do this?
+
+Well-written HTML will display correctly in any browser, so the correct
+answer to this question is to design a template for your output in good
+HTML, and make sure your output is correct.
+
+If you insist on a different answer, you can use the HTTP_USER_AGENT
+environment variable.  This requires care, and can lead to unexpected
+results.   For example, checking for "Mozilla" and serving a frameset
+to it ensures that you *also* serve the frameset to early (Non-Frame)
+Netscapes, me-too browsers (notably MicroSoft) and others who have
+chosen to lie to you about their browser.
+
+Note also that not every User Agent is a browser.   Your page may be
+read by a user agent you've never heard of, and then displayed by
+100 different browsers.   Or retrieved by different browsers from
+a cache.   Another reason to write good HTML, and not try to
+devise a clever or koool substitute.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="7">3.7: Can I trace where a user has come from/is going to?</a></h3><pre>
+HTTP_REFERER might or might not tell you anything.   By all means
+use it to collect partial statistics if you participate in (say)
+an advertising banner scheme.   But it is not always set, and may
+be meaningless (eg if a user has accessed your page from a bookmark,
+and the browser is too dumb to cope with this).
+
+You cannot trace outgoing links at all.   If you really must try,
+point all the external links to your HTTPD and use its redirection
+facility (which gives you generally-reliable logs).   This is much
+less inefficient than using a CGI script.
+
+BTW: don't even think about asking Javascript to send you information
+on some event: it's a violation of privacy which Netscape fixed as
+soon as complaints about its abuse started coming in.   If it works
+with *your* browser, you should upgrade!
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="8">3.8: Can I launch a long process and return a page before it's finished?</a></h3><pre>
+[UNIX]
+You have to fork/spawn the long-running process.
+The important thing to remember is to close all its file descriptors;
+otherwise nothing will be returned to the browser until it's finished.
+The standard trick to accomplish this is redirection to/from /dev/null:
+
+        exec ("long_process &lt; /dev/null &gt; /dev/null 2&gt;&amp;1 &amp;")
+        print HTML page as usual
+
+(don't take "exec" as literal in anything but a shell script - in
+C, Perl, etc use fork+exec or system() :-)
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="9">3.9: Can I launch a long process which the user interacts with?</a></h3><pre>
+This does not fit well with the basic mechanics of the Web, in which
+each transaction comprises a single request and response.
+If your processing can be done on the Client machine, you can use
+a clientside application; for example a Java applet.
+
+For processing on the server, one trick that works well for Clients
+running an X server (and far more efficient than a JAVA solution) is:
+  if ( fork() ) {
+    print HTML page explaining what's going on and advising about xhost
+  } else {
+    exec ("xterm -display THEIR_DISPLAY -title MY_APP -e MY_PROG ARGS
+        &lt; /dev/null &gt; /dev/null 2&gt;&amp;1 &amp;") ;
+  }
+NOTE: THEIR_DISPLAY is not necessarily the same as REMOTE_HOST or REMOTE_ADDR.
+You have to ask users to supply their display (set REMOTE_HOST as default).
+
+[ Question: Is there a JAVA alternative to xterm yet, for platforms
+  which support JAVA but not X ? ]
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="10">3.10: Can I password-protect my pages?</a></h3><pre>
+Yes.   Use your HTTPD's authentication, just as you would a basic HTML page.
+Now you'll have the identity of every visitor in REMOTE_USER.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="11">3.11: Can I do HTTP authentication using CGI?</a></h3><pre>
+It depends on which version of the question you asked.
+
+Yes, you can use CGI to trigger the browser's standard Username/Password
+dialogue.   Send a response code 401, together with a "WWW-authenticate"
+header including details of the the authentication scheme and realm:
+e.g. (in a non-NPH script)
+
+	Status: 401 Unauthorized to access the document
+	WWW-authenticate: Basic realm="foobar"
+	Content-type: text/plain
+
+	Unauthorised to access this document
+
+The use you can make of this is server-dependent, and harder,
+since most servers expect to deal with authentication before ever
+reaching the CGI (eg through .www_acl or .htaccess).
+Thus it cannot usefully replace the standard login sequence, although
+it can be applied to other situations, such as re-validating a user -
+e.g after a certain timeout period or if the same person may need to
+login under more than one userid.
+
+What you can never get in CGI is the credentials returned by the user.
+The HTTPD takes care of this, and simply sets REMOTE_USER to the
+username if the correct password was entered.
+
+For a much longer discussion of this question (with code extracts),
+see my discussion at <a href="http://www.webthing.com/tutorials/login.html">http://www.webthing.com/tutorials/login.html</a>
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="12">3.12: Can I identify users/sessions without password protection?</a></h3><pre>
+The most usual (but browser-dependent) way to do this is to set a cookie.
+If you do this, you are accepting that not all users will have a 'session'.
+
+An alternative is to pass a session ID in every GET URL, and in hidden
+fields of POST requests.   This can be a big overhead unless _every_ page
+requires CGI in any case.
+
+Another alternative is the Hyper-G[1] solution of encoding a session-id in
+the URLs of pages returned:
+	<a href="http://hyper-g.server/session_id/real/path/to/page">http://hyper-g.server/session_id/real/path/to/page</a>
+This has the drawback of making the URLs very confusing, and causes any
+bookmarked pages to generate old session_ids.
+
+Note that a session ID based solely on REMOTE_HOST (or REMOTE_ADDR)
+will NOT work, as multiple users may access your pages concurrently
+from the same machine.
+
+[1] Actually I don't think that's been true of Hyper-G since sometime in '96.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="13">3.13: Can I redirect users to another page?</a></h3><pre>
+For permanent and simple redirection, use the HTTPD configuration file:
+it's much more efficient than doing it yourself.   Some servers enable
+you to do this using a file in your own directory (eg Apache) whereas
+others use a single configuration file (eg CERN).
+
+For more complicated cases (eg process form inputs and conditionally
+redirect the user), use the "Location:" response header.
+If the redirection is itself a CGI script,  it is easy to URLencode
+parameters to it in a GET request, but don't forget to escape the URL!
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="14">3.14: Can I run a CGI script without returning a new page to the browser?</a></h3><pre>
+Yes, but think carefully first:  How are your readers going to know
+that their "submit" has succeeded?   They may hit 'submit' many times!
+
+The correct solution according to the HTTP specification is to
+return HTTP status code 204.   As an NPH script, this would be:
+
+	#!/bin/sh
+	# do processing (or launch it as background job)
+	echo "HTTP/1.0 204 No Change"
+	echo
+
+(as non-NPH, you'd simply replace HTTP/1.0 with the Status: CGI header).
+
+Alan J Flavell has pointed out that this will fail with certain
+popular browsers, and suggests a workaround to accommodate them:
+
+[ May 1998 update[1]: I'm deleting Alan's suggestion, because the problem
+  is mainly of historical interest, and the workaround is no longer
+  recommended.  See his page for a a detailed survey and recommendations.
+]
+
+His survey is at
+<a href="http://ppewww.ph.gla.ac.uk/%7Eflavell/status204/results.html">http://ppewww.ph.gla.ac.uk/%7Eflavell/status204/results.html</a>
+
+[1] With apologies to Alan for having left it in so long.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="15">3.15: Can I write output to a different Netscape frame?</a></h3><pre>
+Yep.   The fact you're using CGI makes no difference: use
+"target=" in your links as usual.   Alternatively, the script
+can print a "Window-target:" header.   Read Netscape's pages
+for detail: these answer all the questions about things like
+"getting rid of" or "breaking out of" frames, too.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="16">3.16: Can I write output to several frames at once?</a></h3><pre>
+A single CGI script can only ever print to one frame.
+
+However, this limitation may be overcome by using more than one script.
+The first script (the URL of the "submit" button) prints a frameset,
+typically to a "_parent" or "_top" target.   The sources for one or
+more of the frames thus generated may also be CGI scripts, to which
+you can easily pass parameters (eg encoded in URLs with method GET).
+This hack is definitely not recommended.   If you find yourself wanting
+to update several frames from a single user event, it probably means
+you should review the design of your application at a higher level.
+
+Warnings:
+ 1. Don't forget to escape your URLs.
+ 2. This technique results in your server being hit by multiple 
+    concurrent CGI requests.   You'll need LOTS of memory, especially
+    if you use a memory-hog like Perl.   It can be a good recipe
+    for bringing a server to its knees.
+
+Javascript is often a valid alternative here, but note just how silly
+it can (and often does) look in a different browser.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="17">3.17: Can I use a CGI script to generate both text and inline images?</a></h3><pre>
+Not directly.   One script generates one response to one request.
+
+If you want to generate a dynamic page including dynamic images
+(say, a report including graphs, all of which depend on user input)
+then your primary script will print the usual
+   &lt;img src="[script-to-generate-image]" alt="[what you asked for]"&gt;
+and, just as in the multiple frames case, you can pass data to the
+image-generating program encoded in a GET URL.   Of course, the same
+caveats apply: see above.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="18">3.18: How can I use Caches to make CGI scripts faster and more Net-friendly?</a></h3><pre>
+This is currently beyond the scope of this FAQ (whose author urgently
+needs to improve his own applications in this regard).   However,
+there is an excellent introduction to net-friendly webpages, including
+CGI pages, at <a href="http://vancouver-webpages.com/CacheNow/">http://vancouver-webpages.com/CacheNow/</a>
+
+A sample cacheing perl/cgi script by Andrew Daviel is available at
+<a href="http://vancouver-webpages.com/proxy/log-tail.pl">http://vancouver-webpages.com/proxy/log-tail.pl</a>
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="19">3.19: How can I avoid users hitting "submit" twice?</a></h3><pre>
+You can't.   You just have to deal with it when they do.
+
+You can avoid re-processing a submission by embedding a unique ID in your
+Form each time it is displayed.   When you process the form, you enter
+the ID in a database.  Or, if it's already there, you don't repeat the
+processing.
+
+You probably want to expire your database entries after a little time:
+an hour should be fine in a typical situation.
+
+If you're already using cookies (e.g. a shoppingcart), an alternative is
+to use the cookie as a unique identifier.   This means you also have to
+handle the situation where a user deliberately "goes round twice" and
+submits the same form with different contents.
+
+If your script may take some time to process, you should also consider
+running it as a background job, and returning an immediate
+acknowledgement to the user (see above if your "immediate" response
+gets delayed until processing is complete in any case).
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="20">3.20: How can I stop my CGI script reading and writing files as "nobody"?</a></h3><pre>
+CGI scripts are run by the HTTPD, and therefore by the UID of the HTTPD
+process, which is (by convention) usually a special user "nobody".
+
+There are two basic ways to run a script under your own userid:
+(1) The direct approach: use a setuid program.
+(2) The double-server approach: have your CGI script communicate
+    with a second process (e.g. a daemon) running under your userid,
+    which is responsible for the actual file management.
+
+The direct approach is usually faster, but the client-server architecture
+may help with other problems, such as maintaining integrity of a database.
+
+When running a compiled CGI program (e.g. C, C++), you can make it
+setuid by simply setting the setuid bit:
+e.g. "chmod 4755 myprog.cgi"
+
+For security reasons, this is not possible with scripting languages
+(eg Perl, Tcl, shell).   A workaround is to run them from a setuid
+program, such as cgiwrap.
+
+In most cases where you'd want to use the client-server approach,
+the server is a finished product (such as an SQL server) with its
+own CGI interface.
+A lightweight alternative to this is Don Libes' "expect" package.
+
+Note that any program running under your userid has access to all your
+files, and could do serious damage if hacked.   Take care!
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="21">3.21: How can I prevent my CGI results being cached by the browser?</a></h3><pre>
+Firstly, we need to debunk a myth.  People asking this question usually
+add that they tried "Pragma: no-cache".  Whilst this is not actively
+wrong, there is no requirement on browsers to take any notice of it,
+and most of them don't.
+
+The "Pragma: no-cache" header (now superseded by HTTP/1.1 Cache-Control)
+is a directive to proxies.  The browser sends it with an HTTP request
+to indicate that it wants the request to be dealt with by the original
+server and will not accept a proxy's cached document (e.g. when you
+use a reload button).  The server may send it to tell a proxy not to
+cache the document.
+
+Having said all that, a practical hack to get round cacheing is
+to use a different URL for your CGI script each time it's called.
+This can easily be accomplished by adding a unique identifier such
+as current time in the QUERY_STRING or PATH_INFO.  The browser will
+see a different URL, but the script can just ignore it.  Note that
+this can be very inefficient, and should be avoided where possible.
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small><hr><h3><a name="22">3.22: How can I control the default filename when downloading a file via CGI?</a></h3><pre>
+	(from a newsgroup post by Matthew Healy)
+
+One option, assuming you aren't already using the PATH_INFO
+environment variable, is just to call your CGI script with extra
+path information.
+
+For example, suppose the URL to your script is actually
+
+<a href="http://server.com/scriptname?name1=value1&amp;name2=value2">http://server.com/scriptname?name1=value1&amp;name2=value2</a>
+
+Instead, try calling it as
+
+<a href="http://server.com/scriptname/filename.ext?name1=value1&amp;name2=value2">http://server.com/scriptname/filename.ext?name1=value1&amp;name2=value2</a>
+
+And probably the browser will assign the name given in the last chunk
+as the suggested filename for downloading.
+
+This works because the http server looks for the program file to run,
+then passes any extra path to the program as PATH_INFO variable; the
+browser cannot tell where the SCRIPT_NAME part ends and the PATH_INFO
+part begins.
+
+This can also be very useful if you want one script to generate more
+than one filename -- the script can check the PATH_INFO value and
+alter its response accordingly...
+
+</pre><small>[<a href="cgifaq.html">Table of Contents</a>] [<a href="cgifaq.index.html">Index</a>]</small></body></html>

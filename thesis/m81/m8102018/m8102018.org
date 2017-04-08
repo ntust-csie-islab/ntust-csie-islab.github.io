@@ -1,0 +1,106 @@
+<html><head><title>黃瓊緯個人資料</title>
+<link rev="made" href="mailto:d8902105@mail.ntust.edu.tw">
+</head>
+<body background="/picture/greenwhi.gif">
+<pre>
+<img align=left src="/staff/m81/m8102018/m8102018.jpg"> 
+<br>
+<strong> <font size=6>
+  83級畢業碩士  黃瓊緯</font></strong>
+
+
+
+
+
+<hr>
+<h4><li>生日</h4>
+<h5>	9月29日</h5>
+
+<hr>
+<h4><li>學經歷</h4>
+<h5>	
+
+	2000-現在       清雲技術學院   電子工程系  專任講師
+	1999-1999       健行技術學院   電子工程系  專任講師
+	1998-1999       健行工商專科學校   電子工程系  專題製作委員會  召集人
+	1994-1999       健行工商專科學校   電子工程科  專任講師
+	1992-1994       國立台灣工業技術學院  工程技術研究所  電子工程技術學程  計算機組
+	1992-1993       國立台灣工業技術學院  電子系電腦室助教
+	1992                   高級程式設計師系統組鑑定合格（資策會主辦）
+	1990-1992       國立台灣工業技術學院  電子系（二年制）
+	1988-1990       普騰半導體工業股份有限公司（ASIC Design Support: VGA chip project）
+	1988                   程式設計師檢定合格（資策會主辦）
+	1986-1988       支援陸軍Command, Contral, Communication, Information 小組
+	1986                   畢業專題 Printer Multiplexer 獲得全友電腦實驗獎 優等獎
+	1981-1986       私立健行工業專科學校 電子工程科
+</h5>
+
+<hr>
+<h4><li>現職</h4>
+<h5>	 清雲技術學院   電子工程系  講師</h5>
+
+<hr>
+<h4><li>教學方向</h4>
+<h5>          
+         計算機程式
+         資料結構
+         微算機應用
+         微處理機
+         套裝軟體
+         計算機網路
+         視窗程式設計
+          介面技術</h5>
+
+<hr>
+<h4><li>專題製作</h4>
+<h5>          
+          畢業紀念冊光碟版  (84健行電子專題製作競賽 第二名)
+          電腦語音查詢系統  (84健行電子專題製作競賽 第三名)
+          健行電子WWW伺服器之架設
+          電信網路與網際網路之整合服務系統  (85健行電子專題製作競賽 第二名)
+
+          健行電子 多媒體簡介
+          網際網路遠端遙控站台  (86健行電子專題製作競賽 第一名)
+            (86學年度教育部微電腦應用系統設計製作競賽 專科組佳作）
+          呼叫器之遠端遙控  (86健行電子專題製作競賽 第二名)
+          網路無人探險車  (87健行電子專題製作競賽 第一名)
+            (87學年度教育部微電腦應用系統設計製作競賽 專科組佳作)
+                    (1999年義隆盃微控器控制應用製作大賽 控制組佳作)
+          電腦控制之小型舞台雷射燈光音效系統  (87健行電子專題製作競賽 第二名)
+          多用途遠端遙控系統  (88清雲電子專題製作競賽 優等組)
+                    (88學年度教育部微電腦應用系統設計製作競賽 專科組佳作)
+</h5>
+<hr></pre>
+<h4><li>碩士學位論文</h4><h5>
+
+<a href="m8102018p1.html#paper1">以模糊法則為基礎之手寫中文部首抽取系統 (A Fuzzy Rule-based System for the Radical Extraction on Handwritten Chinese Characters)</a></h5>
+	
+<hr>	  　  
+<h4><li>論文發表</h4><h5><ol>
+
+<li><a href="/staff/hmlee/hmlee.html"> Hahn-Ming Lee</a> and Chiung-Wei Huang, "<a href="m8102018p1.html#paper2">Fuzzy Feature Extraction on
+        Handwritten Chinese Characters</a>," <i> Proc. of IEEE Int. Conf. on Fuzzy Systems</i>, vol. III, pp.1809-1814, USA, June 1994.
+<li><a href="/staff/hmlee/hmlee.html"> Hahn-Ming Lee</a> and Chiung-Wei Huang, "<a href="m8102018p1.html#paper3">A Fuzzy Rule-based System for 
+       Structure Decomposition on Handwritten Chinese Characters</a>,"<i> 1994 IEEE Int. Conf. on Systems, Man, and
+       Cybernetics</i>, Vol. I, pp. 487-492, USA Oct. 1994.
+<li><a href="/staff/hmlee/hmlee.html"> Hahn-Ming Lee</a> and Chiung-Wei Huang," A Fuzzy Rule-based System for Structure Decomposition on Handwritten Chinese Characters,"<i> Fuzzy Sets and System,</i>, Vol. 100, pp. 53-64.  1998. 計畫編號：NSC-86-2213-E-011-069 (本期刊EI收錄；SCI收錄)</h5></ol>
+
+<hr><pre>
+<h4><li>專長</h4>
+<h5>	手寫中文辨識
+	類神經網路
+	模糊集合理論
+	學術網路應用系統
+	Sun 工作站管理</h5>
+
+<hr>
+</pre></h4>   
+</html>	
+
+
+
+
+
+
+
+

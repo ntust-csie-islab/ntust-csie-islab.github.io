@@ -1,0 +1,60 @@
+<title>CGI Programming OpenFAQ</title>
+<h1>CGI Programming OpenFAQ</h1>
+<h2>How can I identify the user who is accessing my CGI script?
+</h3>
+<strong>Contributors:</strong><br>
+<ul>
+<li>boutell <a href="mailto:boutell@boutell.com">boutell@boutell.com</a>
+</ul>
+<hr>
+Five important environment variables are available to your CGI script
+to help in identifying the end user. 
+<h4>HTTP_FROM</h4>
+This environment variable is, theoretically, set to the email address
+of the user. However, many browsers do not set it at all, and most
+browsers that do support it allow the user to set any value for
+this variable. As such, it is recommended that it be used only
+as a default for the reply email address in an email form.
+<h4>REMOTE_USER</h4>
+This variable only set if authentication
+was used to access the script. The AUTH_TYPE variable can be checked
+to determine what form of authentication was used (typically basic). 
+REMOTE_USER will then contain the name the user authenticated under. Note that
+REMOTE_USER is only set if authentication was actually used,
+and is not supported by all web servers. Authentication may
+unexpectedly fail to happen under the NCSA or Apache server 
+if the method used for the transaction is not listed in the
+access.conf file (ie, &lt;Limit GET POST&gt; should be
+set rather than the default, &lt;Limit GET&gt;). For more
+information about authenticated (password-protected) directories
+see your web server's manual.
+<h4>REMOTE_IDENT</h4>
+This variable is set if the server has contacted an IDENTD server
+on the client machine. This is a slow operation, usually turned off
+in most servers, and there is no way to ensure that the client machine
+will respond honestly to the query, if it responds at all. Almost
+never used any more.
+<h4>REMOTE_HOST</h4>
+This variable will not identify the user specifically, but does provide
+information about the site the user has connected from, if the hostname
+was retrieved by the server. In the absence of any certainty regarding 
+the user's precise identity, making decisions based on a list of trusted 
+addresses is sometimes an adequate workaround. This variable is not set
+if the server failed to look up the host name or skipped the lookup
+in the interest of speed; see REMOTE_ADDR below. Also keep in mind that
+you may see all users of a particular proxy server listed under
+one hostname.
+<h4>REMOTE_ADDR</h4>
+This variable will not identify the user specifically, but does provide
+information about the site the user has connected from.
+REMOTE_ADDR will contain the dotted-decimal IP address of the client.
+In the absence of any certainty regarding 
+the user's precise identity, making decisions based on a list of trusted 
+addresses is sometimes an adequate workaround. This variable is 
+always set, unlike REMOTE_HOST, above.
+Also keep in mind that you may see all users of a particular proxy server 
+listed under one address.
+
+	
+<hr>
+<a href="http://www.boutell.com/openfaq/cgi/6.html">Previous</a> | <a href="http://www.boutell.com/openfaq/cgi/8.html">Next</a> | <a href="http://www.boutell.com/openfaq/cgi">Table of Contents</a>

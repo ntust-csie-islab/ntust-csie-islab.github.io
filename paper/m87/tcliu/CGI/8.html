@@ -1,0 +1,101 @@
+<title>CGI Programming OpenFAQ</title>
+<h1>CGI Programming OpenFAQ</h1>
+<h2>My CGI scripts don't work. What's wrong?
+</h3>
+<strong>Contributors:</strong><br>
+<ul>
+<li>boutell <a href="mailto:boutell@boutell.com">boutell@boutell.com</a>
+<li>Stas <a href="mailto:sbekman@hotmail.com">sbekman@hotmail.com</a>
+<li>Stas <a href="mailto:sbekman@hotmail.com">sbekman@hotmail.com</a>
+</ul>
+<hr>
+		<h4>The Server Must Recognize Your Program</h4>
+Simply linking from your page to an executable program
+or script won't cause it to be run by the server. There are
+two common arrangements: either files in 
+directories specially designated by the
+server administrator are executed as CGI scripts,
+or files with a special extension (such as .cgi)
+are executed as CGI scripts. 
+<P>
+These are just two possible ways your server might
+be configured. Many sites don't allow users to
+run CGI scripts at all. Consult your
+web server's administrator.
+<h4>Always Output a MIME Type</h4>
+Every CGI script must output a MIME type
+indicating what kind of document it is producing. If your script 
+outputs an HTML page, the correct format is:
+<P>
+<code>Content-type: text/html</code>
+<P>
+Followed by two line feeds (ascii 10 decimal).
+<P>
+After the MIME type, output the desired HTML.
+<h4>Always Flush Output</h4>
+On many systems, unexpected problems can result when
+a CGI script outputs a MIME type, then executes another
+program to generate output. To prevent such problems,
+flush standard output before executing other programs.
+If your script is written in C, the proper code
+is usually: <code>fflush(stdout); </code>
+<h4>Permissions and Paths: Why Can't My Script Access My Files?</h4>
+CGI programs typically execute with a current directory and
+user ID that differ from your personal home directory and
+user ID. When you write CGI programs, make sure any files
+accessed are accessed by absolute path (beginning from the
+root of the file system). Also, users of multiuser systems
+such as Unix may have to grant all users read access or even write access 
+to data files using the chmod command. This is not an ideal
+situation. Better servers run your CGI programs using your user ID.
+Talk to your admin if you have difficulties in this area.
+<h4>When One Browser Works and Another Doesn't</h4>
+Some browsers are tolerant of incorrect Content-type
+headers, as well as of null characters in text/html
+or text/plain output. Make sure your output is strictly
+correct; it helps to check the script with several
+different browsers.
+
+
+<h4>Obtaining Complete Error Messages From CGI Programs</h4>
+Programmers in all languages can often obtain any messages
+that were written to "standard error" by examining the
+error log of the web server. The error log is typically in
+the same directory with the main web server log file.
+<p>
+Perl programmers wanting to know what the actual error
+was in detail when a CGI program fails can add the following
+code to their programs.
+<blockquote>
+I have just learned a nice snippet to use for CGI&nbsp;debugging, put
+at the beginning of your code or even better in BEGIN{} block then any
+time your script calls die() or warn() All the STDERR&nbsp;will be printed
+to your browser's window. So from now on no need to use error logs , almost
+:-)
+</blockquote>
+
+<PRE>  
+          ## death handler, presumes no output yet
+          $SIG{``__DIE__''} = $SIG{``__WARN__''} = sub {
+            my $error = shift;
+            chomp $error;
+            $error =~ s/[<&>]/``&#''.ord($&).``;''/ge;  # entity escape;
+            print ``Content-type: text/html\n\n[$error]\n'';
+            exit 0;
+          };
+           </PRE>
+
+<P>Example: <BR>
+open FILE, $file or die &quot;Can't open $file:$!\n&quot;;</P>
+
+<P>If the open call fails, you will see the message you passed
+to die() in your browsers's window.</P>
+
+<P>This code was written by Randal L. Schwartz. 
+
+
+	
+
+	
+<hr>
+<a href="http://www.boutell.com/openfaq/cgi/7.html">Previous</a> | <a href="http://www.boutell.com/openfaq/cgi/9.html">Next</a> | <a href="http://www.boutell.com/openfaq/cgi">Table of Contents</a>

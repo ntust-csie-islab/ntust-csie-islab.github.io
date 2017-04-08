@@ -1,0 +1,38 @@
+#!/usr/local/bin/perl
+print "Content-type: text/html
+<head>
+<title>顯示使用者輸入資料</title>
+</head>
+<body>
+<h1>顯示使用者資料</h1>
+";
+%display = &user_input;  # 讀使用者輸入資料。
+$your_name = $display{'name'};
+print $your_name;        # 列印使用者姓名。
+$your_email = $display{'email'};
+print $your_email;       # 列印使用者電傳地址。
+$your_suggest = $display{'suggest'};
+print $your_suggest;     # 列印使用者意見。
+print "<h3> display finished </h3>";
+print "</body>";
+
+sub user_input
+{
+   local ($buffer, @datas, $data, $name, $value, %FORM); 
+   $ENV{'REQUEST_METHOD'} =~ tr/a-z/A-Z/;  
+   if ($ENV{'REQUEST_METHOD'} eq "POST")
+   {
+      read(STDIN, $buffer, $ENV{'CONTENT_LENGTH'});
+    } else {
+      $buffer = $ENV{'QUERY_STRING'};
+   }
+   @datas = split(/&/, $buffer);
+   foreach $data (@datas)
+   {
+      ($name, $value) = split(/=/, $data);
+      $value =~ tr/+/ /;
+      $value =~ s/%(..)/pack("C", hex($1))/eg;
+      $FORM{$name} = $value;
+   }
+   %FORM;
+}
